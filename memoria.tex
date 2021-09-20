@@ -429,30 +429,69 @@ Heroku, a diferencia de otras tecnologías vistas en este documento, no es un se
 
 La aplicación web Gymkhana App se ha desarrollado en Django con su estructura típica basada en el una arquitectura de modelo-vista controlador como se ve en la figura~\ref{fig:arquitectura}, en esta figura las lineas sólidas muestran una relación directa entre los elementos y las rayadas una asociación indirecta. Dentro de este modelo  la vista será la capa que se presente y con la que interactua el usuario, compuesta por los diferentes tipos de plantillas o Templates como los conoce Django. El modelo es quien se encarga de gestionar los datos, es quien tiene comunicación directa con la base datos y maneja toda la información que entra y sale de esta. El controlador es quien maneja las comunicaciones entre los dos anteriores módulos y el único que tiene conexión directa con el resto de módulos, se encarga de recibir las peticiones del módulo de vistas, gestionar internamente estas peticiones y decidir que hacer en base a la información recogida consultando en cualquier caso los datos que considere necesarios del modelo. 
 
+\begin{figure}
+	\centering
+	\includegraphics[width=12cm, keepaspectratio]{img/model-vista-controlador.png}
+	\caption{Estructura de las relación modelo-vista-controlador.}\label{fig:arquitectura}
+\end{figure}
 
 \section{Módulo Vistas-Controlador}
 
 
 \section{Módulo Templates-Vistas}
+El módulo de Templates es el que forma la interfaz de usuario de la aplicación. Cada vista de la aplicación, o página que el usuario acaba visualizando está compuesta por un template o plantilla HTML sobre la que se aplica un estilo con CSS. Trabajar con plantillas en Django hace que la aplicación sea escalable y el código quede ordenado. En muchos casos la plantilla es reutilizable si se parametrizan adecuadamente, a su vez, la capa de estilo esta muy bien aislada gracias a Boostrap, de manera que se puede separar muy bien la parte programática del desarrollo de la parte encargada del diseño y el estilo evitando así tener que aplicar estilo a cada una de las páginas implicadas en el desarrollo. 
+
+La aplicación de Gymkhana App se apoya principalmente sobre tres views: Start, Challenge y Response.
+
+\subparagraph{Start}
+Esta página muestra los juegos que hay disponibles en la aplicación, los lista ordenadamente de manera descendientes, y cada juego tiene un botón en el que pinchando accedes al juego concreto. 
+\subparagraph{Challenge} 
+En esta página muestra un único reto, que se compone de un nombre o título, una pregunta y una imagen con un diagrama UML que debe estar relacionado con el reto. Esta vista tiene también un campo que el usuario debe rellenar con la respuesta planteada al reto y un botón par enviar la petición GET con la respuesta al servidor.
+ 
 
 
 \section{Módulo Models-Modelo}
+Este módulo es el que gestiona la información de la aplicación Gymkhana App, toda la información de la aplicación está contenida en una base de datos. El gestor de base de datos utilizado es, en este caso, SQLite versión 3. Este sistema de base de datos es un sistema de base de datos relacional y es por defecto el que utiliza Django, no obstante se permite cambiar a otros modelos fácilmente. Se ha decidido utilizar este gestor precisamente por la sencillez y compatibilidad con Django, con SQLite la base de datos completa se encuentra en un solo archivo totalmente autocontenido, sin dependencias externas ademas admite concurrencia decir que permite que múltiples procesos tengan el archivo de base de datos abierto y leer a la vez. En  en la figura~\ref{fig:diagarma_ER} se puede ver el diagrama entidad-relación que define la base de datos de la aplicación, el proyecto de Django tiene más tablas a parte de las que se muestran, pero el resto son propias de la arquitectura de Django así que no nos centraremos en ellas. Las tablas que componen la base de datos de la aplicación se describen a continuación:
+
+
+\begin{itemize}
+	\item \textbf {Users}: En esta tabla se almacenan los usuarios registrados en Gymkhana App. Dispone de los siguientes campos: 
+	\begin{itemize}
+		\item \textbf {name}: Indica el nombre del usuario. 
+		\item \textbf {email}: La dirección de correo electrónico con la que se registra el usuario. 
+		\item \textbf {admin}: Un campo que indica si este usuario tiene privilegios de administrador o no. 
+	\end{itemize}
+
+	\item \textbf {Diagrams}: Esta tabla contiene los tipos de diagramas que pueden aparecer en los retos, estos tipos de diagramas se limitan a los mencionados en el apartado 3.1 de este documento.  
+	\begin{itemize}
+		\item \textbf {type}: Indica el nombre general del tipo de diagrama UML. 
+		\item \textbf {description}: La descripción del tipo de diagrama asociado que se puede extender hasta diez mil caracteres. 
+	\end{itemize}
+	
+	\item \textbf {Challenges}: Tabla que almacena los retos de los que se componen los juegos que maneja la aplicación. 
+	\begin{itemize}
+		\item \textbf {name}: Nombre que se le da a cada reto.
+		\item \textbf {question}: Pregunta clave sobre el reto específico. 
+		\item \textbf {awnser}: Respuesta a la pregunta clave. 
+		\item \textbf {diagram}: Diagrama UML, en formato imagen a la que está asociado el reto. 
+		\item \textbf {creator}: Usuario que ha creado este reto. 
+		\item \textbf {diagram type}: El tipo de diagrama UML al que esta asociado el diagrama de este reto. 
+	\end{itemize}
+	
+	\item \textbf {Games}: Tabla que almacena los distintos juegos, estos juegos son principalmente una colección de uno o varios retos. 
+	\begin{itemize}
+		\item \textbf {title}: Nombre o título del juego. 
+		\item \textbf {challenges}: Uno o varios retos de los contenidos en la tabla Challenges. 
+		\item \textbf {creator}: Usuario que ha creado el juego. 
+	\end{itemize}
+	
+\end{itemize}
 
 \begin{figure}
-  \centering
-  \includegraphics[width=12cm, keepaspectratio]{img/model-vista-controlador.png}
-  \caption{Estructura de las relación modelo-vista-controlador.}\label{fig:arquitectura}
+	\centering
+	\includegraphics[width=16cm, keepaspectratio]{img/ghymkhana_ER.png}
+	\caption{Diagrama entidad-relación de la aplicación Ghymkhana App.}\label{fig:diagarma_ER}
 \end{figure}
-
- 
-Recuerda que toda figura que añadas a tu memoria debe ser explicada.
-Sí, aunque te parezca evidente lo que se ve en la figura~\ref{fig:arquitectura}, la figura en sí solamente es un apoyo a tu texto.
-Así que explica lo que se ve en la figura, haciendo referencia a la misma tal y como ves aquí.
-Por ejemplo: En la figura~\ref{fig:arquitectura} se puede ver que la estructura del \emph{parser} básico, que consta de seis componentes diferentes: los datos se obtienen de la red, y según el tipo de dato, se pasará a un \emph{parser} específico y bla, bla, bla\ldots
-
-Si utilizas una base de datos, no te olvides de incluir también un diagrama de entidad-relación.
-
-
 
 
 
