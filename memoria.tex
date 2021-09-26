@@ -30,6 +30,7 @@
 \usepackage{float}  %% H para posicionar figuras
 \usepackage[nottoc, notlot, notlof, notindex]{tocbibind} %% Opciones de índice
 \usepackage{latexsym}  %% Logo LaTeX
+\usepackage{listings} %% Para que el codigo quede bonito
 
 \title{Memoria del Proyecto}
 \author{Nombre del autor}
@@ -436,19 +437,44 @@ La aplicación web Gymkhana App se ha desarrollado en Django con su estructura t
 \end{figure}
 
 \section{Módulo Vistas-Controlador}
+Este módulo es el encargado de recibir y gestionar las peticiones recibidas desde el módulo Templates, gestionarlas, consultar con el módulo Models y preparar las respuestas para el usuario. Django dispone de herramientas muy útiles para la gestión y respuesta de peticiones web, de tal manera que definir las funciones del servidor cada vez que un usuario accede a una URL y generar las respuestas es limpio, sencillo, escalable. 
+Las URL y como se gestionan las respuestas se define a continuación: 
+
+\begin{itemize}
+	\item \textbf {Home}: Como muchas otras aplicaciones que existen, cuando se introduce la URL con el nombre completo del dominio sin añadir ningún directorio tras este, se redirige esta petición a la página principal o home, donde se simplemente se hace una pequeña introducción al proyecto y te permite iniciar Gymkhana App. 
+	\item \textbf {/start}: Cuando inicias la Gymkhana desde el home te lleva automáticamente a esta URL, donde primero este módulo comprueba si existen juegos disponibles en la base de datos, y si es así los muestra. El usuario puede elegir uno de estos juegos y enviar una petición GET con el identificador del juego elegido. 
+	\item \textbf {/challenge}: Cuando se accede a este directorio se recoge la petición GET del usuario con el juego elegido, y si vienes de un reto anterior o acaba de empezar el juego. Así podemos elegir cual de los diferentes retos que componen un juego mostrar, siempre comprobando que todos los datos existan en la base de datos para evitar posibles errores. Una vez elegido el reto a mostrar se le muestra a el reto donde el usuario debe introducir la respuesta al mismo para avanzar. 
+	\item \textbf {/response}: Una vez el usuario ha rellenado la repuesta al reto se envía una petición tipo GET con la información contenida del reto al que pertenece, el juego, sí ha habido una reto del mismo juego anterior y la respuesta al reto. En caso de ser correcta el servidor redirigirá al usuario bien al nuevo reto, si se está jugando a un juego con varios retos, o una pantalla en la que indica que ha finalizado correctamente el juego y desde ahí el usuario podrá regresar al menú principal para poder elegir otros juegos, o repetir el mismo. Por otro lado, si la respuesta no es correcta, enviará al usuario a una pantalla donde se indica que la respuesta es incorrecta y te dejará volver a intentar el reto o salir al menú de juegos.
+\end{itemize}
+
+Django cuenta con muchas funciones y respuestas que vienen ya integradas, como por ejemplo poder responder a peticiones que provocan errores genéricos como tipo HTTP 404 (Not Found) entre otros, de esta manera todas las peticiones que se hacen al servidor en caso de encontrar la información requerida en la base de datos la aplicación captura este error y devuelve un ERROR 404 genérico de Django, que aparte hace terminar el resto de procesos en curso, haciendo a la aplicación mucho más robusta ante errores. 
 
 
 \section{Módulo Templates-Vistas}
 El módulo de Templates es el que forma la interfaz de usuario de la aplicación. Cada vista de la aplicación, o página que el usuario acaba visualizando está compuesta por un template o plantilla HTML sobre la que se aplica un estilo con CSS. Trabajar con plantillas en Django hace que la aplicación sea escalable y el código quede ordenado. En muchos casos la plantilla es reutilizable si se parametrizan adecuadamente, a su vez, la capa de estilo esta muy bien aislada gracias a Boostrap, de manera que se puede separar muy bien la parte programática del desarrollo de la parte encargada del diseño y el estilo evitando así tener que aplicar estilo a cada una de las páginas implicadas en el desarrollo. 
 
-La aplicación de Gymkhana App se apoya principalmente sobre tres views: Start, Challenge y Response.
-
+La aplicación de Gymkhana App se apoya principalmente sobre cinco principales views: home, start, challenge, succes y wrong.
+\subparagraph{Home}
+Es la página principal que el usuario ve cuando accede a la web. Tiene una cabecera y un pie de página que comparten todas las paginas de la aplicación. En la cabecera hay dos enlaces ocultos que redirigirán al usuario bien a la página principal de la aplicación Gymkhana App, o a la web oficial de la organización UML. En el pie de página se muestra información relativa a la ETSIT como localización y enlaces ocultos para poder visitar la cuenta de Twitter, y la web oficial de la ETSIT. También aparece la licencia de uso de la plantilla de Boostrap elegida. En cuanto al contenido de esta página se limita a una presentación sencilla y limpia del proyecto, con un botón bien visible al usuario que será el que le permita avanzar y adentrarse en Gymkhana App. 
 \subparagraph{Start}
-Esta página muestra los juegos que hay disponibles en la aplicación, los lista ordenadamente de manera descendientes, y cada juego tiene un botón en el que pinchando accedes al juego concreto. 
+Esta página actúa de forma de menú y muestra los juegos que hay disponibles en la aplicación, los lista ordenadamente de manera descendientes, y cada juego tiene un botón con el que el usuario puede interactuar, pulsando el mismo accede a dicho juego.  
 \subparagraph{Challenge} 
-En esta página muestra un único reto, que se compone de un nombre o título, una pregunta y una imagen con un diagrama UML que debe estar relacionado con el reto. Esta vista tiene también un campo que el usuario debe rellenar con la respuesta planteada al reto y un botón par enviar la petición GET con la respuesta al servidor.
- 
+En esta página muestra un único reto, que se compone de un nombre o título, una pregunta y una imagen con un diagrama UML que debe estar relacionado con el reto. Esta vista tiene también un campo que el usuario debe rellenar con la respuesta planteada al reto y un botón par enviar la petición que más tarde procesará el módulo Vistas-Controlador.
+\subparagraph{Success}
+Una vez enviada la respuesta a un reto, si eta es correcta te redirigirá a esta página donde puedes ver un texto dando la enhorabuena al usuario. Dependiendo del juego te mostrará un botón para volver al menú de juegos o al siguiente reto si el juego estaba compuesto por varios. 
+\subparagraph{Wrong}
+En contraposición a la anterior plantilla, esta mostrará al usuario un comentario haciéndole saber que la respuesta no es correcta, pero también animándolo a que lo vuelva a intentar. Esta plantilla solo mostrará dos botones, uno para volver a intentar el reto que ha fallado y otro para volver al menú de juegos en caso de que el usuario desista y de por perdido el reto. 
 
+NOTA: PODEMOS AÑADIR PANALLAZOS CON TODA LA INTERFAZ EN LOS ANEXOS PARA RELLERNAR
+
+\subsection{Internacionalización}
+Django también ofrece de manera relativamente sencilla la posibilidad de añadir internacionalización a las plantillas. Este proceso consiste en traducir todo el texto que aparece en las plantillas. 
+
+En este proyecto, el idioma original que se eligió para desarrollar las plantillas fue el inglés, pero con el proceso de internacionalización también está disponible en castellano. La idea básica de la internacionalización o I18N es marcar aquellas cadenas de texto que deben ser traducidas. Estas cadenas se guardan en un diccionario, donde se añade la traducción al idioma o idiomas deseados, de esta manera cuando un usuario seleccione un idioma, mostrará estas cadenas de texto marcadas en el lenguaje que le corresponda al usuario. 
+
+En el diccionario aparte de todas las cadenas de texto que se muestran en las diferentes plantillas, también están guardadas las respuestas a los retos. Esta es la única manera de poder procesar las respuesta de los usuarios en diferentes idiomas y comprobar que coinciden con la respuesta de un reto concreto. 
+
+De la misma manera, para poder traducir las imágenes de los diagramas UML que se muestran, cada diagrama tiene que estar disponible en dos idiomas diferentes, es decir cada diagrama está representado por dos imágenes, una en inglés y otra en castellano, así se seleccionará la imagen correspondiente dependiendo del idioma del usuario. 
 
 \section{Módulo Models-Modelo}
 Este módulo es el que gestiona la información de la aplicación Gymkhana App, toda la información de la aplicación está contenida en una base de datos. El gestor de base de datos utilizado es, en este caso, SQLite versión 3. Este sistema de base de datos es un sistema de base de datos relacional y es por defecto el que utiliza Django, no obstante se permite cambiar a otros modelos fácilmente. Se ha decidido utilizar este gestor precisamente por la sencillez y compatibilidad con Django, con SQLite la base de datos completa se encuentra en un solo archivo totalmente autocontenido, sin dependencias externas ademas admite concurrencia decir que permite que múltiples procesos tengan el archivo de base de datos abierto y leer a la vez. En  en la figura~\ref{fig:diagarma_ER} se puede ver el diagrama entidad-relación que define la base de datos de la aplicación, el proyecto de Django tiene más tablas a parte de las que se muestran, pero el resto son propias de la arquitectura de Django así que no nos centraremos en ellas. Las tablas que componen la base de datos de la aplicación se describen a continuación:
