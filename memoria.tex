@@ -428,7 +428,7 @@ Heroku, a diferencia de otras tecnologías vistas en este documento, no es un se
 \section{Arquitectura general} 
 \label{sec:arquitectura}
 
-La aplicación web Gymkhana App se ha desarrollado en Django con su estructura típica basada en el una arquitectura de modelo-vista controlador como se ve en la figura~\ref{fig:arquitectura}, en esta figura las lineas sólidas muestran una relación directa entre los elementos y las rayadas una asociación indirecta. Dentro de este modelo  la vista será la capa que se presente y con la que interactua el usuario, compuesta por los diferentes tipos de plantillas o Templates como los conoce Django. El modelo es quien se encarga de gestionar los datos, es quien tiene comunicación directa con la base datos y maneja toda la información que entra y sale de esta. El controlador es quien maneja las comunicaciones entre los dos anteriores módulos y el único que tiene conexión directa con el resto de módulos, se encarga de recibir las peticiones del módulo de vistas, gestionar internamente estas peticiones y decidir que hacer en base a la información recogida consultando en cualquier caso los datos que considere necesarios del modelo. 
+La aplicación web Gymkhana App se ha desarrollado en Django con su estructura típica basada en el modelo-vista controlador como se ve en la figura~\ref{fig:arquitectura}, en esta figura las lineas sólidas muestran una relación directa entre los elementos y las rayadas una asociación indirecta. Dentro de este modelo  la vista será la capa que se presente y con la que interactua el usuario, compuesta por los diferentes tipos de plantillas o Templates como los conoce Django. El modelo es quien se encarga de gestionar los datos, es quien tiene comunicación directa con la base datos y maneja toda la información que entra y sale de esta. El controlador es quien maneja las comunicaciones entre los dos anteriores módulos y el único que tiene conexión directa con el resto de módulos, se encarga de recibir las peticiones del módulo de vistas, gestionar internamente estas peticiones y decidir que hacer en base a la información recogida consultando en cualquier caso los datos que considere necesarios del modelo. 
 
 \begin{figure}
 	\centering
@@ -441,10 +441,17 @@ Este módulo es el encargado de recibir y gestionar las peticiones recibidas des
 Las URL y como se gestionan las respuestas se define a continuación: 
 
 \begin{itemize}
-	\item \textbf {Home}: Como muchas otras aplicaciones que existen, cuando se introduce la URL con el nombre completo del dominio sin añadir ningún directorio tras este, se redirige esta petición a la página principal o home, donde se simplemente se hace una pequeña introducción al proyecto y te permite iniciar Gymkhana App. 
-	\item \textbf {/start}: Cuando inicias la Gymkhana desde el home te lleva automáticamente a esta URL, donde primero este módulo comprueba si existen juegos disponibles en la base de datos, y si es así los muestra. El usuario puede elegir uno de estos juegos y enviar una petición GET con el identificador del juego elegido. 
-	\item \textbf {/challenge}: Cuando se accede a este directorio se recoge la petición GET del usuario con el juego elegido, y si vienes de un reto anterior o acaba de empezar el juego. Así podemos elegir cual de los diferentes retos que componen un juego mostrar, siempre comprobando que todos los datos existan en la base de datos para evitar posibles errores. Una vez elegido el reto a mostrar se le muestra a el reto donde el usuario debe introducir la respuesta al mismo para avanzar. 
-	\item \textbf {/response}: Una vez el usuario ha rellenado la repuesta al reto se envía una petición tipo GET con la información contenida del reto al que pertenece, el juego, sí ha habido una reto del mismo juego anterior y la respuesta al reto. En caso de ser correcta el servidor redirigirá al usuario bien al nuevo reto, si se está jugando a un juego con varios retos, o una pantalla en la que indica que ha finalizado correctamente el juego y desde ahí el usuario podrá regresar al menú principal para poder elegir otros juegos, o repetir el mismo. Por otro lado, si la respuesta no es correcta, enviará al usuario a una pantalla donde se indica que la respuesta es incorrecta y te dejará volver a intentar el reto o salir al menú de juegos.
+	\item \textbf {/ (Home)}: Como muchas otras aplicaciones que existen, cuando se introduce la URL con el nombre completo del dominio sin añadir ningún directorio tras este, se redirige con esta petición a la página principal o home, donde se simplemente se puede ver dos botones grandes que te permiten o bien iniciar sesión y registrarte o bien iniciar Gymkhana App. 
+	\item \textbf {/start}: Cuando inicias la Gymkhana desde el home te lleva automáticamente a esta dirección, donde primero este módulo comprueba si existen juegos disponibles en la base de datos, y si es así los muestra. El usuario puede elegir uno de estos juegos y enviar una petición GET con el identificador del juego elegido. 
+	\item \textbf {/challenge}: Cuando se accede a este directorio se recoge la petición GET del usuario con el juego elegido, y si vienes de un reto anterior o acaba de empezar el juego. Así podemos elegir cual de los diferentes retos que componen un juego mostrar, siempre comprobando que todos los datos existan en la base de datos para evitar posibles errores. Una vez elegido el reto a mostrar se le muestra a el reto donde el usuario debe introducir la respuesta al mismo para poder avanzar. 
+	\item \textbf {/response}: Una vez el usuario ha rellenado la repuesta al reto se envía una petición tipo GET con la información contenida del reto al que pertenece, el juego, si ha habido una reto del mismo juego anterior y la respuesta al reto. En caso de ser correcta el servidor redirigirá al usuario bien al nuevo reto, si se está jugando a un juego con varios retos, o una pantalla en la que indica que ha finalizado correctamente el juego y desde ahí el usuario podrá regresar al menú principal para poder elegir otros juegos, o repetir el mismo. También en cada response se analizará si el usuario que está jugando está registrado y le añadirá a ese usuario la puntuación que de dicho reto, pero solo en caso de que no lo halla completado anteriormente. Por otro lado, si la respuesta no es correcta, enviará al usuario a una pantalla donde se indica que la respuesta es incorrecta y te dejará volver a intentar el reto o salir al menú de juegos.
+	\item \textbf {/accounts}: Esta dirección funciona de una manera un poco diferente. Para el inicio de sesión, modificación de contraseñas y cierre de la misma en la aplicación se ha decidido utilizar un módulo ya implementado de Django que gestione correctamente estas peticiones. Este módulo se le conoce como "Django’s authentication system" y esta dentro de la configuración por defecto de Django. Una vez accedemos a esta dirección el usuario deberá ingresar su nombre de usuario y contraseña para poder continuar. En caso de ser correcto redirigirá al usuario a su perfil. Cuando el usuario decida cerrar la sesión se le redirigirá al home de la aplicación. 
+	\item \textbf {/profile}: Si te registras en la aplicación exitosamente podrás acceder a tu perfil de usuario a traves de una petición GET en esta dirección. Básicamente aquí se muestra la información del usuario, como el nombre o el acumulado de sus puntos. También se podrá acceder a /start para comenzar a jugar. Desde este punto el usuario que ha iniciado sesión puede acceder a los módulos para crear retos y juegos 
+	\item \textbf {/create challenge}: En esta dirección primero comprueba que el usuario esté registrado y si es así se le muestra un formulario con los campos necesarios que componen un reto. Para poder continuar desde este punto habrá que haber rellenado correctamente todos los datos del formulario y pulsar el botón de subir reto. 
+	\item \textbf {/upload challenge}: La activación de botón mencionado en el apartado anterior enviara los datos del formulario mediante una petición POST. En este punto se revisa que los campos requeridos hayan sido rellenados correctamente y en caso afirmativo se guarda este reto en base de datos.  
+	\item \textbf {/create game}: Al igual que para crear un reto, se accede a este módulo desde la página del usuario, una vez se haya registrado. En este caso una vez se haya accedido se presenta un formulario para poder crear un juego. Como los juegos son simples colecciones de retos, aquí se le muestra al usuario un listado con los retos subidos para que seleccione uno o varios retos. La única forma de avanzar desde este punto será pulsando el botón de subir juego con el formulario correctamente cumplimentado. 
+	\item \textbf {/upload challenge} Para terminar la subida de un juego se envían los campos del formulario contenidos en una petición POST que será la se espera recibir aquí. En caso de que todos los campos requeridos existan y sean correctos subirá el juego a la base de datos de la aplicación Gymkhana App.
+	
 \end{itemize}
 
 Django cuenta con muchas funciones y respuestas que vienen ya integradas, como por ejemplo poder responder a peticiones que provocan errores genéricos como tipo HTTP 404 (Not Found) entre otros, de esta manera todas las peticiones que se hacen al servidor en caso de encontrar la información requerida en la base de datos la aplicación captura este error y devuelve un ERROR 404 genérico de Django, que aparte hace terminar el resto de procesos en curso, haciendo a la aplicación mucho más robusta ante errores. 
@@ -453,11 +460,11 @@ Django cuenta con muchas funciones y respuestas que vienen ya integradas, como p
 \section{Módulo Templates-Vistas}
 El módulo de Templates es el que forma la interfaz de usuario de la aplicación. Cada vista de la aplicación, o página que el usuario acaba visualizando está compuesta por un template o plantilla HTML sobre la que se aplica un estilo con CSS. Trabajar con plantillas en Django hace que la aplicación sea escalable y el código quede ordenado. En muchos casos la plantilla es reutilizable si se parametrizan adecuadamente, a su vez, la capa de estilo esta muy bien aislada gracias a Boostrap, de manera que se puede separar muy bien la parte programática del desarrollo de la parte encargada del diseño y el estilo evitando así tener que aplicar estilo a cada una de las páginas implicadas en el desarrollo. 
 
-La aplicación de Gymkhana App se apoya principalmente sobre cinco principales views: home, start, challenge, succes y wrong.
+La aplicación de Gymkhana App se compone de las siguientes views: home, start, challenge, succes y wrong, login, profile, create challenge y create game
 \subparagraph{Home}
-Es la página principal que el usuario ve cuando accede a la web. Tiene una cabecera y un pie de página que comparten todas las paginas de la aplicación. En la cabecera hay dos enlaces ocultos que redirigirán al usuario bien a la página principal de la aplicación Gymkhana App, o a la web oficial de la organización UML. En el pie de página se muestra información relativa a la ETSIT como localización y enlaces ocultos para poder visitar la cuenta de Twitter, y la web oficial de la ETSIT. También aparece la licencia de uso de la plantilla de Boostrap elegida. En cuanto al contenido de esta página se limita a una presentación sencilla y limpia del proyecto, con un botón bien visible al usuario que será el que le permita avanzar y adentrarse en Gymkhana App. 
+Es la página principal que el usuario ve cuando accede a la web. Se limita a una presentación sencilla y limpia del proyecto, con un botón bien visible al usuario que será el que le permita avanzar y adentrarse en Gymkhana App. 
 \subparagraph{Start}
-Esta página actúa de forma de menú y muestra los juegos que hay disponibles en la aplicación, los lista ordenadamente de manera descendientes, y cada juego tiene un botón con el que el usuario puede interactuar, pulsando el mismo accede a dicho juego.  
+Esta página actúa de forma de menú y muestra los juegos que hay disponibles en la aplicación, los lista ordenadamente de manera descendientes, y cada juego tiene un botón con el que él usuario puede interactuar, pulsando el mismo se accede a dicho juego.  
 \subparagraph{Challenge} 
 En esta página muestra un único reto, que se compone de un nombre o título, una pregunta y una imagen con un diagrama UML que debe estar relacionado con el reto. Esta vista tiene también un campo que el usuario debe rellenar con la respuesta planteada al reto y un botón par enviar la petición que más tarde procesará el módulo Vistas-Controlador.
 \subparagraph{Success}
@@ -465,7 +472,31 @@ Una vez enviada la respuesta a un reto, si eta es correcta te redirigirá a esta
 \subparagraph{Wrong}
 En contraposición a la anterior plantilla, esta mostrará al usuario un comentario haciéndole saber que la respuesta no es correcta, pero también animándolo a que lo vuelva a intentar. Esta plantilla solo mostrará dos botones, uno para volver a intentar el reto que ha fallado y otro para volver al menú de juegos en caso de que el usuario desista y de por perdido el reto. 
 
-NOTA: PODEMOS AÑADIR PANALLAZOS CON TODA LA INTERFAZ EN LOS ANEXOS PARA RELLERNAR
+\subparagraph{Login}
+Tiene la estructura de cualquier pagina de inicio de sesión tradicional, donde el usuario debera introducir su nombre y contraseña para acceder. Como diferencial al resto de sitios web, Gymkhana App no ofrece en esta página la opción de crear un usuario, ya que un usuario registrado tiene la capacidad de hacer inyecciones en la base de datos y subir contenidos como imágenes. Por tanto y por motivos de seguridad, la potestad de creación de usuarios queda relegada solo al administrador de este proyecto que, en todo caso, proporcionara las credenciales de registro a quien considere necesario.   
+
+\subparagraph{Profile} Una vez el usuario esté registrado tendrá acceso a esta página, donde podrá ver información del usuario, como su nombre en la aplicación y los puntos que ha obtenido. Además desde este punto tendrá acceso a las dos siguientes views: create challenge y create game
+
+\subparagraph{Create Challenge} En esta página se podrá ver un formulario con los campos que debe rellenar un usuario para poder subir el reto. Los campos son los siguientes:
+\begin{itemize}
+	\item \textbf {nombre}: Nombre o título deseado para el reto.
+	\item \textbf {pregunta}: Será la cuestión a la que los jugadores deban responder para poder completar el desafío.
+	\item \textbf {solución}: La respuesta o solución correcta que se espera por parte del jugador para poder completar el reto.
+	\item \textbf {tipo de diagrama}: En este campo se despliega una lista con todos los tipos de diagramas UML para que el usuario que está subiendo el juego seleccione el tipo de diagrama al que pertenece el usado en el reto.
+	\item \textbf {imagen}: Un campo que permite al usuario abrir el explorador de archivos de su sistema operativo para poder subir una imagen, en concreto se debe subir la imagen del diagrama UML asociado al reto. 
+	\item \textbf {puntos}: Valor que se le quiere dar en puntos al reto.
+\end{itemize}	
+
+\subparagraph{Create Game} Al igual que la anterior esta página mostrará un formulario que se deber rellenar para poder crear juegos. 
+\begin{itemize}
+	\item \textbf {título}: Nombre o título deseado para el juego.
+	\item \textbf {retos}: Se muestra una lista con todos los retos subidos a la plataforma, tanto los creados por ese usuario como los creados por otros. El usuario que cree un juego puede elegir uno o tantos como considere para formar un juego. 
+\end{itemize}	
+
+
+Todas estas páginas han sido construidas sobre una base genérica común que usan todas las plantillas. Esta base común permite contener la información de todas las vieews mencidonadas anteriormente, además de la cabecera o header y el pie de página o footer. En la cabecera hay dos enlaces ocultos que redirigirán al usuario bien a la página principal de la aplicación Gymkhana App, o a la web oficial de la organización UML. En el pie de página se muestra información relativa a la ETSIT como localización y enlaces ocultos para poder visitar la cuenta de Twitter, y la web oficial de la ETSIT. También aparece la licencia de uso de la plantilla de Boostrap elegida
+
+NOTA: PODEMOS AÑADIR PANTALLAZOS CON TODA LA INTERFAZ EN LOS ANEXOS PARA RELLENAR
 
 \subsection{Internacionalización}
 Django también ofrece de manera relativamente sencilla la posibilidad de añadir internacionalización a las plantillas. Este proceso consiste en traducir todo el texto que aparece en las plantillas. 
@@ -486,11 +517,15 @@ Este módulo es el que gestiona la información de la aplicación Gymkhana App, 
 		\item \textbf {name}: Indica el nombre del usuario. 
 		\item \textbf {email}: La dirección de correo electrónico con la que se registra el usuario. 
 		\item \textbf {admin}: Un campo que indica si este usuario tiene privilegios de administrador o no. 
+		\item \textbf {points}: Campo numérico entero que contien la puntuación del usuario. 
+		\item \textbf {challenges passed}: Un reacción Many To Many con la tabla Challenges, que registra que Challenges ha superado ya el usuario. 
+		\item \textbf {created at}: Campo en formato fecha del momento ene el que se crea el usuario. 
+		\item \textbf {updated at}: Campo en formato fecha que indica el momento que se actualiza la información del usuario. 
 	\end{itemize}
 
 	\item \textbf {Diagrams}: Esta tabla contiene los tipos de diagramas que pueden aparecer en los retos, estos tipos de diagramas se limitan a los mencionados en el apartado 3.1 de este documento.  
 	\begin{itemize}
-		\item \textbf {type}: Indica el nombre general del tipo de diagrama UML. 
+		\item \textbf {name}: Indica el nombre general del tipo de diagrama UML. 
 		\item \textbf {description}: La descripción del tipo de diagrama asociado que se puede extender hasta diez mil caracteres. 
 	\end{itemize}
 	
@@ -499,9 +534,11 @@ Este módulo es el que gestiona la información de la aplicación Gymkhana App, 
 		\item \textbf {name}: Nombre que se le da a cada reto.
 		\item \textbf {question}: Pregunta clave sobre el reto específico. 
 		\item \textbf {awnser}: Respuesta a la pregunta clave. 
-		\item \textbf {diagram}: Diagrama UML, en formato imagen a la que está asociado el reto. 
+		\item \textbf {image}: 	Campo tipo image que contien el Diagrama UML al que está asociado el reto. 
+		\item \textbf {diagram type}: Identificador único que referencia el tipo de diagrama de la tabla Diagrams al que está asociado el reto. 
 		\item \textbf {creator}: Usuario que ha creado este reto. 
-		\item \textbf {diagram type}: El tipo de diagrama UML al que esta asociado el diagrama de este reto. 
+		\item \textbf {created at}: Campo de tipo date que registra el momento en el que se creó el reto. 
+		\item \textbf {points}: Campo tipo numérico entero que contiene la puntuación del reto. 		
 	\end{itemize}
 	
 	\item \textbf {Games}: Tabla que almacena los distintos juegos, estos juegos son principalmente una colección de uno o varios retos. 
@@ -515,7 +552,7 @@ Este módulo es el que gestiona la información de la aplicación Gymkhana App, 
 
 \begin{figure}
 	\centering
-	\includegraphics[width=16cm, keepaspectratio]{img/ghymkhana_ER.png}
+	\includegraphics[width=16cm, keepaspectratio]{img/gymkhana_ER.jpg}
 	\caption{Diagrama entidad-relación de la aplicación Ghymkhana App.}\label{fig:diagarma_ER}
 \end{figure}
 
@@ -660,5 +697,6 @@ Aqui vienen las fotitos de los diagramas UML
 %versiones uml https://www.omg.org/spec/UML/
 %https://www.omg.org/spec/UML/2.5.1/PDF
 %https://docs.djangoproject.com/en/3.2/
+%https://www.uml-diagrams.org/uml-25-diagrams.html
 
 \end{document}
