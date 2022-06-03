@@ -158,26 +158,21 @@ Además, la pareja quizás no sea para siempre, pero tu madre sí.
 
 El lenguaje unificado modelado es en la actualidad la herramienta más utilizada en el modelado de software. No obstante, los diagramas y aspectos conceptuales del mismo pueden utilizarse para otros entornos, como el educativo.  
 
-La aplicación web Ghymkhana App 
+Este Trabajo de Fin de Grado tienen como objetivo desarrollar una aplicación web para uso docente y estudiantil a través de la cual alumnos de tempranas edades puedan aprender y familiarizarse con actividades que impliquen de alguna manera el entender y analizar diagramas para extraer información de estos. Todo esto se intentará hacer a través de gymkhanas y juegos para atraer de alguna manera el interés de usuarios más jóvenes.
 
-\begin{itemize}
-  \item ¿De qué va este proyecto? ¿Cuál es su objetivo principal?
-  \item ¿Cómo se ha realizado? ¿Qué tecnologías están involucradas?
-  \item ¿En qué contexto se ha realizado el proyecto? ¿Es un proyecto dentro de un marco general?
-\end{itemize}
-
-Lo mejor es escribir el resumen al final.
+La aplicación se ha desarrollado prácticamente en su totalidad con tecnologías \emph{OpenSource}, o en su defecto sobre software de empresas pero que cuentan con planes gratuitos para propuestas estudiantiles y/o pequeñas pruebas de concepto y por su puesto el acceso a esta debe ser totalmente gratuito. Entre esas tecnologías hay que destacar Python y Django, junto con Boostrap, HTML, css, y Git para el control de versiones. Se ha desplegado en la red de internet gracias a Heroku y por tanto se puede tener acceso a Gymkhana App desde cualquier parte del mundo, en cualquier momento del tiempo.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Resumen en inglés
 
 \chapter*{Summary}
 %\addcontentsline{toc}{chapter}{Summary} % si queremos que aparezca en el índice
-\markboth{SUMMARY}{SUMMARY} % encabezado
+\markboth{SUMMARY}{SUMMARY} 
+The Unified Modeling Language is currently the most widely used tool in software modeling. However, the diagrams and conceptual aspects of it can be used for other environments, such as education.
 
-Here comes a translation of the ``Resumen'' into English. 
-Please, double check it for correct grammar and spelling.
-As it is the translation of the ``Resumen'', which is supposed to be written at the end, this as well should be filled out just before submitting.
+This End of Degree Project aims to develop a web application for teaching and student use through which students of early ages can learn and become familiar with activities that imply in some way understanding and analyzing diagrams to extract information from them. All of this will be attempted through gymkhanas and games to somehow attract the interest of younger users.
+
+The application has been developed practically in its entirety with \emph{OpenSource} technologies, or failing that, with company software but which have free plans for student proposals and/or small proofs of concept and, of course, access to it must be be totally free. These technologies include Python and Django, along with Bootstrap, HTML, css, and Git for version control. It has been deployed on the internet thanks to Heroku and therefore Gymkhana App can be accessed from anywhere in the world, at any moment of time.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -215,13 +210,13 @@ La siguiente memoria recoge el trabajo realizado durante el desarrollo de Gymkha
 
 \section{Contexto}
 \label{sec:seccion}
-Gymkhana App es una aplicación web con simples juegos que consisten en la resolución de diagramas UML (lenguaje unificado modelado, de las siglas en inglés \emph{Unified Modeling Language}), o extracción de las respuestas a través del análisis de estos. 
+Gymkhana App es una aplicación web con simples juegos que consisten en la resolución de retos asociados a diagramas UML (lenguaje unificado modelado, de las siglas en inglés \emph{Unified Modeling Language}), o extracción de las respuestas a través del análisis de estos. 
 
 La idea surge bajo la premisa de fomentar y ayudar en el desarrollo de habilidades como el seguimiento de flujo, pensamiento lógico, simplificación y análisis de situaciones complejas y la resolución de problemas mediante la división de estos en un conjunto de actividades estructurales que juntas forman una solución. 
 
-Los mini-juegos consisten en resolución de sencillos enigmas que se resuelven combinando sus habilidades con diagramas UML. El nivel elegido en esta primera versión está orientado para niños de entre nueve y doce años. 
+Los mini-juegos consisten en resolución de sencillos enigmas que se resuelven combinando sus habilidades con diagramas UML. El nivel elegido en esta primera versión está orientado para niños de edades tempranas. También se quiere ofrecer la posibilidad de ser utilizado por el equipo docente para que estos mismos o cualquier contribuidor pueda crear, diseñar y aportar nuevos retos y juegos que puedan ser utilizados por toda la comunidad de la aplicación. 
 
-Se trata de divulgar y enseñar conceptos de UML y que, a al vez, los más jóvenes se familiaricen con estos últimos a través los sencillos juegos y retos que contiene Gymkhana App. 
+El objetivo final de este proyecto trata de poder aportar una infraestructura en forma de aplicación de acceso público y muy sencilla de entender y manejar por los usuarios con el objetivo de divulgar y enseñar conceptos de UML y que, a al vez, los más jóvenes se familiaricen con estos últimos a través los sencillos juegos y retos que contiene Gymkhana App. 
 
 
 \section{Estructura de la memoria}
@@ -230,15 +225,18 @@ Se trata de divulgar y enseñar conceptos de UML y que, a al vez, los más jóve
 La memoria de este trabajo esta estructurada de la siguiente manera: 
 
 \begin{itemize}
-  \item Capítulo 1. Introducción. En el primer capítulo se hace una introducción al proyecto y se exponen las ideas básicas del mismo además de definir su estructura. 
+  \item \textbf{Capítulo 1. Introducción.} Hace una descripción básica del proyecto y se exponen las ideas principales del mismo. A parte, también especifica la estructura de la memoria. 
   
-  \item En el capítulo~\ref{chap:objetivos} (ojo, otra referencia automática) se muestran los objetivos del proyecto.
+  \item \textbf{Capítulo~\ref{chap:objetivos}. Objetivos.} En este capítulo se describe el objetivo principal de este proyecto y también objetivos más específicos e hitos a alcanzar durante el desarrollo de la aplicación.
   
-  \item A continuación se presenta el estado del arte en el capítulo~\ref{chap:estado}.
+  \item \textbf{Capítulo~\ref{chap:estado}. Estado del arte.}. Capítulo dedicado a las tecnologías utilizadas durante el desarrollo de la aplicación. Se hace una pequeña introducción de las mismas y se explican características básicas y propiedades que hacen que se pueda y tenga sentido utilizarlas en el proyecto.
   
-  \item \ldots
+  \item \textbf{Capítulo~\ref{chap:diseño}. Diseño e implementación.} Se hace una descripción más profunda y técnica de la arquitectura del proyecto a nivel interno. Explicando detalladamente con ayuda de diagramas el diseño de la aplicación desgranando los módulos que la componen.
+  
+  \item \textbf{Apéndice~\ref{app:manual}. Manual de usuario.} Pequeño recorrido por la interfaz de usuario de la aplicación donde se muestran con imágenes los pasos a seguir para iniciar, resolver o subir nuevos retos en Gymkhana App. 
+  
+   \item \textbf{Apéndice~\ref{app:diagramas}. Ejemplos de diagramas UML.} En este anexo se describen brevemente ejemplos de cada uno de los diagramas UML que se explican la sección~\ref{sec:UML}, también se añaden imágenes de cada uno de ellos con el fin de aportar información gráfica.
 \end{itemize}
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -254,21 +252,21 @@ La memoria de este trabajo esta estructurada de la siguiente manera:
 \section{Objetivo general} % título de sección (se muestra)
 \label{sec:objetivo-general} % identificador de sección (no se muestra, es para poder referenciarla)
 
-El objetivo de este trabajo es desarrollar una aplicación web sencilla, limpia y clara enfocada para su uso por niños que aprendan y se familiaricen con el lenguaje unificado modelado y sus tipos de diagramas. El desarrollo del este proyecto se ha hecho con Django y apoyándose principalmente en otras tecnologías y servicios como Heroku, Git y Bootstrap.
+El objetivo de este trabajo es desarrollar una aplicación web sencilla, limpia y clara enfocada para su uso por niños que aprendan y se familiaricen con el lenguaje unificado modelado y sus tipos de diagramas. También tendrá un apartado que te permita subir juegos y actividades que se integren en la misma plataforma, por tanto, también permite el uso por parte de un equipo docente.
+
+Con esta aplicación web un equipo docente debería ser capaz de poder crear una serie de gymkhanas en forma de juegos y retos basados en diagramas UML que estudiantes de edades tempranas sean capaces de manejar, entender y poder moverse por la interfaz de la aplicación de manera sencilla. 
 
 \section{Objetivos específicos}
 \label{sec:objetivos-especificos}
-
-Los objetivos específicos se pueden entender como las tareas en las que se ha desglosado el objetivo general.
-Y, sí, también vienen en.
-
-
-\section{Planificación temporal}
-\label{sec:planificacion-temporal}
-
-A mí me gusta que aquí pongáis una descripción de lo que os ha llevado realizar el trabajo.
-Hay gente que añade un diagrama de GANTT.
-Lo importante es que quede claro cuánto tiempo llevas (tiempo natural, p.ej., 6 meses) y a qué nivel de esfuerzo (p.ej., principalmente los fines de semana).
+El proyecto general se ha desglosado en los siguientes objetivos y tareas más específicas: 
+\begin{itemize}
+	\item Diseñar una aplicación web sencilla y limpia sobre \emph{localhost} que permita resolver retos compuestos por una pregunta relacionada directamente con un diagrama embebido en una imagen sobre la web y una repuesta.
+	\item Permitir agrupar cuantos retos se deseen en juegos o gymkhanas y crear un menú de juegos donde puedas seleccionar de 1 a \emph{n} juegos.
+	\item Hacer accesible la aplicación en diferentes idiomas, a través del sistema de internacionalización I18N. De esta manera podemos disponer de este proyecto tanto en castellano como en inglés de manera muy sencilla y ofreciendo a otros desarrolladores o contribuidores poder traducir la aplicación a otros idiomas de una manera estandarizada. 
+	\item Crear un sistema de gestión de usuarios que gestione directamente la base de datos de la aplicación, que permita a estos usuarios la posibilidad de subir contenido a la aplicación en forma de retos y además puedan agrupar estos retos y/o los creados por otros usuarios de la app a juegos nuevos que se añadirán al panel principal común.
+	\item Añadir sistema de puntuación a los retos, siendo estos puntos acumulables en los usuarios, y con un control de retos ya superados por un usuario a la hora de la asignación de puntos. 
+	\item Despliegue de la aplicación y migración de base de datos a un portal web público para que tener acceso a la misma desde cualquier parte del mundo.
+\end{itemize}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -279,13 +277,10 @@ Lo importante es que quede claro cuánto tiempo llevas (tiempo natural, p.ej., 6
 \cleardoublepage
 \chapter{Estado del arte}
 \label{chap:estado}
-
-
 La aplicación web en la que se basa este proyecto se ha desarrollado con diferentes tecnologías gratuitas y de código abierto (\emph{Open Source}), pero la piedra angular sobre la que se apoya todo el proyecto es sobre el lenguaje unificado modelado. 
 
-
 \section{UML: Unified Modeling Language} 
-\label{sec:seccion1}
+\label{sec:UML}
 
 El lenguaje unificado modelado, también conocido por sus siglas en inglés UML, es el lenguaje de modelado de software más utilizado actualmente. 
 
@@ -299,7 +294,7 @@ Desde fue presentado el primer estándar UML en 1997 (UML 1.1) hasta día de hoy
 Naturalmente entre medias de han aparecido y varias versiones menores las cual han ido actualizando y corrigiendo hasta la versión que se utiliza actualmente. Desde el año 2004, UML es un estándar aprobado por la ISO (ISO/IEC 19501:2005 Information technology — Open Distributed Processing — Unified Modeling Language) y en el año 2012 se actualizó la norma dando lugar a la ISO/IEC 19505-1, la última versión disponible en este momento.
 
 En UML se definen distintos tipos de diagramas, los cuales muestran diferentes aspectos del modelo representado. 
-Los dos tipos principales de diagramas son: diagramas \emph{estructurales} y diagramas de \emph{comportamiento}. En la Figura 3.1 se puede ve un "metadiagrama" donde están ordenados jerárquicamente los diferentes tipos de diagrama. 
+Los dos tipos principales de diagramas son: diagramas \emph{estructurales} y diagramas de \emph{comportamiento}. En la Figura 3.1 se puede ve un "metadiagrama" donde están ordenados jerárquicamente los diferentes tipos de diagrama. De la misma manera, en el Apéndice~\ref{app:diagramas} se dejan ejemplos brevemente explicados de cada uno de los tipos de diagramas que se comentan a continuación.
 
 \begin{figure}
 	\centering
@@ -323,7 +318,6 @@ Este tipo de diagramas ofrece una vista parcial o completa de los objetos de un 
 Representa las dependencias entre los paquetes que componen un sistema. Muestra como este está dividido en agrupaciones lógicas y las dependencias entre esas agrupaciones. Estos diagramas muestran la descomposición de la jerarquía lógica de un sistema.  
 \subparagraph{Diagrama de estructura compuesta}
 Esta clase de diagrama muestra la estructura interna de una clase y las relaciones e interacciones entre las distintas partes de la misma. Muestran el rol definido que tiene cada elemento y la estructura compuesta como el conjunto de esos elementos interconectados.
-
 \subsection{Diagramas de Comportamiento}
 Los diagramas de comportamiento muestran el comportamiento dinámico de un sistema, se puede describir como la serie de cambios que pueden existir en un sistema en un tiempo extraordinario.  
 \subparagraph{Diagrama de actividad}
@@ -331,13 +325,16 @@ También conocidos como diagrama de flujo es la representación gráfica de un a
 \subparagraph{Diagrama de casos de uso}
 Los diagramas de casos de usos describen los diferentes tipos de interacción que tiene alguien o algo con un determinado sistema, especificando el tipo de comunicación y comportamiento del mismo mediante la interacción con los usuarios y/u otros sistemas.
 \subparagraph{Diagrama de interacción}
-Este tipo de diagrama describen en detalle un determinado escenario de casos de uso. Ilustran la interacción entre el conjunto de objetos que cooperan en la realización de un proceso. 
-
+Este tipo de diagrama describen en detalle un determinado escenario de casos de uso. Ilustran la interacción entre el conjunto de objetos que cooperan en la realización de un proceso. También se pueden utilizar para representar secuencias ordenadas dentro de un sistema. Según las últimas versiones  de UML este diagrama se pueden clasificar en cuatro tipos principales de subdiagramas. 
+\begin{itemize}
+	\item Diagrama de colaboración. 
+	\item Diagrama de secuencia. 
+	\item Diagrama de tiempos. 
+	\item Diagrama global de interacciones.  
+\end{itemize}
+Al igual que el resto de diagramas se hace una introspección más profunda en cada uno de estos diagramas en el Apéndice~\ref{app:diagramas}.
 \subparagraph{Diagrama de máquina de estados}
 Un diagrama de máquina de estados, conocidos en ocasiones como diagrama de estados modela el comportamiento de un objeto. Especifican la secuencia de eventos que sufre este determinado objeto durante su tiempo de ejecución. 
-
-%SE PODRIA AÑADIR EN LOS ANEXOS EJEMPLOS DE CADA UNO DE ELLOS ANEXO 2 
-
 
 \section{Python}
 Python es un lenguaje de programación interpretado, dinámico y multiplataforma con licencia de código abierto\footnote{Python Software Foundation License: \url{https://docs.python.org/3/license.html}}. Su máxima es hacer un lenguaje que sea fácilmente legible y con una empinada curva de aprendizaje. Python fue creado a principios de los 90s por Guido van Rossum en los Países Bajos, como curiosidad, saber que le debe su nombre gracias la afición que tenía su creador por el grupo de humoristas británicos Monty Python. 
@@ -391,8 +388,6 @@ Este software es multiplataforma, se puede instalar tanto en Linux, como en Wind
 
 Los repositorios de código que usan Git como control de versiones no necesariamente tienen que estar alojados en un repositorio de internet, pero lo más habitual y práctico es que sí lo esté. Existen numerosas plataformas que te permiten alojar repositorios de código fuente e interactuar con las herramientas de Git como GitLab o Gogs, que son de código abierto y gratuitas o siios como CodeComit que perteneze a AWS\footnote{Amazon Web Services} y por tanto es de dominio privado. En este proyecto durante su desarrollo se ha utilizado Git para el control de versiones alojando el repositorio en GitHub, que es el otro sitio más de código abierto para alojar proyectos, es gratuita y típicamente se almacenan los repositorios de forma pública.
 
-% SI QUIERO METER RELLENO INFORMAR DE FLUJO DE TRABAJO GIT (RAMA MASTER, DEVELOPMENT, HOTFIX ... ) ANTES DE LO DE GITHUB
-
 \section{Boostrap}
 Boostrap es un framework de código abierto y multiplataforma que contiene bibliotecas y herramientas para el diseño de aplicaciones web. Contiene plantillas de diseño con tipografía, formularios, botones, menús de navegación y otros elementos basado en HTML y CSS, así como extensiones de JavaScript adicionales. Fue desarrollado por Mark Otto y Hacob Thornton como marco de trabajo para fomentar las herramientas internas de Twitter, en 2011 se liberó como código abierto bajo una licencia MIT License.
 
@@ -407,14 +402,60 @@ El modelo de arquitectura de Heroku se basa en Dynos, que son unidades de capaci
 \begin{itemize}
 	\item Elasticidad y crecimiento: La cantidad de Dynos se puede cambiar en cualquier momento. 
 	\item Tamaño: Puedes elegir diferentes unidades de memoria y procesamiento en cada máquina. 
-	\item Routing: Unternamente se conoce la ubicación de los Dynos y por tanto redirigen el tráfico eficientemente. 
+	\item Routing: Internamente se conoce la ubicación de los Dynos y por tanto redirigen el tráfico eficientemente. 
 	\item Seguimiento: Existe un manejador de Dynos, el cual está continuamente monitorizando sus servicios, en caso de que alguno falle este nodo es eliminado y levantado nuevamente. 
 	\item Distribución y redundancia. Estas unidades de procesamiento al estar aisladas implica que si existen fallos en la infraestructura de una de ellas otras no se verán afectadas y en consecuencia tampoco sus servicios. 	
 \end{itemize}
 
 Heroku, a diferencia de otras tecnologías vistas en este documento, no es un servicio puramente gratuito, ya que es propiedad de Salesforce, una gran empresa estadounidense de software bajo demanda. No obstante, su unidad de cómputo más básica es de uso gratuito. Con una de estas unidades o Dynos es suficiente para experimentar, poder trabajar en pequeñas aplicaciones y en pruebas de concepto. Todas estas características convierten e a este servicio en un entorno perfecto para desplegar una aplicación web pequeña o mediana de manera gratuita para que esté disponible en cualquier parte del mundo. 
+\subsection{Heroku PostgreSQL}
+Heroku ofrece la base de datos PostgreSQL de código abierto en forma de Heroku Postgres. 
 
-% SE PODRÍA AÑADIR EL TIPO DE BASE DE DATOS Y DONDE SE ALOJA SI QUEREMOS MÁS RELLENO
+Heroku Postgres es una de las soluciones que más usan los desarrolladores en los proyectos de la plataforma. Ofrece todas las ventajas de utilizar PostgreSQL como escalabilidad, acceso a un sistema de administración, seguridad, una alta concurrencia y otras características que se detallan de manera más profunda en el punto 3.8. 
+
+Los planes de precio dentro que Heroku ofrece a sus usuarios para este servicio pasan por una gran variedad de precios pero cuenta con un plan gratuito para desarrolladores que permite probarlo sin ningún riesgo con un tamaño y características más que suficientes para pequeños proyectos o pruebas de concepto sencillas. 
+
+\section{SQLite 3}
+SQLite es un sistema de gestión de bases de datos relacional de código abierto.  A diferencia de los sistemas de gestión de bases datos cliente-servidor la biblioteca SQLite es una parte integral de la programa que enlaza y no un proceso independiente del mismo. Esto hace que la latencia sea más reducida, y las comunicaciones entre procesos y funciones son más eficientes. 
+
+SQLite nació ne el año 2000, fue creado por D. Richard Hipp Y su objetivo era diseñar un sistema de gestión de bases de datos relacional que permitiera ejecutar programas sin la necesidad de instalar un sistema de gestión de bases de datos. 
+
+Sus primeras versiones se caracterizaban por contener la base de datos en un espacio en disco relativamente pequeño y está contenida en un solo archivo. En su versión 3, SQLite admite bases de datos de hasta 2 Terabytes de tamaño. 
+
+Este sistema de gestión de bases de datos soporta funciones SQL definidas por los usuarios, y tiene otras ventajas como una amplia compatibilidad con diferentes plataformas como Windows, Linux, Android, MacOS e iOS. También es compatible con caso todos los lenguajes de programación y proporcionando API útiles para ellos. Por defecto es la base de datos que viene configurada para proyectos de Django, por su ligereza, independencia de paquetes externos y la eficiencia de sus procesos es ideal para pruebas de concepto en proyectos pequeños, pero es difícil de escalar y al no presentar el estándar cliente-servidor tiene limitaciones en cuanto al formato y la sintaxis, y no presenta muchas funciones de seguridad.
+
+\section{PostgreSQL}
+PostgreSQL, también llamado Postgres, es un sistema de gestión de bases de datos relacional orientado a objetos y de código abierto. Este proyecto de código abierto no es gestionado por una persona o empresa, sino que lo mantienen una comunidad de desarrolladores que trabajan de forma altruista y libre, el PGDG.\footnote{PostgreSQL Global Development Group}
+
+Entre las características principales de este sistema de gestión de bases de datos se encuentran: 
+\begin{itemize}
+	\item Alta concurrencia: Permiten que varios usuarios o procesos accedan a la misma tabla sin necesidad bloqueos. 
+	\item Amplia variedad de tipos nativos: PostgreSQL provee nativamente soporte para diferentes tipos de datos como texto ilimitado, direcciones IP o MAC o CIDR, arrays, números de precisión arbitraria e incluso figuras geométricas (con variedad de funciones asociadas). Adicionalmente permite que los usuarios puedan crear sus propios ipos de tos , que pueden ser  perfectamente indexables. 
+	\item Otrás características deseables en un gestor de bases de datos, como claves foráneas (\emph{foregin keys}), disparadores, herencia de tablas, integridad transaccional, seguridad y escalabilidad.  
+\end{itemize}
+Las ventajas que ofrecen todas esté gestor de base de datos son básicamente seguridad e integridad en términos generales en la BD\footnote{Base de Datos}, un buen sistema de transacciones y respaldos y una conexión a sistema de gestión de base datos. Desafortunadamente no cuenta con gestor de errores, or tanto es difícil conocer el estado de los errores o corregirlos. 
+
+Como ya vimos en el punto 3.6, PostgreSQL cuenta con un paquete propio integrado en Heroku que permite utilizar este sistema de gestión de bases de datos junto con el almacenamiento de los mismos en servicios virtualizados de manera gratuita en algunos de sus planes.  
+
+\section{Visual Studio Code}
+Visual Studio Code es un editor de código fuente lanzado en 2015 y desarrollado por Microsoft. Es un editor multiplataforma compatible con Windows, Lunux, MacOs y ahora cuenta también con una versión web. 
+
+Soporta prácticamente cualquier lenguaje de programación conocido, resaltando la sintaxis del mismo de manera personalizada, ofrece sugerencias de sentencias y variables y finalización inteligente de código, integración con la shell y gestor de archivos interno. Incluye soporte para depuración, control de versiones integrado con Git. Además gracias a la gran comunidad de desarrolladores existen infinidad de \emph{pluggins} muy fácilmente instalables que añaden funcionalidades realmente útiles a la hora de programar, depurar, integrar o desplegar código. 
+Es un software gratuito y de código abierto pero la descarga oficial esta bajo software privativo de Microsoft. 
+
+Visual Studio Code recopila datos de uso y los envía a Microsoft, aunque esto se puede desactivar, y por la natuuraleza open-source de la aplicación se puede ver exactamente que clase de datos se recopilan y envían. Los datos pueden ser compartidos entre Microsoft, sus filiales y las autoridades según lo firmado conformemente en la declaración de privacidad. 
+
+\section{WSL 2}
+Windows Subsystem for Linux (WSL) es una capa de compatibilidad entre sistemas desarrollada por Microsoft con el objetivo de poder correr ejecutables de Linux nativamente en Windows 10 y Windows Server. En 2019 se lanza la versión 2 de WSL incluyendo cambios importantes, como el uso real del kernel de Linux. 
+
+WSL ofrece una interfaz que simula el kernel de Linux sobre Windows sin necesidad de instalar un SO\footnote{Sistema Operativo} en particiones de disco y sin necesidad de crear una máquina virtual que tenga que emular hardware. Establece un espacio de usuario GNU\footnote{GNU es un sistema operativo de tipo Unix, así como una gran colección de programas informáticos que componen al sistema, desarrollado por y para el Proyecto GNU y auspiciado por la Free Software Foundation.} donde instalar un sistema base como Ubuntu, Debian o Kali Lunux. Dicho entorno no contará con interfaz gráfica(a no ser que tenga ayuda de aplicaciones gráficas como un servidor X11) sino que se accedera a ella mediante una shell de tipo Bash\footnote{Bash (Bourne-again shell) es una popular interfaz de usuario de línea de comandos, específicamente un shell de Unix; así como un lenguaje de scripting}. 
+
+Para acceder al hardware y al sistema de archivos se hace uso directo del sistema de archivos en Windows y partes del hardware como el hardware de red e incluso su infraestructura como los puertos. Este uso compartido del sistema hace que haya gran interoperabilidad entre ambo. Esto permite incluso desarrollar software sobre Linux, en un sistema Windows con sus aplicaciones propias como Visual Studio, hacer que ejecute el código en un entorno Linux con sus respectivos paquetes de software y acceder al programa o aplicación desarrollado a través de un puerto de red en un navegador de Windows con relativa facilidad. 
+
+\section{Diagrams.net}
+Diagrams.net, anteriormente conocido como draw.io, es un software de código abierto de dibujo gráfico, pensado especialmente para la creación y dibujado de diagramas.
+
+Esta desarrollado en HTML5 y JavaScript, es multiplataforma y esta disponible en aplicación web\footnote{https://app.diagrams.net/}. A parte de ser muy intuitiva y fácil de manejar no requiere inicio de sesión o registro. Permite exportar los diagramas o dibujos a gran cantidad de formatos como .PNG, .PDF, .SVG y .JPEG. Y se puede integrar con servicios de almacenamiento \emph{onCloud} como Google Dive, Dropbox o OneDrive (para estas funcionalidades si es necesario registrarse) y cuenta con un complemento para integrar la aplicación web en Visual Studio Code. Lo cual simplifica el poder hacer diagramas UML paralelamente al desarrollo de un software.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -423,6 +464,7 @@ Heroku, a diferencia de otras tecnologías vistas en este documento, no es un se
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \chapter{Diseño e implementación}
+\label{chap:diseño}
 
 
 \section{Arquitectura general} 
@@ -496,8 +538,6 @@ Tiene la estructura de cualquier pagina de inicio de sesión tradicional, donde 
 
 Todas estas páginas han sido construidas sobre una base genérica común que usan todas las plantillas. Esta base común permite contener la información de todas las vieews mencidonadas anteriormente, además de la cabecera o header y el pie de página o footer. En la cabecera hay dos enlaces ocultos que redirigirán al usuario bien a la página principal de la aplicación Gymkhana App, o a la web oficial de la organización UML. En el pie de página se muestra información relativa a la ETSIT como localización y enlaces ocultos para poder visitar la cuenta de Twitter, y la web oficial de la ETSIT. También aparece la licencia de uso de la plantilla de Boostrap elegida
 
-NOTA: PODEMOS AÑADIR PANTALLAZOS CON TODA LA INTERFAZ EN LOS ANEXOS PARA RELLENAR
-
 \subsection{Internacionalización}
 Django también ofrece de manera relativamente sencilla la posibilidad de añadir internacionalización a las plantillas. Este proceso consiste en traducir todo el texto que aparece en las plantillas. 
 
@@ -552,7 +592,7 @@ Este módulo es el que gestiona la información de la aplicación Gymkhana App, 
 
 \begin{figure}
 	\centering
-	\includegraphics[width=16cm, keepaspectratio]{img/gymkhana_ER.jpg}
+	\includegraphics[width=16cm, keepaspectratio]{img/gymkhana_ER.png}
 	\caption{Diagrama entidad-relación de la aplicación Ghymkhana App.}\label{fig:diagarma_ER}
 \end{figure}
 
@@ -650,29 +690,179 @@ Es un apartado que sirve para dar ideas de cara a futuros TFGs/TFMs.
 \chapter{Manual de usuario}
 \label{app:manual}
 
-Esto es un apéndice.
-Si has creado una aplicación, siempre viene bien tener un manual de usuario.
-Pues ponlo aquí.
+A pesar de haber planificado esta aplicación con esquemas muy sencillos, botones grandes de colores vistosos y claros, debido a que principalmente está enfocada a un público joven e infantil y, que de sobra puede ser entendida sin mayor complejidad por cualquier persona adulta, se deja aquí un pequeño manual de usuario con las principales funcionalidades de la aplicación. \\
 
-\chapter{Anexo I: Ejemplos de Diagramas UML}
-% Contenido del anexo I
-Aqui vienen las fotitos de los diagramas UML 
+\section{Página principal}
+La página principal, también comúnmente conocida como \emph{home}. Tiene la única función de presentar la aplicación de manera clara y limpia, con no demasiada información para no bombardear ni agobiar a los potenciales usuarios que puedan visitar la página. En este punto también se exponen dos botones principales que llevan a las dos principales funcionalidades de la aplicación: empezar a jugar y poder registrarse para acceder a las funcionalidades que permiten crear nuevos retos y juegos. 
 
-{\footnotesize
-	\begin{verbatim}
-		@inproceedings{robles2005self,
-			title={Self-organized development in libre software:
-				a model based on the stigmergy concept},
-			author={Robles, Gregorio and Merelo, Juan Juli\'an 
-				and Gonz\'alez-Barahona, Jes\'us M.},
-			booktitle={ProSim'05},
-			year={2005}
-		}
-	\end{verbatim}
-}
+\begin{figure}
+	\centering
+	\includegraphics[width=16cm, keepaspectratio]{img/home_html.png}
+	\caption{Página principal de la aplicación.}\label{fig:home}
+\end{figure}
+
+\section{Menú de juegos}
+El menú de juego es la página a la que accedes inmediatamente después de pulsar el botón \emph{START!} de la página principal. Aquí se presentan en manera de lista descendiente todos los juegos subidos a la aplicación. Pulsando sobre la imagen de cada uno de los juegos la aplicación debería llevar al usuario al primer reto de cada una de las pruebas. 
+
+\begin{figure}
+	\centering
+	\includegraphics[width=16cm, keepaspectratio]{img/start_html.png}
+	\caption{Menú de juegos de la aplicación.}\label{fig:start}
+\end{figure}
+
+\section{Página de los retos}
+Una vez pulsado sobre uno de los juegos redirigirá al usuario a la página con el primer reto del juego seleccionado. Todos los retos siguen el mismo esquema: 
+\begin{enumerate}
+	\item En la cabecera del reto se ve el nombre del tipo de diagrama UML con el que está relacionado el reto.
+	\item Para abrir el reto tenemos un pequeño resumen explicando el tipo de diagrama que es, y para que sirve. 
+	\item Luego se plantea la pregunta o tarea que debe responder el usuario para poder completar el reto. 
+	\item Debajo está la imagen con el diagrama UML sobre el cual el usuario debe extrae la información para poder contestar el reto.
+	\item Por último un cuadro de texto y un botón de enviar la respuesta. 
+\end{enumerate}
+Después de enviar la respuesta el usuario es redirigido a otra página donde se le dice al usuario si la respuesta es correcta o no. En caso de que sea correcto el usuario podrá continuar con el siguiente reto, en caso de que el juego contenga más y en caso de que sea incorrecta se le da la opción de volver al menú de juegos o volver a intentar el reto fallado. 
+\begin{figure}
+	\centering
+	\includegraphics[width=16cm, keepaspectratio]{img/challenge_html.png}
+	\caption{Página de retos.}\label{fig:challenge}
+\end{figure}
+
+\section{Inicio de sesión}
+La sección de inicio de sesión se reduce a un simple \emph{login}. Por motivos de seguridad no se ha implementado las funcionalidades de registro o dar de alta a un nuevo usuario. El uso es simple; el usuario debe introducir las credenciales dadas por el administrador de la aplicación y pulsar el botón de iniciar sesión. 
+\begin{figure}
+	\centering
+	\includegraphics[width=16cm, keepaspectratio]{img/login_html.png}
+	\caption{Menú de juegos de la aplicación.}\label{fig:login}
+\end{figure}
+
+\section{Perfil del usuario}
+Una vez se ha iniciado sesión y el usuario está registrado se accede al perfil. Dentro de este encontrarás los puntos acumulados por haber superado retos y acceso a varias funciones. Desde este punto es el único punto desde el cual puedes acceder a poder subir retos y poder crear juegos. En la parte inferior está el botón para poder cerrar sesión y volver a la aplicación como usuario anónimo. 
+\begin{figure}
+	\centering
+	\includegraphics[width=16cm, keepaspectratio]{img/profile_html.png}
+	\caption{Menú de juegos de la aplicación.}\label{fig:profile}
+\end{figure}
+
+\section{Subida de retos}
+Si el usuario ha accedido hasta la página de subida de retos para poder continuar deberá rellenar el formulario. Se supone que esta funcionalidad solo se le concede a usuarios de confianza, por tanto aunque el formulario si que sea resistente a intentos de subida con campos vacíos, no está diseñado para comprobar que los campos rellenos sean coherentes con lo que se espera recibir. Se asume que el usuario al que se le han concedido estos permisos subirá retos coherentes y de manera responsable. También hay que tener en cuenta que en este punto se pueden subir imágenes que se guardan directamente en la máquina que hospeda la web en Heroku, por tanto si esto estuviera abierto al público en general se podría generar un sobrecarga de memoria en la maquina que hospeda la web.
+El formulario es bastante claro con los campos a rellenar, la imagen la debemos seleccionar haciendo click en el campo que pide la misma, y subiendo la imagen deseada desde la memoria del ordenador desde el que se esté haciendo la solicitud. 
+Para completar con la subida solo hay que pulsar el botón situado al final de la página. 
+
+\begin{figure}
+	\centering
+	\includegraphics[width=16cm, keepaspectratio]{img/create_challenge_html.png}
+	\caption{Menú de juegos de la aplicación.}\label{fig:create_challenge}
+\end{figure}
+
+\section{Creación de juegos}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=16cm, keepaspectratio]{img/create_game_html.png}
+	\caption{Menú de juegos de la aplicación.}\label{fig:create_game}
+\end{figure}
 
 
-\cleardoublepage
+\chapter{Anexo II: Ejemplos de Diagramas UML}
+\label{app:diagramas}
+% Contenido del anexo II
+
+\section{Diagrama de clases}
+En este diagrama de clases, hay una clase padre y dos clases hijas. En este caso la clase padre cuenta con unos atributos y métodos comunes, los cuales comparte con las clases hijas. Las clases hijas en cambio tienen cada una unos atributos y métodos que no pueden compartir entre ellas ni con la clase padre.
+\begin{figure}
+	\centering
+	\includegraphics[width=14cm, keepaspectratio]{img/diagrama_clases.png}
+	\caption{Ejemplo de diagrama de clases.}\label{fig:diagrama_clases}
+\end{figure}
+
+\section{Diagrama de objetos}
+Los diagrama de objetos están fuertemente relacionados con los diagramas de clases, tanto es así que hasta comparten símbolos y figuras. Básicamente para seguir con el objeto anterior de los vehículos, en este ejemplo se puede ver los datos o "fotografía" de un objeto del sistema en un momento determinado del tiempo. 
+\begin{figure}
+	\centering
+	\includegraphics[width=14cm, keepaspectratio]{img/diagrama_objetos.png}
+	\caption{Ejemplo de diagrama de objetos.}\label{fig:diagrama_objetos}
+\end{figure}
+
+\section{Diagrama de despliegue}
+Este diagrama de despliegue modela la arquitectura en tiempo de ejecución de un sistema. Se muestra la configuración de los elementos de hardware, identificados como nodos. Y muestra la trazas de elementos y artefactos del software en estos nodos. 
+\begin{figure}
+	\centering
+	\includegraphics[width=16cm, keepaspectratio]{img/diagrama_despliegue.png}
+	\caption{Ejemplo de diagrama de despliegue.}\label{fig:diagrama_despliegue}
+\end{figure}
+
+\section{Diagrama de componentes}
+En este diagrama de componentes se puede visualizar la estructura y la funcionalidad de un software de correo electrónico. Muestra la interacción a través de sus tres interfaces. La linea discontinua etiquetada con "use" indica que el usuario es dependiente de esa interfaz (management port) para supervisar y administrar el correcto funcionamiento del sistema.
+\begin{figure}
+	\centering
+	\includegraphics[width=18cm, keepaspectratio]{img/diagrama_componentes.png}
+	\caption{Ejemplo diagrama de componentes.}\label{fig:diagrama_componentes}
+\end{figure}
+
+\section{Diagrama de paquetes}
+En este ejemplo de diagrama de paquetes tiene la intención de mostrar la organización y disposición de los diferentes elementos que componen un aplicación web para compras. Las carpetas representa la anidación de elementos del software, y estas a la vez se organizan jerárquicamente dentro del diagrama. 
+\begin{figure}
+	\centering
+	\includegraphics[width=14cm, keepaspectratio]{img/diagrama_paquetes.png}
+	\caption{Ejemplo diagrama de paquetes.}\label{fig:diagrama_paquetes}
+\end{figure}
+
+\section{Diagrama de estructura compuesta}
+En este ejemplo podemos apreciar el diagrama de estructura compuesta de un sistema contraincendios. Se puede ver que la unidad central de control está compuesta por componentes más pequeños (sirena, aspersores, sensores, monitores...), que a su vez pertenecen al sistema general.
+\begin{figure}
+	\centering
+	\includegraphics[width=12cm, keepaspectratio]{img/diagrama_estructura_compuesta.png}
+	\caption{Ejemplo diagrama de estructura compuesta.}\label{fig:diagrama_estructura_compuesta}
+\end{figure}
+
+\section{Diagrama de actividad}
+Este ejemplo de diagrama es uno de los usados para los retos de Gymkhana App. Este tipo de diagramas es de los más conocidos, en este caso se trata de seguir el flujo de trabajo, pudiendo actuar de distinta manera dependiendo de las respuestas del sistema a diferentes preguntas (representadas con rombos). 
+\begin{figure}
+	\centering
+	\includegraphics[width=10cm, keepaspectratio]{img/diagrama_actividad.png}
+	\caption{Ejemplo diagrama de actividad.}\label{fig:diiagrama_actividad}
+\end{figure}
+
+\section{Diagrama de casos de uso}
+Este ejemplo modela la funcionalidad de un "Sistema Apocalipsis Zombie" con los diferentes casos de uso representado con elipses. Se muestra también la interacción que tiene el actor (superviviente) con el sistema. Este diagrama ha sido diseñado para uno de los primeros retos de la aplicación Gymkhana App.
+\begin{figure}
+	\centering
+	\includegraphics[height=18cm,width=12cm, keepaspectratio]{img/diagrama_casos_uso.png}
+	\caption{Ejemplo diagrama casos de uso.}\label{fig:diagrama_casos_uso}
+\end{figure}
+
+\section{Diagrama de máquina de estados}
+En este ejemplo se muesta un diagrama del proceso de inscripción y finalización de una asignatura de la universidad. Se puede como el estado pasa de tratar de apuntarse a una asignatura, poder matricularte en esta y pasar los exámenes finales. 
+\begin{figure}
+	\centering
+	\includegraphics[width=16cm, keepaspectratio]{img/diagrama_maquina_estados.png}
+	\caption{Ejemplo diagrama de máquina de estados.}\label{fig:diagrama_maquina_estados}
+\end{figure}
+
+\section{Diagrama de interacción}
+Como dentro de estos tipos de diagramas se pueden clasificar cuatro más, en este apartado se aportan ejemplos sencillos de alguno de ellos.
+
+Los diagramas de colaboración se centran en los aspectos estructurales y la arquitectura de los objetos de un software. En el ejemplo se muestra el flujo de organización de una tienda online, con el tipo de mensajes y de llamadas que se hacen entre los objetos del sistema. 
+\begin{figure}
+	\centering
+	\includegraphics[width=14cm, keepaspectratio]{img/diagrama_colaboracion.png}
+	\caption{Ejemplo diagrama de colaboración}\label{fig:diagrama_colaboracion}
+\end{figure}
+
+Los diagramas de secuencia se centrar en representa las interacciones entre los eventos de un sistema. En el ejemplo se muestra la secuencia de eventos de un software de manejo de una agenda, enlazada a una dirección de correo electrónico.
+\begin{figure}
+	\centering
+	\includegraphics[width=14cm, keepaspectratio]{img/diagrama_secuencia.png}
+	\caption{Ejemplo diagrama de secuencia}\label{fig:diagrama_secuencia}
+\end{figure}
+
+Los diagramas de tiempos se unas para representar la línea de vida de un objeto en una instancia y en el tiempo. Se representa los cambios con nivel alto y bajo con señales. En el ejemplo se puede ver un diagrama del comportamiento de los objetos que forman una sistema contraincendios.
+\begin{figure}
+	\centering
+	\includegraphics[width=12cm, keepaspectratio]{img/diagrama_tiempos.png}
+	\caption{Ejemplo diagrama de tiempos.}\label{fig:diagrama_tiempos}
+\end{figure}
+
+%\cleardoublepage
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -698,5 +888,6 @@ Aqui vienen las fotitos de los diagramas UML
 %https://www.omg.org/spec/UML/2.5.1/PDF
 %https://docs.djangoproject.com/en/3.2/
 %https://www.uml-diagrams.org/uml-25-diagrams.html
+%https://www.lucidchart.com/pages/es/diagrama-de-interaccion-uml
 
 \end{document}
