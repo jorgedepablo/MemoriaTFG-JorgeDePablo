@@ -156,11 +156,11 @@ Además, la pareja quizás no sea para siempre, pero tu madre sí.
 %\addcontentsline{toc}{chapter}{Resumen} % si queremos que aparezca en el índice
 \markboth{RESUMEN}{RESUMEN} % encabezado
 
-El lenguaje unificado modelado es en la actualidad la herramienta más utilizada en el modelado de software. No obstante, los diagramas y aspectos conceptuales del mismo pueden utilizarse para otros entornos, como el educativo.  
+El lenguaje unificado modelado es en la actualidad el lenguaje más utilizado para el modelado de software. No obstante, los diagramas y aspectos conceptuales del mismo pueden utilizarse para otros entornos, como el educativo.  
 
-Este Trabajo de Fin de Grado tienen como objetivo desarrollar una aplicación web para uso docente y estudiantil a través de la cual alumnos de tempranas edades puedan aprender y familiarizarse con actividades que impliquen de alguna manera el entender y analizar diagramas para extraer información de estos. Todo esto se intentará hacer a través de gymkhanas y juegos para atraer de alguna manera el interés de usuarios más jóvenes.
+Este Trabajo de Fin de Grado tienen como objetivo desarrollar una aplicación web para uso docente y estudiantil a través de la cual alumnos de tempranas edades puedan aprender y familiarizarse con actividades que impliquen de alguna manera el entender y analizar diagramas para extraer información de estos. Todo esto se intentará hacer a través de \emph{gymkhanas} y juegos para atraer de alguna manera el interés de usuarios más jóvenes.
 
-La aplicación se ha desarrollado prácticamente en su totalidad con tecnologías \emph{OpenSource}, o en su defecto sobre software de empresas pero que cuentan con planes gratuitos para propuestas estudiantiles y/o pequeñas pruebas de concepto y por su puesto el acceso a esta debe ser totalmente gratuito. Entre esas tecnologías hay que destacar Python y Django, junto con Boostrap, HTML, css, y Git para el control de versiones. Se ha desplegado en la red de internet gracias a Heroku y por tanto se puede tener acceso a Gymkhana App desde cualquier parte del mundo, en cualquier momento del tiempo.
+La aplicación se ha desarrollado prácticamente en su totalidad con tecnologías \emph{OpenSource}, o en su defecto sobre software de empresas pero que cuentan con planes gratuitos para propuestas estudiantiles y/o pequeñas pruebas de concepto y por su puesto el acceso a esta debe ser totalmente gratuito. Entre esas tecnologías hay que destacar Python y Django, junto con Bootstrap, HTML, CSS, y \texttt{git} para el control de versiones. Se ha desplegado en la red de internet gracias a Heroku y por tanto se puede tener acceso a Gymkhana App desde cualquier parte del mundo, en cualquier momento del tiempo.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Resumen en inglés
@@ -168,11 +168,11 @@ La aplicación se ha desarrollado prácticamente en su totalidad con tecnología
 \chapter*{Summary}
 %\addcontentsline{toc}{chapter}{Summary} % si queremos que aparezca en el índice
 \markboth{SUMMARY}{SUMMARY} 
-The Unified Modeling Language is currently the most widely used tool in software modeling. However, the diagrams and conceptual aspects of it can be used for other environments, such as education.
+The Unified Modeling Language is currently the most widely used language in software modeling. However, the diagrams and conceptual aspects of it can be used for other environments, such as education.
 
 This End of Degree Project aims to develop a web application for teaching and student use through which students of early ages can learn and become familiar with activities that imply in some way understanding and analyzing diagrams to extract information from them. All of this will be attempted through gymkhanas and games to somehow attract the interest of younger users.
 
-The application has been developed practically in its entirety with \emph{OpenSource} technologies, or failing that, with company software but which have free plans for student proposals and/or small proofs of concept and, of course, access to it must be be totally free. These technologies include Python and Django, along with Bootstrap, HTML, css, and Git for version control. It has been deployed on the internet thanks to Heroku and therefore Gymkhana App can be accessed from anywhere in the world, at any moment of time.
+The application has been developed practically in its entirety with \emph{OpenSource} technologies, or failing that, with company software but which have free plans for student proposals and/or small proofs of concept and, of course, access to it must be be totally free. These technologies include Python and Django, along with Bootstrap, HTML, CSS, and git for version control. It has been deployed on the internet thanks to Heroku and therefore Gymkhana App can be accessed from anywhere in the world, at any moment of time.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -233,7 +233,7 @@ La memoria de este trabajo esta estructurada de la siguiente manera:
   
   \item \textbf{Capítulo~\ref{chap:diseño}. Diseño e implementación.} Se hace una descripción más profunda y técnica de la arquitectura del proyecto a nivel interno. Explicando detalladamente con ayuda de diagramas el diseño de la aplicación desgranando los módulos que la componen.
   
-  \item \textbf{Apéndice~\ref{app:manual}. Manual de usuario.} Pequeño recorrido por la interfaz de usuario de la aplicación donde se muestran con imágenes los pasos a seguir para iniciar, resolver o subir nuevos retos en Gymkhana App. 
+  \item \textbf{Capítulo~\ref{cap:resulados}. Resultados.} Pequeño recorrido por la interfaz de usuario de la aplicación donde se muestran con imágenes los pasos a seguir para iniciar, resolver o subir nuevos retos en Gymkhana App. 
   
    \item \textbf{Apéndice~\ref{app:diagramas}. Ejemplos de diagramas UML.} En este anexo se describen brevemente ejemplos de cada uno de los diagramas UML que se explican la sección~\ref{sec:UML}, también se añaden imágenes de cada uno de ellos con el fin de aportar información gráfica.
 \end{itemize}
@@ -377,23 +377,23 @@ Modelo-vista-controlador es un patrón de arquitectura de software, este patrón
  \item Controlador: Gestiona todas las comunicaciones que existen entre la vista y el modelo. 
 \end{itemize}
 
-Esta división en módulos tiene como ventaja que hace las aplicaciones más funcionales, sostenibles, y escalables. Otros muchos grandes frameworks de desarrollo web usan este modelo y Django básicamente también, pero llaman a su modelo de manera diferente. La filosofía sigue siendo la del modelo-vista-controlador pero se llama Model Template View, lo que hace es susttuir las vistas por un módulo que llama Template, o plantilla en castellano, el controlador de Django viene a ser el módulo Views y el Model sigue siendo el modelo.
+Esta división en módulos tiene como ventaja que hace las aplicaciones más funcionales, sostenibles, y escalables. Otros muchos grandes frameworks de desarrollo web usan este modelo y Django básicamente también, pero llaman a su modelo de manera diferente. La filosofía sigue siendo la del modelo-vista-controlador pero se llama Model Template View, lo que hace es sustituir las vistas por un módulo que llama Template, o plantilla en castellano, el controlador de Django viene a ser el módulo Views y el Model sigue siendo el modelo.
 
 \section{Git} 
-Git es un sistema de control de versiones gratuito y de código abierto diseñado para manejar cualquier tipo de proyecto, tanto en pequeños como los muy grandes con gran velocidad y eficiencia. Vino desarrollado por la mano de Linus Toval, famoso por iniciar el desarrollo del kernel del sistema operativo Linux. 
+Git es un sistema de control de versiones gratuito y de código abierto diseñado para manejar cualquier tipo de proyecto, tanto en pequeños como los muy grandes con gran velocidad y eficiencia. Vino desarrollado por la mano de Linus Torvalds, famoso por iniciar el desarrollo del kernel del sistema operativo Linux. 
 
 Git es fácil de aprender y ocupa poco espacio con un rendimiento increíblemente rápido. Su objetivo es facilitar el desarrollo y mantenimiento de código fuente tanto de forma individual como, sobre todo, de trabajo en equipo. Te permite, crear varias ramas de desarrollo y provee de herramientas para poder unir y estas ramas además de guardar un registro de todos los cambios que sufran los archivos. 
 
 Este software es multiplataforma, se puede instalar tanto en Linux, como en Windows y macOS. Se puede utilizar cualquier tipo de lenguaje de programación sobre el archivo del que se desea hacer control de versiones, ya que Git no se fija en el contenido sino en la diferencia de este contenido a lo largo del tiempo y en las diferentes ramas. 
 
-Los repositorios de código que usan Git como control de versiones no necesariamente tienen que estar alojados en un repositorio de internet, pero lo más habitual y práctico es que sí lo esté. Existen numerosas plataformas que te permiten alojar repositorios de código fuente e interactuar con las herramientas de Git como GitLab o Gogs, que son de código abierto y gratuitas o siios como CodeComit que perteneze a AWS\footnote{Amazon Web Services} y por tanto es de dominio privado. En este proyecto durante su desarrollo se ha utilizado Git para el control de versiones alojando el repositorio en GitHub, que es el otro sitio más de código abierto para alojar proyectos, es gratuita y típicamente se almacenan los repositorios de forma pública.
+Los repositorios de código que usan Git como control de versiones no necesariamente tienen que estar alojados en un repositorio de internet, pero lo más habitual y práctico es que sí lo esté. Existen numerosas plataformas que te permiten alojar repositorios de código fuente e interactuar con las herramientas de Git como GitLab o Gogs, que son de código abierto y gratuitas o sitios como CodeComit que pertenece a AWS\footnote{Amazon Web Services} y por tanto es de dominio privado. En este proyecto durante su desarrollo se ha utilizado Git para el control de versiones alojando el repositorio en GitHub, que es el otro sitio más de código abierto para alojar proyectos, es gratuita y típicamente se almacenan los repositorios de forma pública.
 
-\section{Boostrap}
-Boostrap es un framework de código abierto y multiplataforma que contiene bibliotecas y herramientas para el diseño de aplicaciones web. Contiene plantillas de diseño con tipografía, formularios, botones, menús de navegación y otros elementos basado en HTML y CSS, así como extensiones de JavaScript adicionales. Fue desarrollado por Mark Otto y Hacob Thornton como marco de trabajo para fomentar las herramientas internas de Twitter, en 2011 se liberó como código abierto bajo una licencia MIT License.
+\section{Bootstrap}
+Bootstrap es un framework de código abierto y multiplataforma que contiene bibliotecas y herramientas para el diseño de aplicaciones web. Contiene plantillas de diseño con tipografía, formularios, botones, menús de navegación y otros elementos basado en HTML y CSS, así como extensiones de JavaScript adicionales. Fue desarrollado por Mark Otto y Hacob Thornton como marco de trabajo para fomentar las herramientas internas de Twitter, en 2011 se liberó como código abierto bajo una licencia MIT License.
 
 Boostrat tiene soporte relativo para HTML5 y CSS3, pero es compatible con la mayoría de los navegadores web. Desde su versión 2.0 soporta diseños wen adaptables. Esto significa que eñ diseño de la web se ajusta dinámicamente en función del display del que disponga el dispositivo donde se esté visualizando, esta tecnología también se conoce como responsive cuando hablamos de desarrollo web. 
 
-Este framework web sólo se ocupa del desarrollo del front-end, es decir de la parte que ve e interactua el usuario directamente. Integrando este framework con el modelo-vista-controlador de Django, explicado anteriormente en el punto 3.3.1 de este documento podemos enmarcarlo dentro del módulo Template de Django, pudiendo dividir así la parte funcional y práctica del proyecto de la parte del diseño relegándola en Boostrap. 
+Este framework web sólo se ocupa del desarrollo del front-end, es decir de la parte que ve e interactua el usuario directamente. Integrando este framework con el modelo-vista-controlador de Django, explicado anteriormente en el punto 3.3.1 de este documento podemos enmarcarlo dentro del módulo Template de Django, pudiendo dividir así la parte funcional y práctica del proyecto de la parte del diseño relegándola en Bootstrap. 
 
 \section{Heroku}
 Heroku es una plataforma que ofrece servicios de computación en la nube que soporta distintos lenguajes de programación. Fue desarrollada en 2007 con el objetivo de soportar la únicamente el lenguaje de programación Ruby, pero poco a poco extendió su soporte para otros lenguajes como Node, Java, PHP y Python entre otros. También soporta servicios de bases de datos tanto MongoDB como Redis o PostgreSQL, tanto como parte de la plataforma como servicio independiente. Además de esto tiene integración con Git, que dentro de Heroku será quien maneje los repositorios de las aplicaciones subidas por los usuarios. 
@@ -500,7 +500,7 @@ Django cuenta con muchas funciones y respuestas que vienen ya integradas, como p
 
 
 \section{Módulo Templates-Vistas}
-El módulo de Templates es el que forma la interfaz de usuario de la aplicación. Cada vista de la aplicación, o página que el usuario acaba visualizando está compuesta por un template o plantilla HTML sobre la que se aplica un estilo con CSS. Trabajar con plantillas en Django hace que la aplicación sea escalable y el código quede ordenado. En muchos casos la plantilla es reutilizable si se parametrizan adecuadamente, a su vez, la capa de estilo esta muy bien aislada gracias a Boostrap, de manera que se puede separar muy bien la parte programática del desarrollo de la parte encargada del diseño y el estilo evitando así tener que aplicar estilo a cada una de las páginas implicadas en el desarrollo. 
+El módulo de Templates es el que forma la interfaz de usuario de la aplicación. Cada vista de la aplicación, o página que el usuario acaba visualizando está compuesta por un template o plantilla HTML sobre la que se aplica un estilo con CSS. Trabajar con plantillas en Django hace que la aplicación sea escalable y el código quede ordenado. En muchos casos la plantilla es reutilizable si se parametrizan adecuadamente, a su vez, la capa de estilo esta muy bien aislada gracias a Bootstrap, de manera que se puede separar muy bien la parte programática del desarrollo de la parte encargada del diseño y el estilo evitando así tener que aplicar estilo a cada una de las páginas implicadas en el desarrollo. 
 
 La aplicación de Gymkhana App se compone de las siguientes views: home, start, challenge, succes y wrong, login, profile, create challenge y create game
 \subparagraph{Home}
@@ -536,7 +536,7 @@ Tiene la estructura de cualquier pagina de inicio de sesión tradicional, donde 
 \end{itemize}	
 
 
-Todas estas páginas han sido construidas sobre una base genérica común que usan todas las plantillas. Esta base común permite contener la información de todas las vieews mencidonadas anteriormente, además de la cabecera o header y el pie de página o footer. En la cabecera hay dos enlaces ocultos que redirigirán al usuario bien a la página principal de la aplicación Gymkhana App, o a la web oficial de la organización UML. En el pie de página se muestra información relativa a la ETSIT como localización y enlaces ocultos para poder visitar la cuenta de Twitter, y la web oficial de la ETSIT. También aparece la licencia de uso de la plantilla de Boostrap elegida
+Todas estas páginas han sido construidas sobre una base genérica común que usan todas las plantillas. Esta base común permite contener la información de todas las vieews mencidonadas anteriormente, además de la cabecera o header y el pie de página o footer. En la cabecera hay dos enlaces ocultos que redirigirán al usuario bien a la página principal de la aplicación Gymkhana App, o a la web oficial de la organización UML. En el pie de página se muestra información relativa a la ETSIT como localización y enlaces ocultos para poder visitar la cuenta de Twitter, y la web oficial de la ETSIT. También aparece la licencia de uso de la plantilla de Bootstrap elegida
 
 \subsection{Internacionalización}
 Django también ofrece de manera relativamente sencilla la posibilidad de añadir internacionalización a las plantillas. Este proceso consiste en traducir todo el texto que aparece en las plantillas. 
@@ -597,21 +597,6 @@ Este módulo es el que gestiona la información de la aplicación Gymkhana App, 
 \end{figure}
 
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% EXPERIMENTOS Y VALIDACIÓN %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\cleardoublepage
-
-\chapter{Experimentos y validación}
-
-Este capítulo se introdujo como requisito en 2019. 
-Describe los experimentos y casos de test que tuviste que implementar para validar tus resultados. 
-Incluye también los resultados de validación que permiten afirmar que tus resultados son correctos. 
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % RESULTADOS %
@@ -619,76 +604,7 @@ Incluye también los resultados de validación que permiten afirmar que tus resu
 
 \cleardoublepage
 \chapter{Resultados}
-
-En este capítulo se incluyen los resultados de tu trabajo fin de grado.
-
-Si es una herramienta de análisis lo que has realizado, aquí puedes poner ejemplos de haberla utilizado para que se vea su utilidad.
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% CONCLUSIONES %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\cleardoublepage
-\chapter{Conclusiones}
-\label{chap:conclusiones}
-
-
-\section{Consecución de objetivos}
-\label{sec:consecucion-objetivos}
-
-Esta sección es la sección espejo de las dos primeras del capítulo de objetivos, donde se planteaba el objetivo general y se elaboraban los específicos.
-
-Es aquí donde hay que debatir qué se ha conseguido y qué no. 
-Cuando algo no se ha conseguido, se ha de justificar, en términos de qué problemas se han encontrado y qué medidas se han tomado para mitigar esos problemas.
-
-Y si has llegado hasta aquí, siempre es bueno pasarle el corrector ortográfico, que las erratas quedan fatal en la memoria final.
-Para eso, en Linux tenemos aspell, que se ejecuta de la siguiente manera desde la línea de \emph{shell}:
-
-\begin{verbatim}
-  aspell --lang=es_ES -c memoria.tex
-\end{verbatim}
-
-\section{Aplicación de lo aprendido}
-\label{sec:aplicacion}
-
-Aquí viene lo que has aprendido durante el Grado/Máster y que has aplicado en el TFG/TFM. Una buena idea es poner las asignaturas más relacionadas y comentar en un párrafo los conocimientos y habilidades puestos en práctica.
-
-\begin{enumerate}
-  \item a
-  \item b
-\end{enumerate}
-
-
-\section{Lecciones aprendidas}
-\label{sec:lecciones_aprendidas}
-
-Aquí viene lo que has aprendido en el Trabajo Fin de Grado/Máster.
-
-\begin{enumerate}
-  \item Aquí viene uno.
-  \item Aquí viene otro.
-\end{enumerate}
-
-
-\section{Trabajos futuros}
-\label{sec:trabajos_futuros}
-
-Ningún proyecto ni software se termina, así que aquí vienen ideas y funcionalidades que estaría bien tener implementadas en el futuro.
-
-Es un apartado que sirve para dar ideas de cara a futuros TFGs/TFMs.
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% APÉNDICE(S) %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\cleardoublepage
-\appendix
-\chapter{Manual de usuario}
-\label{app:manual}
+\label{cap:resultados}
 
 A pesar de haber planificado esta aplicación con esquemas muy sencillos, botones grandes de colores vistosos y claros, debido a que principalmente está enfocada a un público joven e infantil y, que de sobra puede ser entendida sin mayor complejidad por cualquier persona adulta, se deja aquí un pequeño manual de usuario con las principales funcionalidades de la aplicación. \\
 
@@ -760,6 +676,86 @@ Para completar con la subida solo hay que pulsar el botón situado al final de l
 	\includegraphics[width=16cm, keepaspectratio]{img/create_game_html.png}
 	\caption{Menú de juegos de la aplicación.}\label{fig:create_game}
 \end{figure}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% EXPERIMENTOS Y VALIDACIÓN %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cleardoublepage
+
+\chapter{Experimentos y validación}
+
+Este capítulo se introdujo como requisito en 2019. 
+Describe los experimentos y casos de test que tuviste que implementar para validar tus resultados. 
+Incluye también los resultados de validación que permiten afirmar que tus resultados son correctos. 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% CONCLUSIONES %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cleardoublepage
+\chapter{Conclusiones}
+\label{chap:conclusiones}
+
+
+\section{Consecución de objetivos}
+\label{sec:consecucion-objetivos}
+
+Esta sección es la sección espejo de las dos primeras del capítulo de objetivos, donde se planteaba el objetivo general y se elaboraban los específicos.
+
+Es aquí donde hay que debatir qué se ha conseguido y qué no. 
+Cuando algo no se ha conseguido, se ha de justificar, en términos de qué problemas se han encontrado y qué medidas se han tomado para mitigar esos problemas.
+
+Y si has llegado hasta aquí, siempre es bueno pasarle el corrector ortográfico, que las erratas quedan fatal en la memoria final.
+Para eso, en Linux tenemos aspell, que se ejecuta de la siguiente manera desde la línea de \emph{shell}:
+
+\begin{verbatim}
+  aspell --lang=es_ES -c memoria.tex
+\end{verbatim}
+
+\section{Aplicación de lo aprendido}
+\label{sec:aplicacion}
+
+Aquí viene lo que has aprendido durante el Grado/Máster y que has aplicado en el TFG/TFM. Una buena idea es poner las asignaturas más relacionadas y comentar en un párrafo los conocimientos y habilidades puestos en práctica.
+
+\begin{enumerate}
+  \item a
+  \item b
+\end{enumerate}
+
+
+\section{Lecciones aprendidas}
+\label{sec:lecciones_aprendidas}
+
+Aquí viene lo que has aprendido en el Trabajo Fin de Grado/Máster.
+
+\begin{enumerate}
+  \item Aquí viene uno.
+  \item Aquí viene otro.
+\end{enumerate}
+
+
+\section{Trabajos futuros}
+\label{sec:trabajos_futuros}
+
+Ningún proyecto ni software se termina, así que aquí vienen ideas y funcionalidades que estaría bien tener implementadas en el futuro.
+
+Es un apartado que sirve para dar ideas de cara a futuros TFGs/TFMs.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% APÉNDICE(S) %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cleardoublepage
+\appendix
 
 
 \chapter{Anexo II: Ejemplos de Diagramas UML}
