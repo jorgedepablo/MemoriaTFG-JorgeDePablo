@@ -170,7 +170,7 @@ La aplicación se ha desarrollado prácticamente en su totalidad con tecnología
 \markboth{SUMMARY}{SUMMARY} 
 The Unified Modeling Language is currently the most widely used language in software modeling. However, the diagrams and conceptual aspects of it can be used for other environments, such as education.
 
-This End of Degree Project aims to develop a web application for teaching and student use through which students of early ages can learn and become familiar with activities that imply in some way understanding and analyzing diagrams to extract information from them. All of this will be attempted through gymkhanas and games to somehow attract the interest of younger users.
+This final thesis of the degree aims to develop a web application for teaching and student use through which students of early ages can learn and become familiar with activities that imply in some way understanding and analyzing diagrams to extract information from them. All of this will be attempted through gymkhanas and games to somehow attract the interest of younger users.
 
 The application has been developed practically in its entirety with \emph{OpenSource} technologies, or failing that, with company software but which have free plans for student proposals and/or small proofs of concept and, of course, access to it must be be totally free. These technologies include Python and Django, along with Bootstrap, HTML, CSS, and git for version control. It has been deployed on the internet thanks to Heroku and therefore Gymkhana App can be accessed from anywhere in the world, at any moment of time.
 
@@ -233,9 +233,11 @@ La memoria de este trabajo esta estructurada de la siguiente manera:
   
   \item \textbf{Capítulo~\ref{chap:diseño}. Diseño e implementación.} Se hace una descripción más profunda y técnica de la arquitectura del proyecto a nivel interno. Explicando detalladamente con ayuda de diagramas el diseño de la aplicación desgranando los módulos que la componen.
   
-  \item \textbf{Capítulo~\ref{cap:resulados}. Resultados.} Pequeño recorrido por la interfaz de usuario de la aplicación donde se muestran con imágenes los pasos a seguir para iniciar, resolver o subir nuevos retos en Gymkhana App. 
+  \item \textbf{Capítulo~\ref{chap:resultados}. Resultados.} Pequeño recorrido por la interfaz de usuario de la aplicación donde se muestran con imágenes los pasos a seguir para iniciar, resolver o subir nuevos retos en Gymkhana App. 
   
-   \item \textbf{Apéndice~\ref{app:diagramas}. Ejemplos de diagramas UML.} En este anexo se describen brevemente ejemplos de cada uno de los diagramas UML que se explican la sección~\ref{sec:UML}, también se añaden imágenes de cada uno de ellos con el fin de aportar información gráfica.
+  \item \textbf{Capítulo~\ref{chap:conclusiones}. Conclusiones.} Capítulo dedicado a repasar los objetivos cumplimentados durante el desarrollo del proyecto, los conocimientos aplicados y aprendidos durante el mismo y por último, estudiar posibles líneas de trabajo futuras para el proyecto. 
+  
+  \item \textbf{Apéndice~\ref{app:diagramas}. Ejemplos de diagramas UML.} En este anexo se describen brevemente ejemplos de cada uno de los diagramas UML que se explican la sección~\ref{sec:UML}, también se añaden imágenes de cada uno de ellos con el fin de aportar información gráfica.
 \end{itemize}
 
 
@@ -396,6 +398,8 @@ Boostrat tiene soporte relativo para HTML5 y CSS3, pero es compatible con la may
 Este framework web sólo se ocupa del desarrollo del front-end, es decir de la parte que ve e interactua el usuario directamente. Integrando este framework con el modelo-vista-controlador de Django, explicado anteriormente en el punto 3.3.1 de este documento podemos enmarcarlo dentro del módulo Template de Django, pudiendo dividir así la parte funcional y práctica del proyecto de la parte del diseño relegándola en Bootstrap. 
 
 \section{Heroku}
+\label{sec:heroku}
+
 Heroku es una plataforma que ofrece servicios de computación en la nube que soporta distintos lenguajes de programación. Fue desarrollada en 2007 con el objetivo de soportar la únicamente el lenguaje de programación Ruby, pero poco a poco extendió su soporte para otros lenguajes como Node, Java, PHP y Python entre otros. También soporta servicios de bases de datos tanto MongoDB como Redis o PostgreSQL, tanto como parte de la plataforma como servicio independiente. Además de esto tiene integración con Git, que dentro de Heroku será quien maneje los repositorios de las aplicaciones subidas por los usuarios. 
 
 El modelo de arquitectura de Heroku se basa en Dynos, que son unidades de capacidad de cómputo basadas en contenedores Linux que hay dentro de la plataforma. Cada Dyno está aislado del resto por lo que se pueden desplegar entornos y procesos en cada uno de estos sin que se vean afectado otros. Esto otorga a estas pequeñas máquinas unitarias las siguientes características: 
@@ -596,6 +600,55 @@ Este módulo es el que gestiona la información de la aplicación Gymkhana App, 
 	\caption{Diagrama entidad-relación de la aplicación Ghymkhana App.}\label{fig:diagarma_ER}
 \end{figure}
 
+\section{Despliegue del software}
+Con el objetivo de poder acceder a Gymkhana App desde cualquier lugar con acceso a la red de internet, este proyectó se ha desplegado en un servidor de acceso público. Este despliegue se ha realizado en los servidores de Heroku, se puede encontrar más información acerca de este servicio en la sección~\ref{sec:heroku}. 
+
+Heroku ofrece varias maneras de gestionar el despliegue de código en sus servidores; con un proyecto Git, a través de Docker\footnote{Herramienta de automatización de despliegue de software en contenedores que se ha hecho muy popular en estos últimos años entre los desarrolladores.}, y con otros servicios de integración populares entre desarrolladores. En este proyecto se ha desplegado en Heroku a través de Git.
+
+Para este proceso de despliegue es por tanto necesario tener instalado en la máquina desde la que se quiere desplegar el proyecto los paquetes de Git y Heroku CLI. Además de hacer ciertas variaciones en el proyecto y añadir archivos necesarios para la autoconfiguración en las máquinas remotas de Heroku. Estas modificaciones se explican a continuación: 
+
+Heroku necesita saber el lenguaje o lenguajes de programación en el que está basado el proyecto, para esto es necesario  crear en la carpeta raíz del proyecto un archivo llamado \emph{runtime.txt}, en el caso particular de este proyecto este archivo esta compuesto de una sola línea. 
+\begin{verbatim}
+	python-3.7.13
+\end{verbatim}
+
+También será necesario añadir en el archivo \emph{requirements.txt} todas las dependencias del proyecto para que Heroku pueda instalarlas. Es importante durante el proceso de desarrollo haber tenido un entorno aislado y tener todos las dependencias del proyecto correctamente instaladas. 
+\begin{verbatim}
+	$ pip freeze > requirements.txt
+\end{verbatim}
+
+Para que las máquinas de Heroku tengan la información necesaria para ejecutar las piezas de la aplicación es necesario un archivo \emph{Procfile}. En el caso de este proyecto se compone como se indica a continuación. 
+\begin{verbatim}
+	web: gunicorn ProjectUML.wsgi 
+\end{verbatim}
+
+Del mismo modo hay que añadir cambios en el archivo \emph{settings.py} para permitirle a las máquinas de Heroku encontrar los archivos estáticos de la aplicación.
+\begin{verbatim}
+	STATICFILES_STORAGE = 
+	'whitenoise.storage.CompressedManifestStaticFilesStorage'
+\end{verbatim}
+
+Una vez hecho todo esto, y suponiendo que el repositorio del proyecto ya tenga una rama Git iniciada para el control de versiones, y que ya el usuario se haya registrado y dado de alta en Heroku, se enlazará el directorio Git con el proyecto existente en Heroku de manera local.
+\begin{verbatim}
+	$ heroku create -a project-uml 
+	  # si el proyecto ya existe se debe usar este otro comando: 
+	$ heroku git:remote -a project-uml 
+	$ git add -A
+	$ git commit -m "cambios para despliegue en Heroku"
+	$ git push heroku master
+\end{verbatim}
+
+En este momento el proyecto ya estaría desplegado y listo para usarse, sin embargo no tendría nada de información contenida en la base de datos, aunque sí tendrá su estructura formada. Es necesario migrar la base de datos local usada en desarrollo hacía la base de datos PostgreSQL.
+\begin{verbatim}
+	$ python3 manage.py dumpdata --exclude contenttypes > data.json
+	$ git add data.json
+	$ git commit -m "se añade archivo para migración de base de datos."
+	$ git push heroku master
+	$ heroku run python3 manage.py loaddata data.json
+\end{verbatim}
+
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -604,9 +657,20 @@ Este módulo es el que gestiona la información de la aplicación Gymkhana App, 
 
 \cleardoublepage
 \chapter{Resultados}
-\label{cap:resultados}
+\label{chap:resultados}
 
-A pesar de haber planificado esta aplicación con esquemas muy sencillos, botones grandes de colores vistosos y claros, debido a que principalmente está enfocada a un público joven e infantil y, que de sobra puede ser entendida sin mayor complejidad por cualquier persona adulta, se deja aquí un pequeño manual de usuario con las principales funcionalidades de la aplicación. \\
+A pesar de haber planificado esta aplicación con esquemas muy sencillos, botones grandes de colores vistosos y claros, debido a que principalmente está enfocada a un público joven e infantil y, que de sobra puede ser entendida sin mayor complejidad por cualquier persona adulta, se deja aquí un pequeño manual de usuario con las principales funcionalidades de la aplicación.
+
+\section{Acceso al proyecto}
+
+Se puede acceder a Gymkhana App a través del siguiente enlace: 
+\begin{itemize}
+	\item \textbf  https://project-uml.herokuapp.com/ 
+\end{itemize}
+Y el código fuente utilizado se encuentra en un repositorio público de GitHub: 
+\begin{itemize}
+	\item \textbf  https://github.com/jorgedepablo/ProjectUML
+\end{itemize}
 
 \section{Página principal}
 La página principal, también comúnmente conocida como \emph{home}. Tiene la única función de presentar la aplicación de manera clara y limpia, con no demasiada información para no bombardear ni agobiar a los potenciales usuarios que puedan visitar la página. En este punto también se exponen dos botones principales que llevan a las dos principales funcionalidades de la aplicación: empezar a jugar y poder registrarse para acceder a las funcionalidades que permiten crear nuevos retos y juegos. 
@@ -707,46 +771,60 @@ Incluye también los resultados de validación que permiten afirmar que tus resu
 \section{Consecución de objetivos}
 \label{sec:consecucion-objetivos}
 
-Esta sección es la sección espejo de las dos primeras del capítulo de objetivos, donde se planteaba el objetivo general y se elaboraban los específicos.
+En este proyecto sí se ha conseguido desplegar una aplicación web que puede llenarse de juegos y retos que divulguen sobre el lenguaje unificado modelado. Se ha hecho desde cero, con tecnologías de código abierto y/o servicios gratuitos. La aplicación es sencilla, limpia y fácil de entender para gente de todas las edades. Se ha conseguido también internacionalizarla usando especificaciones y estándares conocidos por toda la comunidad de desarrolladores.
 
-Es aquí donde hay que debatir qué se ha conseguido y qué no. 
-Cuando algo no se ha conseguido, se ha de justificar, en términos de qué problemas se han encontrado y qué medidas se han tomado para mitigar esos problemas.
+En cuanto los objetivos específicos: 
+\begin{enumerate}
+	\item \textbf{Primera versión de la aplicación funcionando en \emph{localhost}.} Este objetivo ha sido alcanzado con creces, ha sido el objetivo más abstracto y con más tareas a realizar. En este objetivo va incluido el diseño inicial del proyecto, elección de los estilos y la mayor parte de lo visto en el Capítulo~\ref{chap:diseño}. Cabe destacar que desde este punto de partida inicial se han añadido diferentes cambios críticos para el proyecto.
+	\item \textbf{Agrupación de juegos y retos, y navegación en menú entre ellos.} Para lleva a cabo este objetivo fue necesario reorganizar parte de la estructura de la base de datos inicial, especialmente los campos de \emph{Challenges} y \emph{Games}. También para poder gestionar la navegación entre retos contenidos en juegos se añadieron varias funciones extras en el archivo \emph{utils.py}
+	\item \textbf{Internacionalización del proyecto.} Gracias al estándar I18N se ha podido alcanzar este objetivo con relativa facilidad. Fue necesario cambiar prácticamente todos los textos de la plantilla e invertir tiempo en la traducción y compilación de los archivos \emph{.po}, pero considero que es una pieza clave del proyecto y un objetivo alcanzado con éxito.
+	\item \textbf{Sistema de gestión de usuarios que puedan subir retos y crear juegos}. Se puede decir que este ha sido el objetivo más complicado del proyecto. Desarrollar un \emph{login} en Django en principio es sencillo, y te da muchas facilidades la documentación, pero en este caso lo complicado era diseñar la aplicación de tal forma que solo ciertos usuarios pudiesen registrarse. El objetivo de estar registrado es poder subir retos, lo que conlleva poder subir archivos a la base de datos del proyecto, y por tanto, es necesario un control de acceso más restrictivo en este caso. Se decidió en este punto que solo el administrador o administradores del proyecto tengan la potestad de crear usuarios. 
+	\item \textbf{Añadir sistema de puntuación}. Para poder cumplir este objetivo fue necesario cambiar la estructura de la base de datos de nuevo y añadir ciertas funciones en \emph{utils.py} de nuevo para poder gestionar toda la parte de retorno de puntuaciones.  
+	\item \textbf{Despliegue de la aplicación y hacerla pública}. Este último objetivo se logró de igual forma que los otros. Llegados a este punto del desarrollo este último fue relativamente sencillo, gracias a la documentación de Heroku y que está diseñado y orientado para ser utilizado en  este tipo de proyectos.  
+\end{enumerate}
 
-Y si has llegado hasta aquí, siempre es bueno pasarle el corrector ortográfico, que las erratas quedan fatal en la memoria final.
-Para eso, en Linux tenemos aspell, que se ejecuta de la siguiente manera desde la línea de \emph{shell}:
+Gracias a esto se ha hecho accesible una herramienta que puedan usar docentes y estudiantes de todo el mundo. En contra partida esto último es lo que no se ha conseguido. En términos generales no se ha logrado que ningún docente o alumno (más allá de pruebas específicas para el proyecto) usen la aplicación desarrollada en este proyecto. No obstante, tanto el código como la aplicación se quedará desplegada en la red de Internet para acceso de todo el mundo en cualquier momento. 
 
-\begin{verbatim}
-  aspell --lang=es_ES -c memoria.tex
-\end{verbatim}
 
 \section{Aplicación de lo aprendido}
 \label{sec:aplicacion}
 
-Aquí viene lo que has aprendido durante el Grado/Máster y que has aplicado en el TFG/TFM. Una buena idea es poner las asignaturas más relacionadas y comentar en un párrafo los conocimientos y habilidades puestos en práctica.
+Este proyecto ha puesto en práctica muchos de los conocimientos enseñados en el Grado en Ingeniería en Sistemas Audiovisuales y Multimedia y también otros adquiridos de manera autodidacta o en el entorno laboral. Especialmente los relacionados con el desarrollo de software.
 
-\begin{enumerate}
-  \item a
-  \item b
-\end{enumerate}
+Se puede decir que las asignaturas que más han aportado en cuanto a conocimientos utilizados en este proyecto es la de Construcción de Servicios y Aplicaciones Audiovisuales en Internet y Protocolos para la Transmisión de Audio y Vídeo en Internet. En las cuales aprendí mucho sobre desarrollo web (la trinidad de HTML, JavaScript y CSS) y programación con Python, aprendiendo a usar la programación orientada a objetos, estructuras de datos, extracción y escritura de información de ficheros y, en general, profesionalizarme con el uso de una herramienta tan potente como es Python. Además hay que remarcar todo el conocimiento sobre Linux, programación, protocolos de comunicación, arquitectura de sistemas, tratamiento de imágenes y muchos más conocimientos adquiridos en el resto de asignaturas que han sido indispensables para llevar a cabo este trabajo.
 
+También se han aplicado muchos contenidos de la asignatura optativa Laboratorio de Tecnologías Audiovisuales en la Web que, en mi caso específico yo no cursé, ya que durante la movilidad internacional que realicé convalidé esa asignatura con otra llamada Databases. No obstante, se me facilitó algunos contenidos docentes de esta asignatura para que me ayudaran en el desarrollo de este proyecto. Al mismo tiempo, la asignatura de base de datos cursada durante la movilidad también me aportó conocimientos que han sido esenciales para entender los modelos de entidad relación y los modelos de bases de datos utilizadas para la aplicación web.
 
 \section{Lecciones aprendidas}
 \label{sec:lecciones_aprendidas}
-
-Aquí viene lo que has aprendido en el Trabajo Fin de Grado/Máster.
+El desarrollo de este trabajo ha servido para reforzar y ampliar conocimientos que adquirí durante la carrera y, además, adquirir otros nuevos y aprender sobre tecnologías y conceptos anteriormente desconocidos para mi. 
 
 \begin{enumerate}
-  \item Aquí viene uno.
-  \item Aquí viene otro.
+  \item \textbf{Lenguaje Unificado Modelado}. El objetivo de este proyecto es tratar de divulgar y expandir conocimientos sobre este lenguaje de modelado y para ello es naturalmente necesario conocer este mismo profundamente. Aunque antes de empezar este proyecto sí que sabía acerca de UML y usado muchos de sus esquemas en varias ocasiones, sabía bastante menos de lo que se a día de hoy. La investigación realizada para el desarrollo de este proyecto me ha aportado mucha nueva información, anteriormente desconocida para mi, sobre este lenguaje que considero que me será muy útil en todos los procesos de modelado de software a los que me enfrente en el resto de mi carrera profesional. 
+  \item \textbf{Django}. La tecnología principal utilizada en el desarrollo del proyecto ha sido Python y Django. A pesar de que he trabajado anteriormente con Python y es una tecnología en la que me siento cómodo desarrollando, no había desarrollado ningún proyecto Django anterior a este. Creo que esta tecnología es idónea si estás acostumbrado a trabajar con Python y haber podido aprender a usar esta potente herramienta durante el desarrollo de este proyecto me ha a portado mucho para mi \emph{background} profesional con Python. 
+  \item \textbf{Diseño de datos}. Enfrentarme al diseño e implementación de una base de datos, teniendo que estudiar bien los campos y las relaciones entre estos para que un aplicación funcione correctamente ha sido un reto nuevo anteriormente desconocido para mi. 
+   \item \textbf{Internacionalización y I18N}. Gracias al desarrollo de este proyecto he poddio conocer un estándar tan potente y útil como I18N, es una de las tecnologías que más me ha sorprendido descubrir, me parece sencilla, completa y útil en muchos aspectos y considero que es fundamental en prácticamente cualquier proyecto web con ámbito internacional. 
+   \item \textbf{Heroku}. También he aprendido bastante sobre Heroku, durante el desarrollo he tenido que ller mucha documentación para llega a entender como funciona y poder hacer un despliegue de código limpio. Aprender sobre este tipo de servicios es muy útil ya que fácilmente puedes tener un pequeño proyecto web con acceso mundial y gratuitamente. 
 \end{enumerate}
 
 
 \section{Trabajos futuros}
 \label{sec:trabajos_futuros}
+Como todos los proyectos web, está aplicación permite nuevas implementaciones, mejoras y cambios que pueden hacer de Gymkhana App una herramienta más completa, óptima, segura y útil en líneas generales. Algunas de las líneas de trabajo futuras podrían ser las siguientes: 
 
-Ningún proyecto ni software se termina, así que aquí vienen ideas y funcionalidades que estaría bien tener implementadas en el futuro.
+\begin{itemize}
+	\item Hacer más segura la aplicación, de manera que así puedan subir retos y juegos cualquier usuario que se quiera registrar, asegurándose de que con un software automatizado no puedan lanzar cientos de peticiones que puede que haga peligrar la integridad del proyecto.
+	\item Hacer compatible la interfaz de usuario con dispositivos móviles y tablets. Esta aplicación se ha desarrollado para visualizarse en una web a través de navegadores convencionales sobre ordenadores, aunque parte de ella sí es lo que se denomina \emph{responsive}, no se ha enfatizado en hacerla totalmente compatible con dispositivos móviles. 
+	\item Ampliar la información que se tiene de un usuario registrado, como por ejemplo los retos ya superado, porcentajes y estadísticas del porcentaje de juegos jugados y por jugar, y otra información que detalle más logros superados y pendientes para jugador. 
+	\item Si se logra el primer objetivo de esta lista, se podría implementar el inicio de sesión a través de Google o Facebook con la intención de hacer más sencilla la implicación del usuario con Gymkhana App. 
+	\item Evolucionar o mejorar  el sistema de retos para que el juego consista en algo más que en dar una respuesta a un reto, algo más interactivo o completo. 
+	\item Conseguir difundir el uso de la aplicación entre docentes y alumnos y obtener de estos un buen muestreo tanto de opiniones y resultado para comprobar si realmente Gymkhana App cumple el propósito de familiarizar y hacer comprender mejor conceptos del lenguaje unificado modelado. 
+\end{itemize}
 
-Es un apartado que sirve para dar ideas de cara a futuros TFGs/TFMs.
+%Para eso, en Linux tenemos aspell, que se ejecuta de la siguiente manera desde la línea de \emph{shell}:
+%\begin{verbatim}
+%	aspell --lang=es_ES -c memoria.tex
+%\end{verbatim}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -757,10 +835,9 @@ Es un apartado que sirve para dar ideas de cara a futuros TFGs/TFMs.
 \cleardoublepage
 \appendix
 
-
-\chapter{Anexo II: Ejemplos de Diagramas UML}
+\chapter{Anexo I: Ejemplos de Diagramas UML}
 \label{app:diagramas}
-% Contenido del anexo II
+% Contenido del anexo I
 
 \section{Diagrama de clases}
 En este diagrama de clases, hay una clase padre y dos clases hijas. En este caso la clase padre cuenta con unos atributos y métodos comunes, los cuales comparte con las clases hijas. Las clases hijas en cambio tienen cada una unos atributos y métodos que no pueden compartir entre ellas ni con la clase padre.
@@ -858,8 +935,6 @@ Los diagramas de tiempos se unas para representar la línea de vida de un objeto
 	\caption{Ejemplo diagrama de tiempos.}\label{fig:diagrama_tiempos}
 \end{figure}
 
-%\cleardoublepage
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -868,22 +943,8 @@ Los diagramas de tiempos se unas para representar la línea de vida de un objeto
 
 \cleardoublepage
 
-% Las siguientes dos instrucciones es todo lo que necesitas
-% para incluir las citas en la memoria
 \bibliographystyle{abbrv}
 \bibliography{memoria}  % memoria.bib es el nombre del fichero que contiene
-% las referencias bibliográficas. Abre ese fichero y mira el formato que tiene,
-% que se conoce como BibTeX. Hay muchos sitios que exportan referencias en
-% formato BibTeX. Prueba a buscar en http://scholar.google.com por referencias
-% y verás que lo puedes hacer de manera sencilla.
-% Más información: 
-% http://texblog.org/2014/04/22/using-google-scholar-to-download-bibtex-citations/
-
-%https://es.wikipedia.org/wiki/Lenguaje_unificado_de_modelado
-%versiones uml https://www.omg.org/spec/UML/
-%https://www.omg.org/spec/UML/2.5.1/PDF
-%https://docs.djangoproject.com/en/3.2/
-%https://www.uml-diagrams.org/uml-25-diagrams.html
-%https://www.lucidchart.com/pages/es/diagrama-de-interaccion-uml
+% las referencias bibliográficas.
 
 \end{document}
