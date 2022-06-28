@@ -160,7 +160,7 @@ El lenguaje unificado modelado es en la actualidad el lenguaje más utilizado pa
 
 Este Trabajo de Fin de Grado tienen como objetivo desarrollar una aplicación web para uso docente y estudiantil a través de la cual alumnos de tempranas edades puedan aprender y familiarizarse con actividades que impliquen de alguna manera el entender y analizar diagramas para extraer información de estos. Todo esto se intentará hacer a través de \emph{gymkhanas} y juegos para atraer de alguna manera el interés de usuarios más jóvenes.
 
-La aplicación se ha desarrollado prácticamente en su totalidad con tecnologías \emph{OpenSource}, o en su defecto sobre software de empresas pero que cuentan con planes gratuitos para propuestas estudiantiles y/o pequeñas pruebas de concepto y por su puesto el acceso a esta debe ser totalmente gratuito. Entre esas tecnologías hay que destacar Python y Django, junto con Bootstrap, HTML, CSS, y \texttt{git} para el control de versiones. Se ha desplegado en la red de internet gracias a Heroku y por tanto se puede tener acceso a Gymkhana App desde cualquier parte del mundo, en cualquier momento del tiempo.
+La aplicación se ha desarrollado prácticamente en su totalidad con tecnologías \emph{OpenSource}, o en su defecto sobre software de empresas pero que cuentan con planes gratuitos para propuestas estudiantiles y/o pequeñas pruebas de concepto y por su puesto el acceso a esta debe ser totalmente gratuito. Entre esas tecnologías hay que destacar Python y Django, junto con Bootstrap, HTML, CSS, y Git para el control de versiones. Se ha desplegado en la red de Internet gracias a Heroku y por tanto se puede tener acceso a Gymkhana App desde cualquier parte del mundo, en cualquier momento del tiempo.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Resumen en inglés
@@ -214,22 +214,22 @@ Gymkhana App es una aplicación web con simples juegos que consisten en la resol
 
 La idea surge bajo la premisa de fomentar y ayudar en el desarrollo de habilidades como el seguimiento de flujo, pensamiento lógico, simplificación y análisis de situaciones complejas y la resolución de problemas mediante la división de estos en un conjunto de actividades estructurales que juntas forman una solución. 
 
-Los mini-juegos consisten en resolución de sencillos enigmas que se resuelven combinando sus habilidades con diagramas UML. El nivel elegido en esta primera versión está orientado para niños de edades tempranas. También se quiere ofrecer la posibilidad de ser utilizado por el equipo docente para que estos mismos o cualquier contribuidor pueda crear, diseñar y aportar nuevos retos y juegos que puedan ser utilizados por toda la comunidad de la aplicación. 
+Los diferentes retos consisten en resolución de sencillos enigmas que se resuelven combinando sus habilidades con diagramas UML. El nivel elegido en esta primera versión está orientado para niños de edades tempranas. También se quiere ofrecer la posibilidad de ser utilizado por el equipo docente para que estos mismos o cualquier contribuidor pueda crear, diseñar y aportar nuevos retos y juegos que puedan ser utilizados por toda la comunidad de la aplicación. 
 
-El objetivo final de este proyecto trata de poder aportar una infraestructura en forma de aplicación de acceso público y muy sencilla de entender y manejar por los usuarios con el objetivo de divulgar y enseñar conceptos de UML y que, a al vez, los más jóvenes se familiaricen con estos últimos a través los sencillos juegos y retos que contiene Gymkhana App. 
+El objetivo final de este proyecto trata de poder aportar una infraestructura en forma de aplicación de acceso público y muy sencilla de entender y manejar por los usuarios con el objetivo de divulgar y enseñar conceptos de UML y que, a la vez, los más jóvenes se familiaricen con estos últimos a través los sencillos juegos y retos que contiene Gymkhana App. 
 
 
 \section{Estructura de la memoria}
 \label{sec:estructura}
 
-La memoria de este trabajo esta estructurada de la siguiente manera: 
+La memoria de este trabajo está estructurada de la siguiente manera: 
 
 \begin{itemize}
   \item \textbf{Capítulo 1. Introducción.} Hace una descripción básica del proyecto y se exponen las ideas principales del mismo. A parte, también especifica la estructura de la memoria. 
   
   \item \textbf{Capítulo~\ref{chap:objetivos}. Objetivos.} En este capítulo se describe el objetivo principal de este proyecto y también objetivos más específicos e hitos a alcanzar durante el desarrollo de la aplicación.
   
-  \item \textbf{Capítulo~\ref{chap:estado}. Estado del arte.}. Capítulo dedicado a las tecnologías utilizadas durante el desarrollo de la aplicación. Se hace una pequeña introducción de las mismas y se explican características básicas y propiedades que hacen que se pueda y tenga sentido utilizarlas en el proyecto.
+  \item \textbf{Capítulo~\ref{chap:estado}. Estado del arte.}. Capítulo dedicado a las tecnologías utilizadas durante el desarrollo de la aplicación. Se hace una pequeña introducción de estas y se explican características básicas y propiedades que hacen que se pueda y tenga sentido utilizarlas en el proyecto.
   
   \item \textbf{Capítulo~\ref{chap:diseño}. Diseño e implementación.} Se hace una descripción más profunda y técnica de la arquitectura del proyecto a nivel interno. Explicando detalladamente con ayuda de diagramas el diseño de la aplicación desgranando los módulos que la componen.
   
@@ -265,7 +265,7 @@ El proyecto general se ha desglosado en los siguientes objetivos y tareas más e
 	\item Diseñar una aplicación web sencilla y limpia sobre \emph{localhost} que permita resolver retos compuestos por una pregunta relacionada directamente con un diagrama embebido en una imagen sobre la web y una repuesta.
 	\item Permitir agrupar cuantos retos se deseen en juegos o gymkhanas y crear un menú de juegos donde puedas seleccionar de 1 a \emph{n} juegos.
 	\item Hacer accesible la aplicación en diferentes idiomas, a través del sistema de internacionalización I18N. De esta manera podemos disponer de este proyecto tanto en castellano como en inglés de manera muy sencilla y ofreciendo a otros desarrolladores o contribuidores poder traducir la aplicación a otros idiomas de una manera estandarizada. 
-	\item Crear un sistema de gestión de usuarios que gestione directamente la base de datos de la aplicación, que permita a estos usuarios la posibilidad de subir contenido a la aplicación en forma de retos y además puedan agrupar estos retos y/o los creados por otros usuarios de la app a juegos nuevos que se añadirán al panel principal común.
+	\item Crear un sistema de gestión de usuarios que gestione directamente la base de datos de la aplicación, que permita a estos usuarios la posibilidad de subir contenido a la aplicación en forma de retos y además puedan agrupar estos retos y/o los creados por otros usuarios a juegos nuevos que se añadirán al panel principal común.
 	\item Añadir sistema de puntuación a los retos, siendo estos puntos acumulables en los usuarios, y con un control de retos ya superados por un usuario a la hora de la asignación de puntos. 
 	\item Despliegue de la aplicación y migración de base de datos a un portal web público para que tener acceso a la misma desde cualquier parte del mundo.
 \end{itemize}
@@ -296,7 +296,7 @@ Desde fue presentado el primer estándar UML en 1997 (UML 1.1) hasta día de hoy
 Naturalmente entre medias de han aparecido y varias versiones menores las cual han ido actualizando y corrigiendo hasta la versión que se utiliza actualmente. Desde el año 2004, UML es un estándar aprobado por la ISO (ISO/IEC 19501:2005 Information technology — Open Distributed Processing — Unified Modeling Language) y en el año 2012 se actualizó la norma dando lugar a la ISO/IEC 19505-1, la última versión disponible en este momento.
 
 En UML se definen distintos tipos de diagramas, los cuales muestran diferentes aspectos del modelo representado. 
-Los dos tipos principales de diagramas son: diagramas \emph{estructurales} y diagramas de \emph{comportamiento}. En la Figura 3.1 se puede ve un "metadiagrama" donde están ordenados jerárquicamente los diferentes tipos de diagrama. De la misma manera, en el Apéndice~\ref{app:diagramas} se dejan ejemplos brevemente explicados de cada uno de los tipos de diagramas que se comentan a continuación.
+Los dos tipos principales de diagramas son: diagramas \emph{estructurales} y diagramas de \emph{comportamiento}. En la Figura 3.1 se puede ver un "metadiagrama" donde están ordenados jerárquicamente los diferentes tipos de diagrama. De la misma manera, en el Apéndice~\ref{app:diagramas} se dejan ejemplos brevemente explicados de cada uno de los tipos de diagramas que se comentan a continuación.
 
 \begin{figure}
 	\centering
@@ -305,9 +305,9 @@ Los dos tipos principales de diagramas son: diagramas \emph{estructurales} y dia
 \end{figure}
 
 \subsection{Diagramas Estructurales}
-Los diagramas estructurales muestran la estructura estática de los objetos en un sistema, es decir representan los elementos independientes del tiempo en un sistema. Los diagramas estructurales no muestran los detalles del comportamiento dinámico de un sistema, para ello existen los diagramas de comportamiento, sin embargo sí que pueden mostrar las relaciones entre los comportamientos definidos en la estructura.  
+Los diagramas estructurales muestran la estructura estática de los objetos en un sistema, es decir representan los elementos independientes del tiempo en un sistema. Los diagramas estructurales no muestran los detalles del comportamiento dinámico de un sistema, para ello existen los diagramas de comportamiento, sin embargo, sí que pueden mostrar las relaciones entre los comportamientos definidos en la estructura.  
 
-A continuación se describe brevemente cada uno de los diagramas pertenecientes a la familia de los diagramas estructurales que se muestran en la Figura 3.1: 
+A continuación, se describe brevemente cada uno de los diagramas pertenecientes a la familia de los diagramas estructurales que se muestran en la Figura 3.1: 
 
 \subparagraph{Diagrama de clases}
 Este tipo de diagramas proporciona los mecanismos para definir la estructura de un sistema estático. Muestra las clases del sistema, sus atributos, métodos y las relaciones y entre los objetos. 
@@ -319,15 +319,15 @@ Este tipo de diagramas ofrece una vista parcial o completa de los objetos de un 
 \subparagraph{Diagrama de paquetes}
 Representa las dependencias entre los paquetes que componen un sistema. Muestra como este está dividido en agrupaciones lógicas y las dependencias entre esas agrupaciones. Estos diagramas muestran la descomposición de la jerarquía lógica de un sistema.  
 \subparagraph{Diagrama de estructura compuesta}
-Esta clase de diagrama muestra la estructura interna de una clase y las relaciones e interacciones entre las distintas partes de la misma. Muestran el rol definido que tiene cada elemento y la estructura compuesta como el conjunto de esos elementos interconectados.
+Esta clase de diagrama muestra la estructura interna de una clase y las relaciones e interacciones entre las distintas partes esta. Muestran el rol definido que tiene cada elemento y la estructura compuesta como el conjunto de esos elementos interconectados.
 \subsection{Diagramas de Comportamiento}
 Los diagramas de comportamiento muestran el comportamiento dinámico de un sistema, se puede describir como la serie de cambios que pueden existir en un sistema en un tiempo extraordinario.  
 \subparagraph{Diagrama de actividad}
 También conocidos como diagrama de flujo es la representación gráfica de un algoritmo o proceso. Representan flujos de trabajo paso a paso utilizando símbolos para representar cada uno de estos y flechas que conectan los símbolos para marcar el flujo de ejecución. 
 \subparagraph{Diagrama de casos de uso}
-Los diagramas de casos de usos describen los diferentes tipos de interacción que tiene alguien o algo con un determinado sistema, especificando el tipo de comunicación y comportamiento del mismo mediante la interacción con los usuarios y/u otros sistemas.
+Los diagramas de casos de usos describen los diferentes tipos de interacción que tiene alguien o algo con un determinado sistema, especificando el tipo de comunicación y comportamiento de este mediante la interacción con los usuarios y/u otros sistemas.
 \subparagraph{Diagrama de interacción}
-Este tipo de diagrama describen en detalle un determinado escenario de casos de uso. Ilustran la interacción entre el conjunto de objetos que cooperan en la realización de un proceso. También se pueden utilizar para representar secuencias ordenadas dentro de un sistema. Según las últimas versiones  de UML este diagrama se pueden clasificar en cuatro tipos principales de subdiagramas. 
+Este tipo de diagrama describen en detalle un determinado escenario de casos de uso. Ilustran la interacción entre el conjunto de objetos que cooperan en la realización de un proceso. También se pueden utilizar para representar secuencias ordenadas dentro de un sistema. Según las últimas versiones de UML este diagrama se pueden clasificar en cuatro tipos principales de diagramas. 
 \begin{itemize}
 	\item Diagrama de colaboración. 
 	\item Diagrama de secuencia. 
@@ -339,6 +339,7 @@ Al igual que el resto de diagramas se hace una introspección más profunda en c
 Un diagrama de máquina de estados, conocidos en ocasiones como diagrama de estados modela el comportamiento de un objeto. Especifican la secuencia de eventos que sufre este determinado objeto durante su tiempo de ejecución. 
 
 \section{Python}
+\label{sec:python}
 Python es un lenguaje de programación interpretado, dinámico y multiplataforma con licencia de código abierto\footnote{Python Software Foundation License: \url{https://docs.python.org/3/license.html}}. Su máxima es hacer un lenguaje que sea fácilmente legible y con una empinada curva de aprendizaje. Python fue creado a principios de los 90s por Guido van Rossum en los Países Bajos, como curiosidad, saber que le debe su nombre gracias la afición que tenía su creador por el grupo de humoristas británicos Monty Python. 
 
 \begin{figure}
@@ -364,13 +365,15 @@ Actualmente su última versión estable es Python 3.9, pero este proyecto ha sid
 
   
 \section{Django}
+\label{sec:django}
 Django es un framework de desarrollo web gratuito, de código abierto y escrito en Python. Fue lanzado en Julio de 2005 y comparte objetivos generales con Python buscando fundamentalmente poder desarrollar sitios web complejos de manera sencilla y accesible para el mayor número de personan posibles. Django funciona bajo Python, es decir, que para poder trabajar con Django es necesario tener instalado Python. 
 
-Un framework, traduciéndolo al castellano, viene a ser un marco de trabajo, una especie de ecosistema formado por un  conjunto de herramientas, librerías y buenas prácticas para crear aplicaciones, en este caso para desarrollar aplicaciones web. 
+Un framework, traduciéndolo al castellano, viene a ser un marco de trabajo, una especie de ecosistema formado por un conjunto de herramientas, librerías y buenas prácticas para crear aplicaciones, en este caso para desarrollar aplicaciones web. 
 
 El framework de Django en concreto nos permite crear sitios web con un cierto grado de complejidad de manera rápida y sencilla. Muchas de las tareas al realizar sitios web suelen ser repetitivas pesadas y comunes en la mayoría de casos, Django viene a facilitar la realización de estas tareas. 
 
 \subsection{Modelo Vista Controlador (MVC)}
+\label{sec:modelo-vista-controlador}
 Modelo-vista-controlador es un patrón de arquitectura de software, este patrón consiste en dividir este patrón en tres grandes módulos: modelo, vista y controlador. 
 
 \begin{itemize}
@@ -381,21 +384,23 @@ Modelo-vista-controlador es un patrón de arquitectura de software, este patrón
 
 Esta división en módulos tiene como ventaja que hace las aplicaciones más funcionales, sostenibles, y escalables. Otros muchos grandes frameworks de desarrollo web usan este modelo y Django básicamente también, pero llaman a su modelo de manera diferente. La filosofía sigue siendo la del modelo-vista-controlador pero se llama Model Template View, lo que hace es sustituir las vistas por un módulo que llama Template, o plantilla en castellano, el controlador de Django viene a ser el módulo Views y el Model sigue siendo el modelo.
 
-\section{Git} 
+\section{Git}
+\label{sec:git}
 Git es un sistema de control de versiones gratuito y de código abierto diseñado para manejar cualquier tipo de proyecto, tanto en pequeños como los muy grandes con gran velocidad y eficiencia. Vino desarrollado por la mano de Linus Torvalds, famoso por iniciar el desarrollo del kernel del sistema operativo Linux. 
 
 Git es fácil de aprender y ocupa poco espacio con un rendimiento increíblemente rápido. Su objetivo es facilitar el desarrollo y mantenimiento de código fuente tanto de forma individual como, sobre todo, de trabajo en equipo. Te permite, crear varias ramas de desarrollo y provee de herramientas para poder unir y estas ramas además de guardar un registro de todos los cambios que sufran los archivos. 
 
 Este software es multiplataforma, se puede instalar tanto en Linux, como en Windows y macOS. Se puede utilizar cualquier tipo de lenguaje de programación sobre el archivo del que se desea hacer control de versiones, ya que Git no se fija en el contenido sino en la diferencia de este contenido a lo largo del tiempo y en las diferentes ramas. 
 
-Los repositorios de código que usan Git como control de versiones no necesariamente tienen que estar alojados en un repositorio de internet, pero lo más habitual y práctico es que sí lo esté. Existen numerosas plataformas que te permiten alojar repositorios de código fuente e interactuar con las herramientas de Git como GitLab o Gogs, que son de código abierto y gratuitas o sitios como CodeComit que pertenece a AWS\footnote{Amazon Web Services} y por tanto es de dominio privado. En este proyecto durante su desarrollo se ha utilizado Git para el control de versiones alojando el repositorio en GitHub, que es el otro sitio más de código abierto para alojar proyectos, es gratuita y típicamente se almacenan los repositorios de forma pública.
+Los repositorios de código que usan Git como control de versiones no necesariamente tienen que estar alojados en un repositorio de Internet, pero lo más habitual y práctico es que sí lo esté. Existen numerosas plataformas que te permiten alojar repositorios de código fuente e interactuar con las herramientas de Git como GitLab o Gogs, que son de código abierto y gratuitas o sitios como CodeComit que pertenece a AWS\footnote{Amazon Web Services} y por tanto es de dominio privado. En este proyecto durante su desarrollo se ha utilizado Git para el control de versiones alojando el repositorio en GitHub, que es el otro sitio más de código abierto para alojar proyectos, es gratuita y típicamente se almacenan los repositorios de forma pública.
 
 \section{Bootstrap}
-Bootstrap es un framework de código abierto y multiplataforma que contiene bibliotecas y herramientas para el diseño de aplicaciones web. Contiene plantillas de diseño con tipografía, formularios, botones, menús de navegación y otros elementos basado en HTML y CSS, así como extensiones de JavaScript adicionales. Fue desarrollado por Mark Otto y Hacob Thornton como marco de trabajo para fomentar las herramientas internas de Twitter, en 2011 se liberó como código abierto bajo una licencia MIT License.
+\label{sec:bootstrap}
+Bootstrap es un framework de código abierto y multiplataforma que contiene bibliotecas y herramientas para el diseño de aplicaciones web. Contiene plantillas de diseño con tipografía, formularios, botones, menús de navegación y otros elementos basados en HTML y CSS, así como extensiones de JavaScript adicionales. Fue desarrollado por Mark Otto y Hacob Thornton como marco de trabajo para fomentar las herramientas internas de Twitter, en 2011 se liberó como código abierto bajo una licencia MIT License.
 
-Boostrat tiene soporte relativo para HTML5 y CSS3, pero es compatible con la mayoría de los navegadores web. Desde su versión 2.0 soporta diseños wen adaptables. Esto significa que eñ diseño de la web se ajusta dinámicamente en función del display del que disponga el dispositivo donde se esté visualizando, esta tecnología también se conoce como responsive cuando hablamos de desarrollo web. 
+Boostrat tiene soporte relativo para HTML5 y CSS3, pero es compatible con la mayoría de los navegadores web. Desde su versión 2.0 soporta diseños web adaptables. Esto significa que el diseño de la web se ajusta dinámicamente en función del display del que disponga el dispositivo donde se esté visualizando, esta tecnología también se conoce como ``responsive'' cuando hablamos de desarrollo web.
 
-Este framework web sólo se ocupa del desarrollo del front-end, es decir de la parte que ve e interactua el usuario directamente. Integrando este framework con el modelo-vista-controlador de Django, explicado anteriormente en el punto 3.3.1 de este documento podemos enmarcarlo dentro del módulo Template de Django, pudiendo dividir así la parte funcional y práctica del proyecto de la parte del diseño relegándola en Bootstrap. 
+Este framework web sólo se ocupa del desarrollo del ``front-end'', es decir de la parte que ve e interactua el usuario directamente. Integrando este framework con el modelo-vista-controlador de Django, explicado anteriormente en la sección~\ref{sec:modelo-vista-controlador} de este documento podemos enmarcarlo dentro del módulo Template de Django, pudiendo dividir así la parte funcional y práctica del proyecto de la parte del diseño relegándola en Bootstrap. 
 
 \section{Heroku}
 \label{sec:heroku}
@@ -415,51 +420,53 @@ Heroku, a diferencia de otras tecnologías vistas en este documento, no es un se
 \subsection{Heroku PostgreSQL}
 Heroku ofrece la base de datos PostgreSQL de código abierto en forma de Heroku Postgres. 
 
-Heroku Postgres es una de las soluciones que más usan los desarrolladores en los proyectos de la plataforma. Ofrece todas las ventajas de utilizar PostgreSQL como escalabilidad, acceso a un sistema de administración, seguridad, una alta concurrencia y otras características que se detallan de manera más profunda en el punto 3.8. 
+Heroku Postgres es una de las soluciones que más usan los desarrolladores en los proyectos de la plataforma. Ofrece todas las ventajas de utilizar PostgreSQL como escalabilidad, acceso a un sistema de administración, seguridad, una alta concurrencia y otras características que se detallan de manera más profunda en la sección \ref{sec:postgeSQL}
 
-Los planes de precio dentro que Heroku ofrece a sus usuarios para este servicio pasan por una gran variedad de precios pero cuenta con un plan gratuito para desarrolladores que permite probarlo sin ningún riesgo con un tamaño y características más que suficientes para pequeños proyectos o pruebas de concepto sencillas. 
+Los planes de precio dentro que Heroku ofrece a sus usuarios para este servicio pasan por una gran variedad de precios, pero cuenta con un plan gratuito para desarrolladores que permite probarlo sin ningún riesgo con un tamaño y características más que suficientes para pequeños proyectos o pruebas de concepto sencillas. 
 
 \section{SQLite 3}
-SQLite es un sistema de gestión de bases de datos relacional de código abierto.  A diferencia de los sistemas de gestión de bases datos cliente-servidor la biblioteca SQLite es una parte integral de la programa que enlaza y no un proceso independiente del mismo. Esto hace que la latencia sea más reducida, y las comunicaciones entre procesos y funciones son más eficientes. 
+\label{sec:SQLite}
+SQLite es un sistema de gestión de bases de datos relacional de código abierto.  A diferencia de los sistemas de gestión de bases datos cliente-servidor la biblioteca SQLite es una parte integral del programa que enlaza y no un proceso independiente del mismo. Esto hace que la latencia sea más reducida, y las comunicaciones entre procesos y funciones son más eficientes. 
 
-SQLite nació ne el año 2000, fue creado por D. Richard Hipp Y su objetivo era diseñar un sistema de gestión de bases de datos relacional que permitiera ejecutar programas sin la necesidad de instalar un sistema de gestión de bases de datos. 
+SQLite nació en el año 2000, fue creado por D. Richard Hipp Y su objetivo era diseñar un sistema de gestión de bases de datos relacional que permitiera ejecutar programas sin la necesidad de instalar un sistema de gestión de bases de datos. 
 
 Sus primeras versiones se caracterizaban por contener la base de datos en un espacio en disco relativamente pequeño y está contenida en un solo archivo. En su versión 3, SQLite admite bases de datos de hasta 2 Terabytes de tamaño. 
 
 Este sistema de gestión de bases de datos soporta funciones SQL definidas por los usuarios, y tiene otras ventajas como una amplia compatibilidad con diferentes plataformas como Windows, Linux, Android, MacOS e iOS. También es compatible con caso todos los lenguajes de programación y proporcionando API útiles para ellos. Por defecto es la base de datos que viene configurada para proyectos de Django, por su ligereza, independencia de paquetes externos y la eficiencia de sus procesos es ideal para pruebas de concepto en proyectos pequeños, pero es difícil de escalar y al no presentar el estándar cliente-servidor tiene limitaciones en cuanto al formato y la sintaxis, y no presenta muchas funciones de seguridad.
 
 \section{PostgreSQL}
+\label{sec:postgeSQL}
 PostgreSQL, también llamado Postgres, es un sistema de gestión de bases de datos relacional orientado a objetos y de código abierto. Este proyecto de código abierto no es gestionado por una persona o empresa, sino que lo mantienen una comunidad de desarrolladores que trabajan de forma altruista y libre, el PGDG.\footnote{PostgreSQL Global Development Group}
 
 Entre las características principales de este sistema de gestión de bases de datos se encuentran: 
 \begin{itemize}
 	\item Alta concurrencia: Permiten que varios usuarios o procesos accedan a la misma tabla sin necesidad bloqueos. 
-	\item Amplia variedad de tipos nativos: PostgreSQL provee nativamente soporte para diferentes tipos de datos como texto ilimitado, direcciones IP o MAC o CIDR, arrays, números de precisión arbitraria e incluso figuras geométricas (con variedad de funciones asociadas). Adicionalmente permite que los usuarios puedan crear sus propios ipos de tos , que pueden ser  perfectamente indexables. 
+	\item Amplia variedad de tipos nativos: PostgreSQL provee nativamente soporte para diferentes tipos de datos como texto ilimitado, direcciones IP o MAC o CIDR, arrays, números de precisión arbitraria e incluso figuras geométricas (con variedad de funciones asociadas). Adicionalmente permite que los usuarios puedan crear sus propios tipos de datos, que se pueden indexar perfectamente a una tabla. 
 	\item Otrás características deseables en un gestor de bases de datos, como claves foráneas (\emph{foregin keys}), disparadores, herencia de tablas, integridad transaccional, seguridad y escalabilidad.  
 \end{itemize}
-Las ventajas que ofrecen todas esté gestor de base de datos son básicamente seguridad e integridad en términos generales en la BD\footnote{Base de Datos}, un buen sistema de transacciones y respaldos y una conexión a sistema de gestión de base datos. Desafortunadamente no cuenta con gestor de errores, or tanto es difícil conocer el estado de los errores o corregirlos. 
+Las ventajas que ofrecen todas esté gestor de base de datos son básicamente seguridad e integridad en términos generales en la BD\footnote{Base de Datos}, un buen sistema de transacciones y respaldos y una conexión a sistema de gestión de base datos. Desafortunadamente no cuenta con gestor de errores, por tanto es difícil conocer el estado de los errores o corregirlos. 
 
-Como ya vimos en el punto 3.6, PostgreSQL cuenta con un paquete propio integrado en Heroku que permite utilizar este sistema de gestión de bases de datos junto con el almacenamiento de los mismos en servicios virtualizados de manera gratuita en algunos de sus planes.  
+Como ya vimos en el \ref{sec:heroku}, PostgreSQL cuenta con un paquete propio integrado en Heroku que permite utilizar este sistema de gestión de bases de datos junto con el almacenamiento de los mismos en servicios virtualizados de manera gratuita en algunos de sus planes.  
 
 \section{Visual Studio Code}
-Visual Studio Code es un editor de código fuente lanzado en 2015 y desarrollado por Microsoft. Es un editor multiplataforma compatible con Windows, Lunux, MacOs y ahora cuenta también con una versión web. 
+Visual Studio Code es un editor de código fuente lanzado en 2015 y desarrollado por Microsoft. Es un editor multiplataforma compatible con Windows, Linux, MacOS y ahora cuenta también con una versión web. 
 
-Soporta prácticamente cualquier lenguaje de programación conocido, resaltando la sintaxis del mismo de manera personalizada, ofrece sugerencias de sentencias y variables y finalización inteligente de código, integración con la shell y gestor de archivos interno. Incluye soporte para depuración, control de versiones integrado con Git. Además gracias a la gran comunidad de desarrolladores existen infinidad de \emph{pluggins} muy fácilmente instalables que añaden funcionalidades realmente útiles a la hora de programar, depurar, integrar o desplegar código. 
-Es un software gratuito y de código abierto pero la descarga oficial esta bajo software privativo de Microsoft. 
+Soporta prácticamente cualquier lenguaje de programación conocido, resaltando la sintaxis de este de manera personalizada, ofrece sugerencias de sentencias y variables y finalización inteligente de código, integración con la shell y gestor de archivos interno. Incluye soporte para depuración, control de versiones integrado con Git. Además, gracias a la gran comunidad de desarrolladores existen infinidad de \emph{pluggins} muy fácilmente instalables que añaden funcionalidades realmente útiles a la hora de programar, depurar, integrar o desplegar código. 
+Es un software gratuito y de código abierto pero la descarga oficial está bajo software privativo de Microsoft. 
 
-Visual Studio Code recopila datos de uso y los envía a Microsoft, aunque esto se puede desactivar, y por la natuuraleza open-source de la aplicación se puede ver exactamente que clase de datos se recopilan y envían. Los datos pueden ser compartidos entre Microsoft, sus filiales y las autoridades según lo firmado conformemente en la declaración de privacidad. 
+Visual Studio Code recopila datos de uso y los envía a Microsoft, aunque esto se puede desactivar, y por la naturaleza open-source de la aplicación se puede ver exactamente qué clase de datos se recopilan y envían. Los datos pueden ser compartidos entre Microsoft, sus filiales y las autoridades según lo firmado conformemente en la declaración de privacidad. 
 
 \section{WSL 2}
 Windows Subsystem for Linux (WSL) es una capa de compatibilidad entre sistemas desarrollada por Microsoft con el objetivo de poder correr ejecutables de Linux nativamente en Windows 10 y Windows Server. En 2019 se lanza la versión 2 de WSL incluyendo cambios importantes, como el uso real del kernel de Linux. 
 
-WSL ofrece una interfaz que simula el kernel de Linux sobre Windows sin necesidad de instalar un SO\footnote{Sistema Operativo} en particiones de disco y sin necesidad de crear una máquina virtual que tenga que emular hardware. Establece un espacio de usuario GNU\footnote{GNU es un sistema operativo de tipo Unix, así como una gran colección de programas informáticos que componen al sistema, desarrollado por y para el Proyecto GNU y auspiciado por la Free Software Foundation.} donde instalar un sistema base como Ubuntu, Debian o Kali Lunux. Dicho entorno no contará con interfaz gráfica(a no ser que tenga ayuda de aplicaciones gráficas como un servidor X11) sino que se accedera a ella mediante una shell de tipo Bash\footnote{Bash (Bourne-again shell) es una popular interfaz de usuario de línea de comandos, específicamente un shell de Unix; así como un lenguaje de scripting}. 
+WSL ofrece una interfaz que simula el kernel de Linux sobre Windows sin necesidad de instalar un SO\footnote{Sistema Operativo} en particiones de disco y sin necesidad de crear una máquina virtual que tenga que emular hardware. Establece un espacio de usuario GNU\footnote{GNU es un sistema operativo de tipo Unix, así como una gran colección de programas informáticos que componen al sistema, desarrollado por y para el Proyecto GNU y auspiciado por la Free Software Foundation.} donde instalar un sistema base como Ubuntu, Debian o Kali Linux. Dicho entorno no contará con interfaz gráfica(a no ser que tenga ayuda de aplicaciones gráficas como un servidor X11) sino que se accederá a ella mediante una Shell de tipo Bash\footnote{Bash (Bourne-again shell) es una popular interfaz de usuario de línea de comandos, específicamente un Shell de Unix; así como un lenguaje de scripting}. 
 
 Para acceder al hardware y al sistema de archivos se hace uso directo del sistema de archivos en Windows y partes del hardware como el hardware de red e incluso su infraestructura como los puertos. Este uso compartido del sistema hace que haya gran interoperabilidad entre ambo. Esto permite incluso desarrollar software sobre Linux, en un sistema Windows con sus aplicaciones propias como Visual Studio, hacer que ejecute el código en un entorno Linux con sus respectivos paquetes de software y acceder al programa o aplicación desarrollado a través de un puerto de red en un navegador de Windows con relativa facilidad. 
 
 \section{Diagrams.net}
 Diagrams.net, anteriormente conocido como draw.io, es un software de código abierto de dibujo gráfico, pensado especialmente para la creación y dibujado de diagramas.
 
-Esta desarrollado en HTML5 y JavaScript, es multiplataforma y esta disponible en aplicación web\footnote{https://app.diagrams.net/}. A parte de ser muy intuitiva y fácil de manejar no requiere inicio de sesión o registro. Permite exportar los diagramas o dibujos a gran cantidad de formatos como .PNG, .PDF, .SVG y .JPEG. Y se puede integrar con servicios de almacenamiento \emph{onCloud} como Google Dive, Dropbox o OneDrive (para estas funcionalidades si es necesario registrarse) y cuenta con un complemento para integrar la aplicación web en Visual Studio Code. Lo cual simplifica el poder hacer diagramas UML paralelamente al desarrollo de un software.
+Esta desarrollado en HTML5 y JavaScript, es multiplataforma y está disponible en aplicación web\footnote{https://app.diagrams.net/}. A parte de ser muy intuitiva y fácil de manejar no requiere inicio de sesión o registro. Permite exportar los diagramas o dibujos a gran cantidad de formatos como .PNG, .PDF, .SVG y .JPEG. Y se puede integrar con servicios de almacenamiento \emph{onCloud} como Google Dive, Dropbox o OneDrive (para estas funcionalidades si es necesario registrarse) y cuenta con un complemento para integrar la aplicación web en Visual Studio Code. Lo cual simplifica el poder hacer diagramas UML paralelamente al desarrollo de un software.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -474,7 +481,7 @@ Esta desarrollado en HTML5 y JavaScript, es multiplataforma y esta disponible en
 \section{Arquitectura general} 
 \label{sec:arquitectura}
 
-La aplicación web Gymkhana App se ha desarrollado en Django con su estructura típica basada en el modelo-vista controlador como se ve en la figura~\ref{fig:arquitectura}, en esta figura las lineas sólidas muestran una relación directa entre los elementos y las rayadas una asociación indirecta. Dentro de este modelo  la vista será la capa que se presente y con la que interactua el usuario, compuesta por los diferentes tipos de plantillas o Templates como los conoce Django. El modelo es quien se encarga de gestionar los datos, es quien tiene comunicación directa con la base datos y maneja toda la información que entra y sale de esta. El controlador es quien maneja las comunicaciones entre los dos anteriores módulos y el único que tiene conexión directa con el resto de módulos, se encarga de recibir las peticiones del módulo de vistas, gestionar internamente estas peticiones y decidir que hacer en base a la información recogida consultando en cualquier caso los datos que considere necesarios del modelo. 
+La aplicación web Gymkhana App se ha desarrollado en Django con su estructura típica basada en el modelo-vista controlador como se ve en la figura~\ref{fig:arquitectura}, en esta figura las líneas sólidas muestran una relación directa entre los elementos y las rayadas una asociación indirecta. Dentro de este modelo, la vista será la capa que se presente y con la que interactúa el usuario, compuesta por los diferentes tipos de plantillas o Templates como los conoce Django. El modelo es quien se encarga de gestionar los datos, es quien tiene comunicación directa con la base datos y maneja toda la información que entra y sale de esta. El controlador es quien maneja las comunicaciones entre los dos anteriores módulos y el único que tiene conexión directa con el resto de los módulos, se encarga de recibir las peticiones del módulo de vistas, gestionar internamente estas peticiones y decidir qué hacer en base a la información recogida consultando en cualquier caso los datos que considere necesarios del modelo. 
 
 \begin{figure}
 	\centering
@@ -488,11 +495,11 @@ Las URL y como se gestionan las respuestas se define a continuación:
 
 \begin{itemize}
 	\item \textbf {/ (Home)}: Como muchas otras aplicaciones que existen, cuando se introduce la URL con el nombre completo del dominio sin añadir ningún directorio tras este, se redirige con esta petición a la página principal o home, donde se simplemente se puede ver dos botones grandes que te permiten o bien iniciar sesión y registrarte o bien iniciar Gymkhana App. 
-	\item \textbf {/start}: Cuando inicias la Gymkhana desde el home te lleva automáticamente a esta dirección, donde primero este módulo comprueba si existen juegos disponibles en la base de datos, y si es así los muestra. El usuario puede elegir uno de estos juegos y enviar una petición GET con el identificador del juego elegido. 
-	\item \textbf {/challenge}: Cuando se accede a este directorio se recoge la petición GET del usuario con el juego elegido, y si vienes de un reto anterior o acaba de empezar el juego. Así podemos elegir cual de los diferentes retos que componen un juego mostrar, siempre comprobando que todos los datos existan en la base de datos para evitar posibles errores. Una vez elegido el reto a mostrar se le muestra a el reto donde el usuario debe introducir la respuesta al mismo para poder avanzar. 
-	\item \textbf {/response}: Una vez el usuario ha rellenado la repuesta al reto se envía una petición tipo GET con la información contenida del reto al que pertenece, el juego, si ha habido una reto del mismo juego anterior y la respuesta al reto. En caso de ser correcta el servidor redirigirá al usuario bien al nuevo reto, si se está jugando a un juego con varios retos, o una pantalla en la que indica que ha finalizado correctamente el juego y desde ahí el usuario podrá regresar al menú principal para poder elegir otros juegos, o repetir el mismo. También en cada response se analizará si el usuario que está jugando está registrado y le añadirá a ese usuario la puntuación que de dicho reto, pero solo en caso de que no lo halla completado anteriormente. Por otro lado, si la respuesta no es correcta, enviará al usuario a una pantalla donde se indica que la respuesta es incorrecta y te dejará volver a intentar el reto o salir al menú de juegos.
-	\item \textbf {/accounts}: Esta dirección funciona de una manera un poco diferente. Para el inicio de sesión, modificación de contraseñas y cierre de la misma en la aplicación se ha decidido utilizar un módulo ya implementado de Django que gestione correctamente estas peticiones. Este módulo se le conoce como "Django’s authentication system" y esta dentro de la configuración por defecto de Django. Una vez accedemos a esta dirección el usuario deberá ingresar su nombre de usuario y contraseña para poder continuar. En caso de ser correcto redirigirá al usuario a su perfil. Cuando el usuario decida cerrar la sesión se le redirigirá al home de la aplicación. 
-	\item \textbf {/profile}: Si te registras en la aplicación exitosamente podrás acceder a tu perfil de usuario a traves de una petición GET en esta dirección. Básicamente aquí se muestra la información del usuario, como el nombre o el acumulado de sus puntos. También se podrá acceder a /start para comenzar a jugar. Desde este punto el usuario que ha iniciado sesión puede acceder a los módulos para crear retos y juegos 
+	\item \textbf {/start}: Cuando inicias la Gymkhana desde el home te lleva automáticamente a esta dirección, donde primero este módulo comprueba si existen juegos disponibles en la base de datos, y si es así, los muestra. El usuario puede elegir uno de estos juegos y enviar una petición GET con el identificador del juego elegido. 
+	\item \textbf {/challenge}: Cuando se accede a este directorio se recoge la petición GET del usuario con el juego elegido, y si vienes de un reto anterior o acaba de empezar el juego. Así podemos elegir cuál de los diferentes retos que componen un juego mostrar, siempre comprobando que todos los datos existan en la base de datos para evitar posibles errores. Una vez elegido el reto a mostrar se le muestra a el reto donde el usuario debe introducir la respuesta al mismo para poder avanzar. 
+	\item \textbf {/response}: Una vez el usuario ha rellenado la repuesta al reto se envía una petición tipo GET con la información contenida del reto al que pertenece, el juego, si ha habido un reto del mismo juego anterior y la respuesta al reto. En caso de ser correcta el servidor redirigirá al usuario bien al nuevo reto, si se está jugando a un juego con varios retos, o una pantalla en la que indica que ha finalizado correctamente el juego y desde ahí el usuario podrá regresar al menú principal para poder elegir otros juegos, o repetir el mismo. También en cada response se analizará si el usuario que está jugando está registrado y le añadirá a ese usuario la puntuación de dicho reto, pero solo en caso de que no lo haya completado anteriormente. Por otro lado, si la respuesta no es correcta, enviará al usuario a una pantalla donde se indica que la respuesta es incorrecta y te dejará volver a intentar el reto o salir al menú de juegos.
+	\item \textbf {/accounts}: Esta dirección funciona de una manera un poco diferente. Para el inicio de sesión, modificación de contraseñas y cierre de la misma en la aplicación se ha decidido utilizar un módulo ya implementado de Django que gestione correctamente estas peticiones. Este módulo se le conoce como "Django’s authentication system" y está dentro de la configuración por defecto de Django. Una vez accedemos a esta dirección el usuario deberá ingresar su nombre de usuario y contraseña para poder continuar. En caso de ser correcto redirigirá al usuario a su perfil. Cuando el usuario decida cerrar la sesión se le redirigirá al home de la aplicación. 
+	\item \textbf {/profile}: Si te registras en la aplicación exitosamente podrás acceder a tu perfil de usuario a través de una petición GET en esta dirección. Básicamente aquí se muestra la información del usuario, como el nombre o el acumulado de sus puntos. También se podrá acceder a /start para comenzar a jugar. Desde este punto el usuario que ha iniciado sesión puede acceder a los módulos para crear retos y juegos 
 	\item \textbf {/create challenge}: En esta dirección primero comprueba que el usuario esté registrado y si es así se le muestra un formulario con los campos necesarios que componen un reto. Para poder continuar desde este punto habrá que haber rellenado correctamente todos los datos del formulario y pulsar el botón de subir reto. 
 	\item \textbf {/upload challenge}: La activación de botón mencionado en el apartado anterior enviara los datos del formulario mediante una petición POST. En este punto se revisa que los campos requeridos hayan sido rellenados correctamente y en caso afirmativo se guarda este reto en base de datos.  
 	\item \textbf {/create game}: Al igual que para crear un reto, se accede a este módulo desde la página del usuario, una vez se haya registrado. En este caso una vez se haya accedido se presenta un formulario para poder crear un juego. Como los juegos son simples colecciones de retos, aquí se le muestra al usuario un listado con los retos subidos para que seleccione uno o varios retos. La única forma de avanzar desde este punto será pulsando el botón de subir juego con el formulario correctamente cumplimentado. 
@@ -504,7 +511,7 @@ Django cuenta con muchas funciones y respuestas que vienen ya integradas, como p
 
 
 \section{Módulo Templates-Vistas}
-El módulo de Templates es el que forma la interfaz de usuario de la aplicación. Cada vista de la aplicación, o página que el usuario acaba visualizando está compuesta por un template o plantilla HTML sobre la que se aplica un estilo con CSS. Trabajar con plantillas en Django hace que la aplicación sea escalable y el código quede ordenado. En muchos casos la plantilla es reutilizable si se parametrizan adecuadamente, a su vez, la capa de estilo esta muy bien aislada gracias a Bootstrap, de manera que se puede separar muy bien la parte programática del desarrollo de la parte encargada del diseño y el estilo evitando así tener que aplicar estilo a cada una de las páginas implicadas en el desarrollo. 
+El módulo de Templates es el que forma la interfaz de usuario de la aplicación. Cada vista de la aplicación, o página que el usuario acaba visualizando está compuesta por un template o plantilla HTML sobre la que se aplica un estilo con CSS. Trabajar con plantillas en Django hace que la aplicación sea escalable y el código quede ordenado. En muchos casos la plantilla es reutilizable si se parametrizan adecuadamente, a su vez, la capa de estilo está muy bien aislada gracias a Bootstrap, de manera que se puede separar muy bien la parte programática del desarrollo de la parte encargada del diseño y el estilo evitando así tener que aplicar estilo a cada una de las páginas implicadas en el desarrollo. 
 
 La aplicación de Gymkhana App se compone de las siguientes views: home, start, challenge, succes y wrong, login, profile, create challenge y create game
 \subparagraph{Home}
@@ -519,9 +526,9 @@ Una vez enviada la respuesta a un reto, si eta es correcta te redirigirá a esta
 En contraposición a la anterior plantilla, esta mostrará al usuario un comentario haciéndole saber que la respuesta no es correcta, pero también animándolo a que lo vuelva a intentar. Esta plantilla solo mostrará dos botones, uno para volver a intentar el reto que ha fallado y otro para volver al menú de juegos en caso de que el usuario desista y de por perdido el reto. 
 
 \subparagraph{Login}
-Tiene la estructura de cualquier pagina de inicio de sesión tradicional, donde el usuario debera introducir su nombre y contraseña para acceder. Como diferencial al resto de sitios web, Gymkhana App no ofrece en esta página la opción de crear un usuario, ya que un usuario registrado tiene la capacidad de hacer inyecciones en la base de datos y subir contenidos como imágenes. Por tanto y por motivos de seguridad, la potestad de creación de usuarios queda relegada solo al administrador de este proyecto que, en todo caso, proporcionara las credenciales de registro a quien considere necesario.   
+Tiene la estructura de cualquier página de inicio de sesión tradicional, donde el usuario deberá introducir su nombre y contraseña para acceder. Como diferencial al resto de sitios web, Gymkhana App no ofrece en esta página la opción de crear un usuario, ya que un usuario registrado tiene la capacidad de hacer inyecciones en la base de datos y subir contenidos como imágenes. Por tanto y por motivos de seguridad, la potestad de creación de usuarios queda relegada solo al administrador de este proyecto que, en todo caso, proporcionara las credenciales de registro a quien considere necesario.   
 
-\subparagraph{Profile} Una vez el usuario esté registrado tendrá acceso a esta página, donde podrá ver información del usuario, como su nombre en la aplicación y los puntos que ha obtenido. Además desde este punto tendrá acceso a las dos siguientes views: create challenge y create game
+\subparagraph{Profile} Una vez el usuario esté registrado tendrá acceso a esta página, donde podrá ver información del usuario, como su nombre en la aplicación y los puntos que ha obtenido. Además, desde este punto tendrá acceso a las dos siguientes views: create challenge y create game
 
 \subparagraph{Create Challenge} En esta página se podrá ver un formulario con los campos que debe rellenar un usuario para poder subir el reto. Los campos son los siguientes:
 \begin{itemize}
@@ -540,19 +547,19 @@ Tiene la estructura de cualquier pagina de inicio de sesión tradicional, donde 
 \end{itemize}	
 
 
-Todas estas páginas han sido construidas sobre una base genérica común que usan todas las plantillas. Esta base común permite contener la información de todas las vieews mencidonadas anteriormente, además de la cabecera o header y el pie de página o footer. En la cabecera hay dos enlaces ocultos que redirigirán al usuario bien a la página principal de la aplicación Gymkhana App, o a la web oficial de la organización UML. En el pie de página se muestra información relativa a la ETSIT como localización y enlaces ocultos para poder visitar la cuenta de Twitter, y la web oficial de la ETSIT. También aparece la licencia de uso de la plantilla de Bootstrap elegida
+Todas estas páginas han sido construidas sobre una base genérica común que usan todas las plantillas. Esta base común permite contener la información de todas las vieews mencionadas anteriormente, además de la cabecera o ``header'' y el pie de página o ``footer''. En la cabecera hay dos enlaces ocultos que redirigirán al usuario bien a la página principal de la aplicación Gymkhana App, o a la web oficial de la organización UML. En el pie de página se muestra información relativa a la ETSIT como localización y enlaces ocultos para poder visitar la cuenta de Twitter, y la web oficial de la ETSIT. También aparece la licencia de uso de la plantilla de Bootstrap elegida
 
 \subsection{Internacionalización}
 Django también ofrece de manera relativamente sencilla la posibilidad de añadir internacionalización a las plantillas. Este proceso consiste en traducir todo el texto que aparece en las plantillas. 
 
 En este proyecto, el idioma original que se eligió para desarrollar las plantillas fue el inglés, pero con el proceso de internacionalización también está disponible en castellano. La idea básica de la internacionalización o I18N es marcar aquellas cadenas de texto que deben ser traducidas. Estas cadenas se guardan en un diccionario, donde se añade la traducción al idioma o idiomas deseados, de esta manera cuando un usuario seleccione un idioma, mostrará estas cadenas de texto marcadas en el lenguaje que le corresponda al usuario. 
 
-En el diccionario aparte de todas las cadenas de texto que se muestran en las diferentes plantillas, también están guardadas las respuestas a los retos. Esta es la única manera de poder procesar las respuesta de los usuarios en diferentes idiomas y comprobar que coinciden con la respuesta de un reto concreto. 
+En el diccionario aparte de todas las cadenas de texto que se muestran en las diferentes plantillas, también están guardadas las respuestas a los retos. Esta es la única manera de poder procesar las respuestas de los usuarios en diferentes idiomas y comprobar que coinciden con la respuesta de un reto concreto. 
 
 De la misma manera, para poder traducir las imágenes de los diagramas UML que se muestran, cada diagrama tiene que estar disponible en dos idiomas diferentes, es decir cada diagrama está representado por dos imágenes, una en inglés y otra en castellano, así se seleccionará la imagen correspondiente dependiendo del idioma del usuario. 
 
 \section{Módulo Models-Modelo}
-Este módulo es el que gestiona la información de la aplicación Gymkhana App, toda la información de la aplicación está contenida en una base de datos. El gestor de base de datos utilizado es, en este caso, SQLite versión 3. Este sistema de base de datos es un sistema de base de datos relacional y es por defecto el que utiliza Django, no obstante se permite cambiar a otros modelos fácilmente. Se ha decidido utilizar este gestor precisamente por la sencillez y compatibilidad con Django, con SQLite la base de datos completa se encuentra en un solo archivo totalmente autocontenido, sin dependencias externas ademas admite concurrencia decir que permite que múltiples procesos tengan el archivo de base de datos abierto y leer a la vez. En  en la figura~\ref{fig:diagarma_ER} se puede ver el diagrama entidad-relación que define la base de datos de la aplicación, el proyecto de Django tiene más tablas a parte de las que se muestran, pero el resto son propias de la arquitectura de Django así que no nos centraremos en ellas. Las tablas que componen la base de datos de la aplicación se describen a continuación:
+Este módulo es el que gestiona la información de la aplicación Gymkhana App, toda la información de la aplicación está contenida en una base de datos. El gestor de base de datos utilizado es, en este caso, SQLite versión 3. Este sistema de base de datos es un sistema de base de datos relacional y es por defecto el que utiliza Django, no obstante, se permite cambiar a otros modelos fácilmente. Se ha decidido utilizar este gestor precisamente por la sencillez y compatibilidad con Django, con SQLite la base de datos completa se encuentra en un solo archivo totalmente autocontenido, sin dependencias externas, además admite concurrencia decir que permite que múltiples procesos tengan el archivo de base de datos abierto y leer a la vez. En la figura~\ref{fig:diagarma_ER} se puede ver el diagrama entidad-relación que define la base de datos de la aplicación, el proyecto de Django tiene más tablas a parte de las que se muestran, pero el resto son propias de la arquitectura de Django así que no nos centraremos en ellas. Las tablas que componen la base de datos de la aplicación se describen a continuación:
 
 
 \begin{itemize}
@@ -561,9 +568,9 @@ Este módulo es el que gestiona la información de la aplicación Gymkhana App, 
 		\item \textbf {name}: Indica el nombre del usuario. 
 		\item \textbf {email}: La dirección de correo electrónico con la que se registra el usuario. 
 		\item \textbf {admin}: Un campo que indica si este usuario tiene privilegios de administrador o no. 
-		\item \textbf {points}: Campo numérico entero que contien la puntuación del usuario. 
-		\item \textbf {challenges passed}: Un reacción Many To Many con la tabla Challenges, que registra que Challenges ha superado ya el usuario. 
-		\item \textbf {created at}: Campo en formato fecha del momento ene el que se crea el usuario. 
+		\item \textbf {points}: Campo numérico entero que contiene la puntuación del usuario. 
+		\item \textbf {challenges passed}: Un relación Many To Many con la tabla Challenges, que registra que Challenges ha superado ya el usuario. 
+		\item \textbf {created at}: Campo en formato fecha del momento en el que se crea el usuario. 
 		\item \textbf {updated at}: Campo en formato fecha que indica el momento que se actualiza la información del usuario. 
 	\end{itemize}
 
@@ -578,7 +585,7 @@ Este módulo es el que gestiona la información de la aplicación Gymkhana App, 
 		\item \textbf {name}: Nombre que se le da a cada reto.
 		\item \textbf {question}: Pregunta clave sobre el reto específico. 
 		\item \textbf {awnser}: Respuesta a la pregunta clave. 
-		\item \textbf {image}: 	Campo tipo image que contien el Diagrama UML al que está asociado el reto. 
+		\item \textbf {image}: 	Campo tipo imagen que contiene el Diagrama UML al que está asociado el reto. 
 		\item \textbf {diagram type}: Identificador único que referencia el tipo de diagrama de la tabla Diagrams al que está asociado el reto. 
 		\item \textbf {creator}: Usuario que ha creado este reto. 
 		\item \textbf {created at}: Campo de tipo date que registra el momento en el que se creó el reto. 
@@ -601,13 +608,13 @@ Este módulo es el que gestiona la información de la aplicación Gymkhana App, 
 \end{figure}
 
 \section{Despliegue del software}
-Con el objetivo de poder acceder a Gymkhana App desde cualquier lugar con acceso a la red de internet, este proyectó se ha desplegado en un servidor de acceso público. Este despliegue se ha realizado en los servidores de Heroku, se puede encontrar más información acerca de este servicio en la sección~\ref{sec:heroku}. 
+Con el objetivo de poder acceder a Gymkhana App desde cualquier lugar con acceso a la red de Internet, este proyectó se ha desplegado en un servidor de acceso público. Este despliegue se ha realizado en los servidores de Heroku, se puede encontrar más información acerca de este servicio en la sección~\ref{sec:heroku}. 
 
 Heroku ofrece varias maneras de gestionar el despliegue de código en sus servidores; con un proyecto Git, a través de Docker\footnote{Herramienta de automatización de despliegue de software en contenedores que se ha hecho muy popular en estos últimos años entre los desarrolladores.}, y con otros servicios de integración populares entre desarrolladores. En este proyecto se ha desplegado en Heroku a través de Git.
 
 Para este proceso de despliegue es por tanto necesario tener instalado en la máquina desde la que se quiere desplegar el proyecto los paquetes de Git y Heroku CLI. Además de hacer ciertas variaciones en el proyecto y añadir archivos necesarios para la autoconfiguración en las máquinas remotas de Heroku. Estas modificaciones se explican a continuación: 
 
-Heroku necesita saber el lenguaje o lenguajes de programación en el que está basado el proyecto, para esto es necesario  crear en la carpeta raíz del proyecto un archivo llamado \emph{runtime.txt}, en el caso particular de este proyecto este archivo esta compuesto de una sola línea. 
+Heroku necesita saber el lenguaje o lenguajes de programación en el que está basado el proyecto, para esto es necesario  crear en la carpeta raíz del proyecto un archivo llamado \emph{runtime.txt}, en el caso particular de este proyecto este archivo está compuesto de una sola línea. 
 \begin{verbatim}
 	python-3.7.13
 \end{verbatim}
@@ -622,7 +629,8 @@ Para que las máquinas de Heroku tengan la información necesaria para ejecutar 
 	web: gunicorn ProjectUML.wsgi 
 \end{verbatim}
 
-Del mismo modo hay que añadir cambios en el archivo \emph{settings.py} para permitirle a las máquinas de Heroku encontrar los archivos estáticos de la aplicación.
+
+Para que las máquinas de Heroku tengan la información necesaria para ejecutar las piezas de la aplicación es necesario un archivo \emph{Procfile}. En el caso de este proyecto se compone como se indica a continuación. 
 \begin{verbatim}
 	STATICFILES_STORAGE = 
 	'whitenoise.storage.CompressedManifestStaticFilesStorage'
@@ -638,7 +646,7 @@ Una vez hecho todo esto, y suponiendo que el repositorio del proyecto ya tenga u
 	$ git push heroku master
 \end{verbatim}
 
-En este momento el proyecto ya estaría desplegado y listo para usarse, sin embargo no tendría nada de información contenida en la base de datos, aunque sí tendrá su estructura formada. Es necesario migrar la base de datos local usada en desarrollo hacía la base de datos PostgreSQL.
+En este momento el proyecto ya estaría desplegado y listo para usarse, sin embargo, no tendría nada de información contenida en la base de datos, aunque sí tendrá su estructura formada. Es necesario migrar la base de datos local usada en desarrollo hacía la base de datos PostgreSQL.
 \begin{verbatim}
 	$ python3 manage.py dumpdata --exclude contenttypes > data.json
 	$ git add data.json
@@ -694,7 +702,7 @@ El menú de juego es la página a la que accedes inmediatamente después de puls
 Una vez pulsado sobre uno de los juegos redirigirá al usuario a la página con el primer reto del juego seleccionado. Todos los retos siguen el mismo esquema: 
 \begin{enumerate}
 	\item En la cabecera del reto se ve el nombre del tipo de diagrama UML con el que está relacionado el reto.
-	\item Para abrir el reto tenemos un pequeño resumen explicando el tipo de diagrama que es, y para que sirve. 
+	\item Para abrir el reto tenemos un pequeño resumen explicando el tipo de diagrama que es, y para qué sirve. 
 	\item Luego se plantea la pregunta o tarea que debe responder el usuario para poder completar el reto. 
 	\item Debajo está la imagen con el diagrama UML sobre el cual el usuario debe extrae la información para poder contestar el reto.
 	\item Por último un cuadro de texto y un botón de enviar la respuesta. 
@@ -723,7 +731,7 @@ Una vez se ha iniciado sesión y el usuario está registrado se accede al perfil
 \end{figure}
 
 \section{Subida de retos}
-Si el usuario ha accedido hasta la página de subida de retos para poder continuar deberá rellenar el formulario. Se supone que esta funcionalidad solo se le concede a usuarios de confianza, por tanto aunque el formulario si que sea resistente a intentos de subida con campos vacíos, no está diseñado para comprobar que los campos rellenos sean coherentes con lo que se espera recibir. Se asume que el usuario al que se le han concedido estos permisos subirá retos coherentes y de manera responsable. También hay que tener en cuenta que en este punto se pueden subir imágenes que se guardan directamente en la máquina que hospeda la web en Heroku, por tanto si esto estuviera abierto al público en general se podría generar un sobrecarga de memoria en la maquina que hospeda la web.
+Si el usuario ha accedido hasta la página de subida de retos para poder continuar deberá rellenar el formulario. Se supone que esta funcionalidad solo se le concede a usuarios de confianza, por tanto aunque el formulario sí que sea resistente a intentos de subida con campos vacíos, no está diseñado para comprobar que los campos rellenos sean coherentes con lo que se espera recibir. Se asume que el usuario al que se le han concedido estos permisos subirá retos coherentes y de manera responsable. También hay que tener en cuenta que en este punto se pueden subir imágenes que se guardan directamente en la máquina que hospeda la web en Heroku, por tanto, si esto estuviera abierto al público en general se podría generar una sobrecarga de memoria en la máquina que hospeda la web.
 El formulario es bastante claro con los campos a rellenar, la imagen la debemos seleccionar haciendo click en el campo que pide la misma, y subiendo la imagen deseada desde la memoria del ordenador desde el que se esté haciendo la solicitud. 
 Para completar con la subida solo hay que pulsar el botón situado al final de la página. 
 
@@ -791,15 +799,15 @@ Gracias a esto se ha hecho accesible una herramienta que puedan usar docentes y 
 
 Este proyecto ha puesto en práctica muchos de los conocimientos enseñados en el Grado en Ingeniería en Sistemas Audiovisuales y Multimedia y también otros adquiridos de manera autodidacta o en el entorno laboral. Especialmente los relacionados con el desarrollo de software.
 
-Se puede decir que las asignaturas que más han aportado en cuanto a conocimientos utilizados en este proyecto es la de Construcción de Servicios y Aplicaciones Audiovisuales en Internet y Protocolos para la Transmisión de Audio y Vídeo en Internet. En las cuales aprendí mucho sobre desarrollo web (la trinidad de HTML, JavaScript y CSS) y programación con Python, aprendiendo a usar la programación orientada a objetos, estructuras de datos, extracción y escritura de información de ficheros y, en general, profesionalizarme con el uso de una herramienta tan potente como es Python. Además hay que remarcar todo el conocimiento sobre Linux, programación, protocolos de comunicación, arquitectura de sistemas, tratamiento de imágenes y muchos más conocimientos adquiridos en el resto de asignaturas que han sido indispensables para llevar a cabo este trabajo.
+Se puede decir que las asignaturas que más han aportado en cuanto a conocimientos utilizados en este proyecto es la de Construcción de Servicios y Aplicaciones Audiovisuales en Internet y Protocolos para la Transmisión de Audio y Vídeo en Internet. En las cuales aprendí mucho sobre desarrollo web (la trinidad de HTML, JavaScript y CSS) y programación con Python, aprendiendo a usar la programación orientada a objetos, estructuras de datos, extracción y escritura de información de ficheros y, en general, profesionalizarme con el uso de una herramienta tan potente como es Python. Además, hay que remarcar todo el conocimiento sobre Linux, programación, protocolos de comunicación, arquitectura de sistemas, tratamiento de imágenes y muchos más conocimientos adquiridos en el resto de las asignaturas que han sido indispensables para llevar a cabo este trabajo.
 
 También se han aplicado muchos contenidos de la asignatura optativa Laboratorio de Tecnologías Audiovisuales en la Web que, en mi caso específico yo no cursé, ya que durante la movilidad internacional que realicé convalidé esa asignatura con otra llamada Databases. No obstante, se me facilitó algunos contenidos docentes de esta asignatura para que me ayudaran en el desarrollo de este proyecto. Al mismo tiempo, la asignatura de base de datos cursada durante la movilidad también me aportó conocimientos que han sido esenciales para entender los modelos de entidad relación y los modelos de bases de datos utilizadas para la aplicación web.
 
 \section{Lecciones aprendidas}
 \label{sec:lecciones_aprendidas}
-El desarrollo de este trabajo ha servido para reforzar y ampliar conocimientos que adquirí durante la carrera y, además, adquirir otros nuevos y aprender sobre tecnologías y conceptos anteriormente desconocidos para mi. 
+El desarrollo de este trabajo ha servido para reforzar y ampliar conocimientos que adquirí durante la carrera y, además, adquirir otros nuevos y aprender sobre tecnologías y conceptos anteriormente desconocidos para mí. 
 
-\begin{enumerate}
+\begin{enumerate} % JDP SEGUIR CORRIGIENDO AQUI !!!!
   \item \textbf{Lenguaje Unificado Modelado}. El objetivo de este proyecto es tratar de divulgar y expandir conocimientos sobre este lenguaje de modelado y para ello es naturalmente necesario conocer este mismo profundamente. Aunque antes de empezar este proyecto sí que sabía acerca de UML y usado muchos de sus esquemas en varias ocasiones, sabía bastante menos de lo que se a día de hoy. La investigación realizada para el desarrollo de este proyecto me ha aportado mucha nueva información, anteriormente desconocida para mi, sobre este lenguaje que considero que me será muy útil en todos los procesos de modelado de software a los que me enfrente en el resto de mi carrera profesional. 
   \item \textbf{Django}. La tecnología principal utilizada en el desarrollo del proyecto ha sido Python y Django. A pesar de que he trabajado anteriormente con Python y es una tecnología en la que me siento cómodo desarrollando, no había desarrollado ningún proyecto Django anterior a este. Creo que esta tecnología es idónea si estás acostumbrado a trabajar con Python y haber podido aprender a usar esta potente herramienta durante el desarrollo de este proyecto me ha a portado mucho para mi \emph{background} profesional con Python. 
   \item \textbf{Diseño de datos}. Enfrentarme al diseño e implementación de una base de datos, teniendo que estudiar bien los campos y las relaciones entre estos para que un aplicación funcione correctamente ha sido un reto nuevo anteriormente desconocido para mi. 
