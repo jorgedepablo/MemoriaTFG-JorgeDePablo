@@ -66,7 +66,7 @@ Trabajo Fin de Grado
 \vspace{2.5cm}
 
 \LARGE
-FIXME: TÍTULO DEL TRABAJO EN MAYÚSCULAS
+GYMKHANA APP: UNA APLICACIÓN WEB PARA LA DIVULGACIÓN DEL LENGUAJE UNIFICADO MODELADO
 
 \vspace{4cm}
 
@@ -78,7 +78,7 @@ Tutor : Dr. Gregorio Robles Martínez
 
 \newpage
 \mbox{}
-\thispagestyle{empty} % para que no se numere esta pagina
+\thispagestyle{empty} 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -94,7 +94,7 @@ Tutor : Dr. Gregorio Robles Martínez
 
 \vspace{1cm}
 \large
-FIXME: Título del Trabajo con Letras Capitales para Sustantivos y Adjetivos
+Gymkhana App: Una Aplicación Web para la divulgación del Lenguaje Unificado Modelado. 
 
 \vspace{1cm}
 \large
@@ -374,15 +374,20 @@ El framework de Django en concreto nos permite crear sitios web con un cierto gr
 
 \subsection{Modelo Vista Controlador (MVC)}
 \label{sec:modelo-vista-controlador}
-Modelo-vista-controlador es un patrón de arquitectura de software, este patrón consiste en dividir este patrón en tres grandes módulos: modelo, vista y controlador. 
-
-FIXME: aquí estaría bien añadir una figura (y referenciarla en el texto... mira cómo lo he hecho con las anteriores. Recuerda que hay que compilar dos veces para que se creen las referencias).
+Modelo-vista-controlador es un patrón de arquitectura de software, este patrón consiste en dividir este patrón en tres grandes módulos: modelo, vista y controlador. Como se ve en la figura~\ref{fig:arquitectura}, en esta figura, las líneas sólidas muestran una relación directa entre los elementos y las rayadas una asociación indirecta.
 
 \begin{itemize}
  \item Modelo: Se encarga de gestionar los datos, normalmente de obtener información de una base de datos. 
  \item Vista: Se encarga de mostrar la información al usuario y las interacciones del mismo con el sistema. 
  \item Controlador: Gestiona todas las comunicaciones que existen entre la vista y el modelo. 
 \end{itemize}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=12cm, keepaspectratio]{img/model-vista-controlador.png}
+	\caption{Estructura de las relación modelo-vista-controlador.}
+	\label{fig:arquitectura}
+\end{figure}
 
 Esta división en módulos tiene como ventaja que hace las aplicaciones más funcionales, sostenibles, y escalables. Otros muchos grandes frameworks de desarrollo web usan este modelo y Django básicamente también, pero llaman a su modelo de manera diferente. La filosofía sigue siendo la del modelo-vista-controlador pero se llama Model Template View, lo que hace es sustituir las vistas por un módulo que llama Template, o plantilla en castellano, el controlador de Django viene a ser el módulo Views y el Model sigue siendo el modelo.
 
@@ -429,8 +434,6 @@ Los planes de precio dentro que Heroku ofrece a sus usuarios para este servicio 
 \section{SQLite 3}
 \label{sec:SQLite}
 
-FIXME: no me queda claro si utilizas Postgres, SQLite o los dos... debería qeudar más claro
-
 SQLite es un sistema de gestión de bases de datos relacional de código abierto.  A diferencia de los sistemas de gestión de bases datos cliente-servidor la biblioteca SQLite es una parte integral del programa que enlaza y no un proceso independiente del mismo. Esto hace que la latencia sea más reducida, y las comunicaciones entre procesos y funciones son más eficientes. 
 
 SQLite nació en el año 2000, fue creado por D. Richard Hipp y su objetivo era diseñar un sistema de gestión de bases de datos relacional que permitiera ejecutar programas sin la necesidad de instalar un sistema de gestión de bases de datos. 
@@ -438,6 +441,8 @@ SQLite nació en el año 2000, fue creado por D. Richard Hipp y su objetivo era 
 Sus primeras versiones se caracterizaban por contener la base de datos en un espacio en disco relativamente pequeño y está contenida en un solo archivo. En su versión 3, SQLite admite bases de datos de hasta 2 Terabytes de tamaño. 
 
 Este sistema de gestión de bases de datos soporta funciones SQL definidas por los usuarios, y tiene otras ventajas como una amplia compatibilidad con diferentes plataformas como Windows, Linux, Android, MacOS e iOS. También es compatible con caso todos los lenguajes de programación y proporcionando API útiles para ellos. Por defecto es la base de datos que viene configurada para proyectos de Django, por su ligereza, independencia de paquetes externos y la eficiencia de sus procesos es ideal para pruebas de concepto en proyectos pequeños, pero es difícil de escalar y al no presentar el estándar cliente-servidor tiene limitaciones en cuanto al formato y la sintaxis, y no presenta muchas funciones de seguridad.
+
+Este tipo de base de datos es la seleccionada por defecto al comenzar proyectos Django, es por eso que se optó en un primer momento desarrollar el proyecto con este tipo de base de datos. Más adelante, en un punto avanzado del desarrollo fue necesario implementar la compatibilidad con una base de datos de tipo PostgreSQL para el despliegue del proyecto en Heroku. Actualmente este software es compatible con ambos sistemas de gestión de bases de datos.
 
 \section{PostgreSQL}
 \label{sec:postgeSQL}
@@ -486,13 +491,8 @@ Esta desarrollado en HTML5 y JavaScript, es multiplataforma y está disponible e
 \section{Arquitectura general} 
 \label{sec:arquitectura}
 
-La aplicación web \texttt{Gymkhana App} se ha desarrollado en Django con su estructura típica basada en el modelo-vista-controlador como se ve en la figura~\ref{fig:arquitectura}. En esta figura, las líneas sólidas muestran una relación directa entre los elementos y las rayadas una asociación indirecta. Dentro de este modelo, la vista será la capa que se presente y con la que interactúa el usuario, compuesta por los diferentes tipos de plantillas o Templates como los conoce Django. El modelo es quien se encarga de gestionar los datos, es quien tiene comunicación directa con la base datos y maneja toda la información que entra y sale de esta. El controlador es quien maneja las comunicaciones entre los dos anteriores módulos y el único que tiene conexión directa con el resto de los módulos, se encarga de recibir las peticiones del módulo de vistas, gestionar internamente estas peticiones y decidir qué hacer en base a la información recogida consultando en cualquier caso los datos que considere necesarios del modelo. 
+La aplicación web \texttt{Gymkhana App} se ha desarrollado en Django con su estructura típica basada en el modelo-vista-controlador, que se explica más detalladamente en la sección~\ref{sec:modelo-vista-controlador}. Dentro de este modelo, la vista será la capa que se presente y con la que interactúa el usuario, compuesta por los diferentes tipos de plantillas o Templates como los conoce Django. El modelo es quien se encarga de gestionar los datos, es quien tiene comunicación directa con la base datos y maneja toda la información que entra y sale de esta. El controlador es quien maneja las comunicaciones entre los dos anteriores módulos y el único que tiene conexión directa con el resto de los módulos, se encarga de recibir las peticiones del módulo de vistas, gestionar internamente estas peticiones y decidir qué hacer en base a la información recogida consultando en cualquier caso los datos que considere necesarios del modelo. 
 
-\begin{figure}
-	\centering
-	\includegraphics[width=12cm, keepaspectratio]{img/model-vista-controlador.png}
-	\caption{Estructura de las relación modelo-vista-controlador. FIXME: esto debería ir a estado del arte, porque no es de tu cosecha}\label{fig:arquitectura}
-\end{figure}
 
 \section{Módulo Vistas-Controlador}
 Este módulo es el encargado de recibir y gestionar las peticiones recibidas desde el módulo Templates, gestionarlas, consultar con el módulo Models y preparar las respuestas para el usuario. Django dispone de herramientas muy útiles para la gestión y respuesta de peticiones web, de tal manera que definir las funciones del servidor cada vez que un usuario accede a una URL y generar las respuestas es limpio, sencillo, escalable. 
@@ -812,12 +812,12 @@ También se han aplicado muchos contenidos de la asignatura optativa Laboratorio
 \label{sec:lecciones_aprendidas}
 El desarrollo de este trabajo ha servido para reforzar y ampliar conocimientos que adquirí durante la carrera y, además, adquirir otros nuevos y aprender sobre tecnologías y conceptos anteriormente desconocidos para mí. 
 
-\begin{enumerate} % JDP SEGUIR CORRIGIENDO AQUI !!!!
-  \item \textbf{Lenguaje de modelado unificado}. El objetivo de este proyecto es tratar de divulgar y expandir conocimientos sobre este lenguaje de modelado y para ello es naturalmente necesario conocer este mismo profundamente. Aunque antes de empezar este proyecto sí que sabía acerca de UML y usado muchos de sus esquemas en varias ocasiones, sabía bastante menos de lo que se a día de hoy. La investigación realizada para el desarrollo de este proyecto me ha aportado mucha nueva información, anteriormente desconocida para mi, sobre este lenguaje que considero que me será muy útil en todos los procesos de modelado de software a los que me enfrente en el resto de mi carrera profesional. 
+\begin{enumerate} 
+  \item \textbf{Lenguaje unificado modelado}. El objetivo de este proyecto es tratar de divulgar y expandir conocimientos sobre este lenguaje de modelado y para ello es naturalmente necesario conocer este mismo profundamente. Aunque antes de empezar este proyecto sí que sabía acerca de UML y usado muchos de sus esquemas en varias ocasiones, sabía bastante menos de lo que se hoy en día. La investigación realizada para el desarrollo de este proyecto me ha aportado mucha nueva información, anteriormente desconocida para mí, sobre este lenguaje que considero que me será muy útil en todos los procesos de modelado de software a los que me enfrente en el resto de mi carrera profesional. 
   \item \textbf{Django}. La tecnología principal utilizada en el desarrollo del proyecto ha sido Python y Django. A pesar de que he trabajado anteriormente con Python y es una tecnología en la que me siento cómodo desarrollando, no había desarrollado ningún proyecto Django anterior a este. Creo que esta tecnología es idónea si estás acostumbrado a trabajar con Python y haber podido aprender a usar esta potente herramienta durante el desarrollo de este proyecto me ha a portado mucho para mi \emph{background} profesional con Python. 
-  \item \textbf{Diseño de datos}. Enfrentarme al diseño e implementación de una base de datos, teniendo que estudiar bien los campos y las relaciones entre estos para que un aplicación funcione correctamente ha sido un reto nuevo anteriormente desconocido para mi. 
-   \item \textbf{Internacionalización y i18n}. Gracias al desarrollo de este proyecto he poddio conocer un estándar tan potente y útil como i18n, es una de las tecnologías que más me ha sorprendido descubrir, me parece sencilla, completa y útil en muchos aspectos y considero que es fundamental en prácticamente cualquier proyecto web con ámbito internacional. 
-   \item \textbf{Heroku}. También he aprendido bastante sobre Heroku, durante el desarrollo he tenido que ller mucha documentación para llega a entender como funciona y poder hacer un despliegue de código limpio. Aprender sobre este tipo de servicios es muy útil ya que fácilmente puedes tener un pequeño proyecto web con acceso mundial y gratuitamente. 
+  \item \textbf{Diseño de datos}. Enfrentarme al diseño e implementación de una base de datos, teniendo que estudiar bien los campos y las relaciones entre estos para que una aplicación funcione correctamente ha sido un reto nuevo anteriormente desconocido para mí. 
+  \item \textbf{Internacionalización y i18n}. Gracias al desarrollo de este proyecto he podido conocer un estándar tan potente y útil como i18n, es una de las tecnologías que más me ha sorprendido descubrir, me parece sencilla, completa y útil en muchos aspectos y considero que es fundamental en prácticamente cualquier proyecto web con ámbito internacional. 
+  \item \textbf{Heroku}. También he aprendido bastante sobre Heroku, durante el desarrollo he tenido que leer mucha documentación para llega a entender cómo funciona y poder hacer un despliegue de código limpio. Aprender sobre este tipo de servicios es muy útil ya que fácilmente puedes tener un pequeño proyecto web con acceso mundial y gratuitamente. 
 \end{enumerate}
 
 
@@ -827,11 +827,13 @@ Como todos los proyectos web, está aplicación permite nuevas implementaciones,
 
 \begin{itemize}
 	\item Hacer más segura la aplicación, de manera que así puedan subir retos y juegos cualquier usuario que se quiera registrar, asegurándose de que con un software automatizado no puedan lanzar cientos de peticiones que puede que haga peligrar la integridad del proyecto.
-	\item Hacer compatible la interfaz de usuario con dispositivos móviles y tablets. Esta aplicación se ha desarrollado para visualizarse en una web a través de navegadores convencionales sobre ordenadores, aunque parte de ella sí es lo que se denomina \emph{responsive}, no se ha enfatizado en hacerla totalmente compatible con dispositivos móviles. 
-	\item Ampliar la información que se tiene de un usuario registrado, como por ejemplo los retos ya superado, porcentajes y estadísticas del porcentaje de juegos jugados y por jugar, y otra información que detalle más logros superados y pendientes para jugador. 
+	\item Hacer compatible la interfaz de usuario con dispositivos móviles y tabletas. Esta aplicación se ha desarrollado para visualizarse en una web a través de navegadores convencionales sobre ordenadores, aunque parte de ella sí es lo que se denomina \emph{responsive}, no se ha enfatizado en hacerla totalmente compatible con dispositivos móviles. 
+	\item Ampliar la información que se tiene de un usuario registrado, como por ejemplo los retos ya superados, porcentajes y estadísticas del porcentaje de juegos jugados y por jugar, y otra información que detalle más logros superados y pendientes para jugador. 
 	\item Si se logra el primer objetivo de esta lista, se podría implementar el inicio de sesión a través de Google o Facebook con la intención de hacer más sencilla la implicación del usuario con \texttt{Gymkhana App}. 
-	\item Evolucionar o mejorar  el sistema de retos para que el juego consista en algo más que en dar una respuesta a un reto, algo más interactivo o completo. 
+	\item Evolucionar o mejorar el sistema de retos para que el juego consista en algo más que en dar una respuesta a un reto, algo más interactivo o completo. 
+	\item Como todos los proyectos de software, siempre se pueden mejorar la resistencia a errores. Someter la aplicación a una fase de QA\footnote{QA: De las siglas Quality Asurance, consiste en asegurar que el producto final sea de calidad, robusto y funcione correctamente} para asegurar el buen funcionamiento de la aplicación en cualquier caustica a la que esté sometido el programa.
 	\item Conseguir difundir el uso de la aplicación entre docentes y alumnos y obtener de estos un buen muestreo tanto de opiniones y resultado para comprobar si realmente \texttt{Gymkhana App} cumple el propósito de familiarizar y hacer comprender mejor conceptos del lenguaje de modelado unificado. 
+	
 \end{itemize}
 
 %Para eso, en Linux tenemos aspell, que se ejecuta de la siguiente manera desde la línea de \emph{shell}:
@@ -861,7 +863,7 @@ En este diagrama de clases, hay una clase padre y dos clases hijas. En este caso
 \end{figure}
 
 \section{Diagrama de objetos}
-Los diagrama de objetos están fuertemente relacionados con los diagramas de clases, tanto es así que hasta comparten símbolos y figuras. Básicamente para seguir con el objeto anterior de los vehículos, en este ejemplo se puede ver los datos o ``fotografía'' de un objeto del sistema en un momento determinado del tiempo. 
+Los diagramas de objetos están fuertemente relacionados con los diagramas de clases, tanto es así que hasta comparten símbolos y figuras. Básicamente para seguir con el objeto anterior de los vehículos, en este ejemplo se puede ver los datos o ``fotografía'' de un objeto del sistema en un momento determinado del tiempo. 
 \begin{figure}
 	\centering
 	\includegraphics[width=14cm, keepaspectratio]{img/diagrama_objetos.png}
@@ -877,7 +879,7 @@ Este diagrama de despliegue modela la arquitectura en tiempo de ejecución de un
 \end{figure}
 
 \section{Diagrama de componentes}
-En este diagrama de componentes se puede visualizar la estructura y la funcionalidad de un software de correo electrónico. Muestra la interacción a través de sus tres interfaces. La linea discontinua etiquetada con ``use'' indica que el usuario es dependiente de esa interfaz (management port) para supervisar y administrar el correcto funcionamiento del sistema.
+En este diagrama de componentes se puede visualizar la estructura y la funcionalidad de un software de correo electrónico. Muestra la interacción a través de sus tres interfaces. La línea discontinua etiquetada con ``use'' indica que el usuario es dependiente de esa interfaz (management port) para supervisar y administrar el correcto funcionamiento del sistema.
 \begin{figure}
 	\centering
 	\includegraphics[width=18cm, keepaspectratio]{img/diagrama_componentes.png}
@@ -885,7 +887,7 @@ En este diagrama de componentes se puede visualizar la estructura y la funcional
 \end{figure}
 
 \section{Diagrama de paquetes}
-En este ejemplo de diagrama de paquetes tiene la intención de mostrar la organización y disposición de los diferentes elementos que componen un aplicación web para compras. Las carpetas representa la anidación de elementos del software, y estas a la vez se organizan jerárquicamente dentro del diagrama. 
+En este ejemplo de diagrama de paquetes tiene la intención de mostrar la organización y disposición de los diferentes elementos que componen una aplicación web para compras. Las carpetas representan la anidación de elementos del software, y estas a la vez se organizan jerárquicamente dentro del diagrama. 
 \begin{figure}
 	\centering
 	\includegraphics[width=14cm, keepaspectratio]{img/diagrama_paquetes.png}
@@ -917,7 +919,7 @@ Este ejemplo modela la funcionalidad de un ``Sistema Apocalipsis Zombie'' con lo
 \end{figure}
 
 \section{Diagrama de máquina de estados}
-En este ejemplo se muesta un diagrama del proceso de inscripción y finalización de una asignatura de la universidad. Se puede como el estado pasa de tratar de apuntarse a una asignatura, poder matricularte en esta y pasar los exámenes finales. 
+En este ejemplo se muestra un diagrama del proceso de inscripción y finalización de una asignatura de la universidad. Se puede como el estado pasa de tratar de apuntarse a una asignatura, poder matricularte en esta y pasar los exámenes finales. 
 \begin{figure}
 	\centering
 	\includegraphics[width=16cm, keepaspectratio]{img/diagrama_maquina_estados.png}
