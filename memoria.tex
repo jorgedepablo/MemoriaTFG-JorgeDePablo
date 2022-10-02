@@ -57,7 +57,7 @@ GRADO EN INGENIERÍA EN SISTEMAS AUDIOVISUALES Y MULTIMEDIA
 \vspace{0.4cm}
 
 \large
-Curso Académico 2021/2022
+Curso Académico 2022/2023
 
 \vspace{0.8cm}
 
@@ -104,7 +104,7 @@ Gymkhana App: Una Aplicación Web para la divulgación del Lenguaje Unificado Mo
 \end{center}
 
 \vspace{1cm}
-La defensa del presente Proyecto Fin de Carrera se realizó el día \qquad$\;\,$ de julio de 2022, siendo calificada por el siguiente tribunal:
+La defensa del presente Proyecto Fin de Carrera se realizó el día \qquad$\;\,$ de octubre de 2022, siendo calificada por el siguiente tribunal:
 
 
 \vspace{0.5cm}
@@ -126,7 +126,7 @@ y habiendo obtenido la siguiente calificación:
 
 \vspace{1cm}
 \begin{flushright}
-Fuenlabrada, a \qquad$\;\,$ de julio de 2022
+Fuenlabrada, a \qquad$\;\,$ de septiembre de 2022
 \end{flushright}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -136,7 +136,7 @@ Fuenlabrada, a \qquad$\;\,$ de julio de 2022
 \pagenumbering{Roman} % para comenzar la numeracion de paginas en numeros romanos
 \begin{flushright}
 \textit{Dedicado a \\
-mi familia / mi abuelo / mi abuela}
+mi señora madre.}
 \end{flushright}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -467,6 +467,7 @@ Es un software gratuito y de código abierto pero la descarga oficial está bajo
 Visual Studio Code recopila datos de uso y los envía a Microsoft, aunque esto se puede desactivar, y por la naturaleza open-source de la aplicación se puede ver exactamente qué clase de datos se recopilan y envían. Los datos pueden ser compartidos entre Microsoft, sus filiales y las autoridades según lo firmado conformemente en la declaración de privacidad. 
 
 \section{WSL 2}
+\label{sec:WSL}
 Windows Subsystem for Linux (WSL)~\cite{wsl2} es una capa de compatibilidad entre sistemas desarrollada por Microsoft con el objetivo de poder correr ejecutables de Linux nativamente en Windows 10 y Windows Server. En 2019 se lanza la versión 2 de WSL incluyendo cambios importantes, como el uso real del kernel de Linux. 
 
 WSL ofrece una interfaz que simula el kernel de Linux sobre Windows sin necesidad de instalar un SO\footnote{Sistema Operativo} en particiones de disco y sin necesidad de crear una máquina virtual que tenga que emular hardware. Establece un espacio de usuario GNU\footnote{GNU es un sistema operativo de tipo Unix, así como una gran colección de programas informáticos que componen al sistema, desarrollado por y para el Proyecto GNU y auspiciado por la Free Software Foundation.} donde instalar un sistema base como Ubuntu, Debian o Kali Linux. Dicho entorno no contará con interfaz gráfica(a no ser que tenga ayuda de aplicaciones gráficas como un servidor X11) sino que se accederá a ella mediante una Shell de tipo Bash\footnote{Bash (Bourne-again shell) es una popular interfaz de usuario de línea de comandos, específicamente un Shell de Unix; así como un lenguaje de scripting}. 
@@ -613,6 +614,7 @@ Este módulo es el que gestiona la información de la aplicación Gymkhana App, 
 \end{figure}
 
 \section{Despliegue del software}
+\label{sec:despliegue}
 Con el objetivo de poder acceder a \texttt{Gymkhana App} desde cualquier lugar con acceso a la red de Internet, este proyectó se ha desplegado en un servidor de acceso público. Este despliegue se ha realizado en los servidores de Heroku, se puede encontrar más información acerca de este servicio en la sección~\ref{sec:heroku}. 
 
 Heroku ofrece varias maneras de gestionar el despliegue de código en sus servidores; con un proyecto Git, a través de Docker\footnote{Herramienta de automatización de despliegue de software en contenedores que se ha hecho muy popular en estos últimos años entre los desarrolladores.}, y con otros servicios de integración populares entre desarrolladores. En este proyecto se ha desplegado en Heroku a través de Git.
@@ -670,6 +672,8 @@ En este momento el proyecto ya estaría desplegado y listo para usarse, sin emba
 
 \cleardoublepage
 \chapter{Resultados}
+
+
 \label{chap:resultados}
 
 A pesar de haber planificado esta aplicación con esquemas muy sencillos, botones grandes de colores vistosos y claros, debido a que principalmente está enfocada a un público joven e infantil y, que de sobra puede ser entendida sin mayor complejidad por cualquier persona adulta, se deja aquí un pequeño manual de usuario con las principales funcionalidades de la aplicación.
@@ -763,12 +767,40 @@ Para completar con la subida solo hay que pulsar el botón situado al final de l
 
 \cleardoublepage
 
+
 \chapter{Experimentos y validación}
 
-Este capítulo se introdujo como requisito en 2019. 
-Describe los experimentos y casos de test que tuviste que implementar para validar tus resultados. 
-Incluye también los resultados de validación que permiten afirmar que tus resultados son correctos. 
+ 
+%Describe los experimentos y casos de test que tuviste que implementar para validar tus resultados. 
+%Incluye también los resultados de validación que permiten afirmar que tus resultados son correctos. 
 
+El fin de este proyecto es ofrecer una aplicación web que pueda ser usada por docentes y estudiantes para realizar dos tareas específicas: Poder crear juegos compuestos por gymkhanas y poder resolver los mismos.
+
+Los primeros experimentos y validaciones se llevaron a cabo en dos fases; la fase de validación en local, sobre WSL y la fase de validación con el software desplegado en Heroku.
+
+
+\section{Validación sobre un entorno WSL.}
+
+Para validar de manera prácticamente inmediata el desarrollo de nuevas funcionalidades o los cambios que se han ido añadiendo, se ha utilizado en este caso un subsistema de Windows para Linux, del que se habla más en profundidad en la sección \ref{sec:WSL} de este documento. Este tipo de entorno es ideal para el desarrollo de software debido a que puedes emular un entorno con el SO y con las dependencias y librerías similares a las que tendría un servidor Linux donde se acabará alojando el código de la aplicación. 
+
+A nivel de control de versiones, las validaciones sobre WSL se han hecho en la rama \emph{develop}, donde se añadían las modificaciones de software que requería el proyecto en cada punto. 
+
+De esta manera durante el desarrollo se ha validado el correcto funcionamiento de cada característica, de manera individual y progresiva, en un servidor web desplegado en el \emph{localhost}. Una vez aprobadas las nuevas funcionalidades y cambios se llevaba a cabo la segunda fase de validación. 
+	
+\section{Validación en la plataforma Heroku.}
+
+Después de la primera fase de desarrollo y validación se despliega el software en la plataforma Heroku, como se vio en la sección \ref{sec:despliegue} de este proyecto. 
+
+Hay que remarcar que antes del despliegue en Heroku el proyecto requería ciertas modificaciones a nivel de archivos de configuración o referencias a ficheros y rutas internas. Esto es debido a que el software va a alojarse en otra máquina, por tanto la arquitectura de ficheros no coincide con lo desplegado en el servidor WSL local. Esto es fácilmente manejable gracias al control de versiones de Git, donde la referencia estos ficheros se dejaba ajustada con los parámetros necesarios de WLS en la rama \emph{develop} y en la rama \emph{main} lo correspondiente a las necesidades de la máquina virtualizada de Heroku. De esta manera cada vez que se completaba una fase de validación en local y se requería emprender una validación en Heroku es necesario mergear y añadir los últimos cambios hechos sobre el software a la rama \emph{main} del proyecto. Una vez hecho eso, si se encontraba algún problema durante esta fase de validación relacionado con Heroku su añadían los \emph{bugfix} sobre esta rama. Se muestra un ejemplo de esto en la figura \ref{fig:git_graph.png}.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=16cm, keepaspectratio]{img/git_graph.png}
+	\caption{Gráfico de Git del repositorio.}\label{fig:git_graph.png}
+\end{figure}
+
+
+En ambas fases el proceso de validación era el mismo. A través de pruebas manuales, probando las nuevas funcionalidades y comprobando que no entraban en conflicto con las funcionalidades ya validadas en fases anteriores del desarrollo. Por ejemplo, si se quería validar que funcionaba la creación de juegos o retos, se subía en cada caso un reto ``\emph{dummy}'', cuya única función era comprobar que los flujos de trabajo del software funcionaban correctamente. Esto se ha hecho eso mismo con todas las funcionalidades requeridas durante el desarrollo del proyecto, hasta alcanzar el resultado actual.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -777,6 +809,8 @@ Incluye también los resultados de validación que permiten afirmar que tus resu
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \cleardoublepage
+
+
 \chapter{Conclusiones}
 \label{chap:conclusiones}
 
