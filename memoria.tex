@@ -126,7 +126,7 @@ y habiendo obtenido la siguiente calificación:
 
 \vspace{1cm}
 \begin{flushright}
-Fuenlabrada, a \qquad$\;\,$ de septiembre de 2022
+Fuenlabrada, a \qquad$\;\,$ de octubre de 2022
 \end{flushright}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -345,7 +345,7 @@ Python~\cite{python} es un lenguaje de programación interpretado, dinámico y m
 \begin{figure}
 	\centering
 	\includegraphics[width=18cm]{img/top_programing_languajes.png}
-	\caption{Top uso de lenguajes de progrmación alojados en GitHub}
+	\caption{Top uso de lenguajes de programación alojados en GitHub}
 	\label{fig:Top_programming}
 \end{figure}
 %% (source:https://octoverse.github.com/#overview )
@@ -355,7 +355,7 @@ Dentro de sus características nos encontramos con que Python es:
 	\item Interpretado: No es necesario que sea procesado por el compilador, se detectan errores en tiempo de ejecución 
 	\item Multiparadigma: Soporta tanto programación funcional, como programación orientada objetos y también programación imperativa.  
 	\item Tipado dinámico: Las variables se comprueban en tiempo de ejecución. 
-	\item Flexible: No es obligatorio definir ni asignar variables antes de usarlas, es posible omitir parámetros, y sú única manera de definir la estructura del código en mediante indentación.
+	\item Flexible: No es obligatorio definir ni asignar variables antes de usarlas, es posible omitir parámetros, y su única manera de definir la estructura del código en mediante indentación.
 	\item Multiplataforma: Puede ejecutarse tanto en Linux, como Windows como macOS. 
 \end{itemize}
 
@@ -405,9 +405,9 @@ Los repositorios de código que usan Git como control de versiones no necesariam
 \label{sec:bootstrap}
 Bootstrap~\cite{bootstrap} es un framework de código abierto y multiplataforma que contiene bibliotecas y herramientas para el diseño de aplicaciones web. Contiene plantillas de diseño con tipografía, formularios, botones, menús de navegación y otros elementos basados en HTML y CSS, así como extensiones de JavaScript adicionales. Fue desarrollado por Mark Otto y Hacob Thornton como marco de trabajo para fomentar las herramientas internas de Twitter, en 2011 se publicó como código abierto bajo una licencia MIT License.
 
-Boostrat tiene soporte relativo para HTML5 y CSS3, pero es compatible con la mayoría de los navegadores web. Desde su versión 2.0 soporta diseños web adaptables. Esto significa que el diseño de la web se ajusta dinámicamente en función del display del que disponga el dispositivo donde se esté visualizando, esta tecnología también se conoce como ``responsive'' cuando hablamos de desarrollo web.
+Bootstrap tiene soporte relativo para HTML5 y CSS3, pero es compatible con la mayoría de los navegadores web. Desde su versión 2.0 soporta diseños web adaptables. Esto significa que el diseño de la web se ajusta dinámicamente en función del display del que disponga el dispositivo donde se esté visualizando, esta tecnología también se conoce como ``responsive'' cuando hablamos de desarrollo web.
 
-Este framework web sólo se ocupa del desarrollo del ``front-end'', es decir de la parte que ve e interactua el usuario directamente. Integrando este framework con el modelo-vista-controlador de Django, explicado anteriormente en la sección~\ref{sec:modelo-vista-controlador} de este documento podemos enmarcarlo dentro del módulo Template de Django, pudiendo dividir así la parte funcional y práctica del proyecto de la parte del diseño relegándola en Bootstrap. 
+Este framework web sólo se ocupa del desarrollo del ``front-end'', es decir de la parte que ve e interactúa el usuario directamente. Integrando este framework con el modelo-vista-controlador de Django, explicado anteriormente en la sección~\ref{sec:modelo-vista-controlador} de este documento podemos enmarcarlo dentro del módulo Template de Django, pudiendo dividir así la parte funcional y práctica del proyecto de la parte del diseño relegándola en Bootstrap. 
 
 \section{Heroku}
 \label{sec:heroku}
@@ -442,7 +442,7 @@ Sus primeras versiones se caracterizaban por contener la base de datos en un esp
 
 Este sistema de gestión de bases de datos soporta funciones SQL definidas por los usuarios, y tiene otras ventajas como una amplia compatibilidad con diferentes plataformas como Windows, Linux, Android, MacOS e iOS. También es compatible con caso todos los lenguajes de programación y proporcionando API útiles para ellos. Por defecto es la base de datos que viene configurada para proyectos de Django, por su ligereza, independencia de paquetes externos y la eficiencia de sus procesos es ideal para pruebas de concepto en proyectos pequeños, pero es difícil de escalar y al no presentar el estándar cliente-servidor tiene limitaciones en cuanto al formato y la sintaxis, y no presenta muchas funciones de seguridad.
 
-Este tipo de base de datos es la seleccionada por defecto al comenzar proyectos Django, es por eso que se optó en un primer momento desarrollar el proyecto con este tipo de base de datos. Más adelante, en un punto avanzado del desarrollo fue necesario implementar la compatibilidad con una base de datos de tipo PostgreSQL para el despliegue del proyecto en Heroku. Actualmente este software es compatible con ambos sistemas de gestión de bases de datos.
+Este tipo de base de datos es la seleccionada por defecto al comenzar proyectos Django. Es por eso que se optó en un primer momento desarrollar el proyecto con este tipo de base de datos. Más adelante, en un punto avanzado del desarrollo fue necesario implementar la compatibilidad con una base de datos de tipo PostgreSQL para el despliegue del proyecto en Heroku. Actualmente este software es compatible con ambos sistemas de gestión de bases de datos.
 
 \section{PostgreSQL}
 \label{sec:postgeSQL}
@@ -452,7 +452,7 @@ Entre las características principales de este sistema de gestión de bases de d
 \begin{itemize}
 	\item Alta concurrencia: Permiten que varios usuarios o procesos accedan a la misma tabla sin necesidad bloqueos. 
 	\item Amplia variedad de tipos nativos: PostgreSQL provee nativamente soporte para diferentes tipos de datos como texto ilimitado, direcciones IP o MAC o CIDR, arrays, números de precisión arbitraria e incluso figuras geométricas (con variedad de funciones asociadas). Adicionalmente permite que los usuarios puedan crear sus propios tipos de datos, que se pueden indexar perfectamente a una tabla. 
-	\item Otrás características deseables en un gestor de bases de datos, como claves foráneas (\emph{foregin keys}), disparadores, herencia de tablas, integridad transaccional, seguridad y escalabilidad.  
+	\item Otras características deseables en un gestor de bases de datos, como claves foráneas (\emph{foregin keys}), disparadores, herencia de tablas, integridad transaccional, seguridad y escalabilidad.  
 \end{itemize}
 Las ventajas que ofrecen todas esté gestor de base de datos son básicamente seguridad e integridad en términos generales en la BD\footnote{Base de Datos}, un buen sistema de transacciones y respaldos y una conexión a sistema de gestión de base datos. Desafortunadamente no cuenta con gestor de errores, por tanto es difícil conocer el estado de los errores o corregirlos. 
 
@@ -461,7 +461,7 @@ Como ya vimos en el \ref{sec:heroku}, PostgreSQL cuenta con un paquete propio in
 \section{Visual Studio Code}
 Visual Studio Code~\cite{vscode} es un editor de código fuente lanzado en 2015 y desarrollado por Microsoft. Es un editor multiplataforma compatible con Windows, Linux, MacOS y ahora cuenta también con una versión web. 
 
-Soporta prácticamente cualquier lenguaje de programación conocido, resaltando la sintaxis de este de manera personalizada, ofrece sugerencias de sentencias y variables y finalización inteligente de código, integración con la shell y gestor de archivos interno. Incluye soporte para depuración, control de versiones integrado con Git. Además, gracias a la gran comunidad de desarrolladores existen infinidad de \emph{pluggins} muy fácilmente instalables que añaden funcionalidades realmente útiles a la hora de programar, depurar, integrar o desplegar código. 
+Soporta prácticamente cualquier lenguaje de programación conocido, resaltando la sintaxis de este de manera personalizada, ofrece sugerencias de sentencias y variables y finalización inteligente de código, integración con la shell y gestor de archivos interno. Incluye soporte para depuración, control de versiones integrado con Git. Además, gracias a la gran comunidad de desarrolladores existen infinidad de \emph{plugins} muy fácilmente instalables que añaden funcionalidades realmente útiles a la hora de programar, depurar, integrar o desplegar código. 
 Es un software gratuito y de código abierto pero la descarga oficial está bajo software privativo de Microsoft. 
 
 Visual Studio Code recopila datos de uso y los envía a Microsoft, aunque esto se puede desactivar, y por la naturaleza open-source de la aplicación se puede ver exactamente qué clase de datos se recopilan y envían. Los datos pueden ser compartidos entre Microsoft, sus filiales y las autoridades según lo firmado conformemente en la declaración de privacidad. 
@@ -477,7 +477,7 @@ Para acceder al hardware y al sistema de archivos se hace uso directo del sistem
 \section{Diagrams.net}
 Diagrams.net~\cite{diagrams.net}, anteriormente conocido como draw.io, es un software de código abierto de dibujo gráfico, pensado especialmente para la creación y dibujado de diagramas.
 
-Esta desarrollado en HTML5 y JavaScript, es multiplataforma y está disponible en aplicación web\footnote{https://app.diagrams.net/}. A parte de ser muy intuitiva y fácil de manejar no requiere inicio de sesión o registro. Permite exportar los diagramas o dibujos a gran cantidad de formatos como .PNG, .PDF, .SVG y .JPEG. Y se puede integrar con servicios de almacenamiento \emph{onCloud} como Google Dive, Dropbox o OneDrive (para estas funcionalidades si es necesario registrarse) y cuenta con un complemento para integrar la aplicación web en Visual Studio Code. Lo cual simplifica el poder hacer diagramas UML paralelamente al desarrollo de un software.
+Está desarrollado en HTML5 y JavaScript, es multiplataforma y está disponible en aplicación web\footnote{https://app.diagrams.net/}. Aparte de ser muy intuitiva y fácil de manejar no requiere inicio de sesión o registro. Permite exportar los diagramas o dibujos a gran cantidad de formatos como .PNG, .PDF, .SVG y .JPEG. Y se puede integrar con servicios de almacenamiento \emph{onCloud} como Google Dive, Dropbox o OneDrive (para estas funcionalidades si es necesario registrarse) y cuenta con un complemento para integrar la aplicación web en Visual Studio Code. Lo cual simplifica el poder hacer diagramas UML paralelamente al desarrollo de un software.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -562,10 +562,10 @@ En este proyecto, el idioma original que se eligió para desarrollar las plantil
 
 En el diccionario aparte de todas las cadenas de texto que se muestran en las diferentes plantillas, también están guardadas las respuestas a los retos. Esta es la única manera de poder procesar las respuestas de los usuarios en diferentes idiomas y comprobar que coinciden con la respuesta de un reto concreto. 
 
-De la misma manera, para poder traducir las imágenes de los diagramas UML que se muestran, cada diagrama tiene que estar disponible en dos idiomas diferentes, es decir cada diagrama está representado por dos imágenes, una en inglés y otra en castellano, así se seleccionará la imagen correspondiente dependiendo del idioma del usuario. 
+De la misma manera, para poder traducir las imágenes de los diagramas UML que se muestran, cada diagrama tiene que estar disponible en dos idiomas diferentes, es decir, cada diagrama está representado por dos imágenes, una en inglés y otra en castellano, así se seleccionará la imagen correspondiente dependiendo del idioma del usuario. 
 
 \section{Módulo Models-Modelo}
-Este módulo es el que gestiona la información de la aplicación Gymkhana App, toda la información de la aplicación está contenida en una base de datos. El gestor de base de datos utilizado es, en este caso, SQLite versión 3. Este sistema de base de datos es un sistema de base de datos relacional y es por defecto el que utiliza Django, no obstante, se permite cambiar a otros modelos fácilmente. Se ha decidido utilizar este gestor precisamente por la sencillez y compatibilidad con Django, con SQLite la base de datos completa se encuentra en un solo archivo totalmente autocontenido, sin dependencias externas, además admite concurrencia decir que permite que múltiples procesos tengan el archivo de base de datos abierto y leer a la vez. En la figura~\ref{fig:diagarma_ER} se puede ver el diagrama entidad-relación que define la base de datos de la aplicación, el proyecto de Django tiene más tablas a parte de las que se muestran, pero el resto son propias de la arquitectura de Django así que no nos centraremos en ellas. Las tablas que componen la base de datos de la aplicación se describen a continuación:
+Este módulo es el que gestiona la información de la aplicación Gymkhana App, toda la información de la aplicación está contenida en una base de datos. El gestor de base de datos utilizado es, en este caso, SQLite versión 3. Este sistema de base de datos es un sistema de base de datos relacional y es por defecto el que utiliza Django, no obstante, se permite cambiar a otros modelos fácilmente. Se ha decidido utilizar este gestor precisamente por la sencillez y compatibilidad con Django, con SQLite la base de datos completa se encuentra en un solo archivo totalmente autocontenido, sin dependencias externas, además admite concurrencia decir que permite que múltiples procesos tengan el archivo de base de datos abierto y leer a la vez. En la figura~\ref{fig:diagarma_ER} se puede ver el diagrama entidad-relación que define la base de datos de la aplicación, el proyecto de Django tiene más tablas aparte de las que se muestran, pero el resto son propias de la arquitectura de Django así que no nos centraremos en ellas. Las tablas que componen la base de datos de la aplicación se describen a continuación:
 
 
 \begin{itemize}
@@ -840,7 +840,7 @@ Este proyecto ha puesto en práctica muchos de los conocimientos enseñados en e
 
 Se puede decir que las asignaturas que más han aportado en cuanto a conocimientos utilizados en este proyecto es la de Construcción de Servicios y Aplicaciones Audiovisuales en Internet y Protocolos para la Transmisión de Audio y Vídeo en Internet. En estas asignaturas aprendí mucho sobre desarrollo web (HTML, JavaScript y CSS) y programación con Python, aprendiendo a usar la programación orientada a objetos, estructuras de datos, extracción y escritura de información de ficheros y, en general, profesionalizarme con el uso de una herramienta tan potente como es Python. Además, hay que remarcar todo el conocimiento sobre Linux, programación, protocolos de comunicación, arquitectura de sistemas, tratamiento de imágenes y muchos más conocimientos adquiridos en el resto de las asignaturas que han sido indispensables para llevar a cabo este trabajo.
 
-También se han aplicado muchos contenidos de la asignatura optativa Laboratorio de Tecnologías Audiovisuales en la Web que, en mi caso específico yo no cursé, ya que durante la movilidad internacional que realicé convalidé esa asignatura con otra llamada Databases. No obstante, se me facilitó algunos contenidos docentes de esta asignatura para que me ayudaran en el desarrollo de este proyecto. Al mismo tiempo, la asignatura de base de datos cursada durante la movilidad también me aportó conocimientos que han sido esenciales para entender los modelos de entidad relación y los modelos de bases de datos utilizadas para la aplicación web.
+También se han aplicado muchos contenidos de la asignatura optativa Laboratorio de Tecnologías Audiovisuales en la Web que, en mi caso específico yo no cursé, ya que durante la movilidad internacional que realicé, convalidé esa asignatura con otra llamada Databases. No obstante, se me facilitó algunos contenidos docentes de esta asignatura para que me ayudaran en el desarrollo de este proyecto. Al mismo tiempo, la asignatura de base de datos cursada durante la movilidad también me aportó conocimientos que han sido esenciales para entender los modelos de entidad relación y los modelos de bases de datos utilizadas para la aplicación web.
 
 \section{Lecciones aprendidas}
 \label{sec:lecciones_aprendidas}
@@ -857,7 +857,7 @@ El desarrollo de este trabajo ha servido para reforzar y ampliar conocimientos q
 
 \section{Trabajos futuros}
 \label{sec:trabajos_futuros}
-Como todos los proyectos web, está aplicación permite nuevas implementaciones, mejoras y cambios que pueden hacer de \texttt{Gymkhana App} una herramienta más completa, óptima, segura y útil en líneas generales. Algunas de las líneas de trabajo futuras podrían ser las siguientes: 
+Como todos los proyectos web, esta aplicación permite nuevas implementaciones, mejoras y cambios que pueden hacer de \texttt{Gymkhana App} una herramienta más completa, óptima, segura y útil en líneas generales. Algunas de las líneas de trabajo futuras podrían ser las siguientes: 
 
 \begin{itemize}
 	\item Hacer más segura la aplicación, de manera que así puedan subir retos y juegos cualquier usuario que se quiera registrar, asegurándose de que con un software automatizado no puedan lanzar cientos de peticiones que puede que haga peligrar la integridad del proyecto.
