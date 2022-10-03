@@ -146,8 +146,13 @@ mi señora madre.}
 %\addcontentsline{toc}{chapter}{Agradecimientos} % si queremos que aparezca en el índice
 \markboth{AGRADECIMIENTOS}{AGRADECIMIENTOS} % encabezado 
 
-Aquí vienen los agradecimientos\ldots Aunque está bien acordarse de la pareja, no hay que olvidarse de dar las gracias a tu madre, que aunque a veces no lo parezca disfrutará tanto de tus logros como tú\ldots 
-Además, la pareja quizás no sea para siempre, pero tu madre sí.
+Como no podía ser de otra manera, primero quiero agradecer a mi familia el apoyo y la ayuda constante ofrecida durante mis años de universidad. Especialmente a mi madre, que ha disfrutado viendo como su hijo ha logrado culminar sus objetivos.
+
+Por otro lado, teniendo en cuenta que la gran mayoría del personal docente que he tenido en la ETSIT han mostrado una actitud sobresaliente conmigo, quiero destacar mi especial agradecimiento a Gregorio, gracias al cual es posible este TFG, a Damián que me inspiró para centrar mi carrera profesional, sin olvidarme del resto que ha dejado huella en mi vida como Eva, Roberto, Inma, Pedro, Javier, Enrique\ldots 
+
+No quiero olvidarme de las amistades que he hecho durante este trayecto, entre las cuales nos hemos ayudado y apoyado en momentos difíciles y con las que he celebrado y disfrutado de nuestros logros: Rafa, Julia, Irene, Antonio, Juanjo, Victor, Willy\ldots
+
+En general a todo estudiante y docente comprometido, que aportan su granito de arena para mejorar y aportar conocimiento de fácil acceso al resto del mundo, que al fin y al cabo, es la idea en torno a la cual gira este proyecto. Gracias. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Resumen
@@ -160,7 +165,7 @@ El lenguaje de modelado unificado es en la actualidad el lenguaje más utilizado
 
 Este Trabajo de Fin de Grado tienen como objetivo desarrollar una aplicación web para uso docente y estudiantil a través de la cual alumnos de tempranas edades puedan aprender y familiarizarse con actividades que impliquen de alguna manera el entender y analizar diagramas para extraer información de estos. Todo esto se intentará hacer a través de \emph{gymkhanas} y juegos para atraer de alguna manera el interés de usuarios más jóvenes.
 
-La aplicación se ha desarrollado prácticamente en su totalidad con tecnologías \emph{OpenSource}, o en su defecto sobre software de empresas pero que cuentan con planes gratuitos para propuestas estudiantiles y/o pequeñas pruebas de concepto y por su puesto el acceso a esta debe ser totalmente gratuito. Entre esas tecnologías hay que destacar Python y Django, junto con Bootstrap, HTML, CSS, y Git para el control de versiones. Se ha desplegado en la red de Internet gracias a Heroku y, por tanto, se puede tener acceso a \texttt{Gymkhana App} desde cualquier parte del mundo, en cualquier momento del tiempo.
+La aplicación se ha desarrollado prácticamente en su totalidad con tecnologías \emph{OpenSource}, o en su defecto sobre software propietario de empresas, pero que cuentan con planes gratuitos para propuestas estudiantiles y/o pequeñas pruebas de concepto. Por su puesto el acceso a esta debe ser totalmente gratuito. Entre esas tecnologías hay que destacar Python y Django, junto con Bootstrap, HTML, CSS, y Git para el control de versiones. Se ha desplegado en la red de Internet gracias a Heroku y, por tanto, se puede tener acceso a \texttt{Gymkhana App} desde cualquier parte del mundo, en cualquier momento del tiempo.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Resumen en inglés
@@ -232,8 +237,11 @@ La memoria de este trabajo está estructurada de la siguiente manera:
   \item \textbf{Capítulo~\ref{chap:estado}. Estado del arte.}. Capítulo dedicado a las tecnologías utilizadas durante el desarrollo de la aplicación. Se hace una pequeña introducción de estas y se explican características básicas y propiedades que hacen que se pueda y tenga sentido utilizarlas en el proyecto.
   
   \item \textbf{Capítulo~\ref{chap:diseño}. Diseño e implementación.} Se hace una descripción más profunda y técnica de la arquitectura del proyecto a nivel interno. Explicando detalladamente con ayuda de diagramas el diseño de la aplicación desgranando los módulos que la componen.
+ 	
   
-  \item \textbf{Capítulo~\ref{chap:resultados}. Resultados.} Pequeño recorrido por la interfaz de usuario de la aplicación donde se muestran con imágenes los pasos a seguir para iniciar, resolver o subir nuevos retos en Gymkhana App. 
+  \item \textbf{Capítulo~\ref{chap:resultados}. Resultados.} Pequeño recorrido por la interfaz de usuario de la aplicación donde se muestran con imágenes los pasos a seguir para iniciar, resolver o subir nuevos retos en Gymkhana App.
+  
+  \item \textbf{Capítulo~\ref{chap:validacion}. Experimentos y validación.} Describe la metodología a seguir, los experimentos y casos de test se han desarrollado durante el proyecto para validar los resultados del mismo. 
   
   \item \textbf{Capítulo~\ref{chap:conclusiones}. Conclusiones.} Capítulo dedicado a repasar los objetivos cumplimentados durante el desarrollo del proyecto, los conocimientos aplicados y aprendidos durante el mismo y por último, estudiar posibles líneas de trabajo futuras para el proyecto. 
   
@@ -292,7 +300,7 @@ Se puede definir como un lenguaje gráfico que tiene como finalidad documentar, 
 
 Es importante destacar que UML no es un lenguaje de programación ni es programación estructurada, pues UML es un lenguaje de modelado con el que se definen métodos y procesos, es decir el lenguaje que describe el modelo.
 
-Desde fue presentado el primer estándar UML en 1997 (UML 1.1) hasta día de hoy ha evolucionado. En el momento de redactar esta memoria la OMT\footnote{Object Management Group \url{https://www.omg.org/}}, organización que respalda UML, tiene formalmente publicada la versión 2.5.1, que es sobre la cual este proyecto se ha desarrollado.
+Desde que fue presentado el primer estándar UML en 1997 (UML 1.1) hasta día de hoy ha evolucionado. En el momento de redactar esta memoria la OMT\footnote{Object Management Group \url{https://www.omg.org/}}, organización que respalda UML, tiene formalmente publicada la versión 2.5.1, que es sobre la cual este proyecto se ha desarrollado.
 Naturalmente entremedias han aparecido varias versiones menores, las cual han ido actualizando y corrigiendo hasta la versión que se utiliza actualmente. Desde el año 2004, UML es un estándar aprobado por la ISO (ISO/IEC 19501:2005 Information technology — Open Distributed Processing — Unified Modeling Language) y en el año 2012 se actualizó la norma dando lugar a la ISO/IEC 19505-1, la última versión disponible en este momento.
 
 En UML se definen distintos tipos de diagramas, los cuales muestran diferentes aspectos del modelo representado. 
@@ -374,7 +382,7 @@ El framework de Django en concreto nos permite crear sitios web con un cierto gr
 
 \subsection{Modelo Vista Controlador (MVC)}
 \label{sec:modelo-vista-controlador}
-Modelo-vista-controlador es un patrón de arquitectura de software, este patrón consiste en dividir este patrón en tres grandes módulos: modelo, vista y controlador. Como se ve en la figura~\ref{fig:arquitectura}, en esta figura, las líneas sólidas muestran una relación directa entre los elementos y las rayadas una asociación indirecta.
+Modelo-vista-controlador es un patrón de arquitectura de software, este patrón consiste en dividir la arquitectura del software en tres grandes módulos: modelo, vista y controlador. Como se ve en la figura~\ref{fig:arquitectura}, en esta figura, las líneas sólidas muestran una relación directa entre los elementos y las rayadas una asociación indirecta.
 
 \begin{itemize}
  \item Modelo: Se encarga de gestionar los datos, normalmente de obtener información de una base de datos. 
@@ -395,7 +403,7 @@ Esta división en módulos tiene como ventaja que hace las aplicaciones más fun
 \label{sec:git}
 Git~\cite{git} es un sistema de control de versiones gratuito y de código abierto diseñado para manejar cualquier tipo de proyecto, tanto en pequeños como los muy grandes con gran velocidad y eficiencia. Vino desarrollado por la mano de Linus Torvalds, famoso por iniciar el desarrollo del kernel del sistema operativo Linux. 
 
-Git es fácil de aprender y ocupa poco espacio con un rendimiento increíblemente rápido. Su objetivo es facilitar el desarrollo y mantenimiento de código fuente tanto de forma individual como, sobre todo, de trabajo en equipo. Te permite crear varias ramas de desarrollo y provee de herramientas para poder unir y estas ramas además de guardar un registro de todos los cambios que sufran los archivos. 
+Git es fácil de aprender y ocupa poco espacio con un rendimiento increíblemente rápido. Su objetivo es facilitar el desarrollo y mantenimiento de código fuente tanto de forma individual como, sobre todo, de trabajo en equipo. Te permite crear varias ramas de desarrollo y provee de herramientas para poder unir estas ramas además de guardar un registro de todos los cambios que sufran los archivos. 
 
 Este software es multiplataforma, se puede instalar tanto en Linux, como en Windows y macOS. Se puede utilizar cualquier tipo de lenguaje de programación sobre el archivo del que se desea hacer control de versiones, ya que Git no se fija en el contenido sino en la diferencia de este contenido a lo largo del tiempo y en las diferentes ramas. 
 
@@ -429,7 +437,7 @@ Heroku ofrece la base de datos PostgreSQL de código abierto en forma de Heroku 
 
 Heroku Postgres~\cite{heroku-postgresql} es una de las soluciones que más usan los desarrolladores en los proyectos de la plataforma. Ofrece todas las ventajas de utilizar PostgreSQL como escalabilidad, acceso a un sistema de administración, seguridad, una alta concurrencia y otras características que se detallan de manera más profunda en la sección \ref{sec:postgeSQL}
 
-Los planes de precio dentro que Heroku ofrece a sus usuarios para este servicio pasan por una gran variedad de precios, pero cuenta con un plan gratuito para desarrolladores que permite probarlo sin ningún riesgo con un tamaño y características más que suficientes para pequeños proyectos o pruebas de concepto sencillas. 
+Los planes de precio que Heroku ofrece a sus usuarios para este servicio pasan por una gran variedad de precios, pero cuenta con un plan gratuito para desarrolladores que permite probarlo sin ningún riesgo con un tamaño y características más que suficientes para pequeños proyectos o pruebas de concepto sencillas. 
 
 \section{SQLite 3}
 \label{sec:SQLite}
@@ -454,7 +462,7 @@ Entre las características principales de este sistema de gestión de bases de d
 	\item Amplia variedad de tipos nativos: PostgreSQL provee nativamente soporte para diferentes tipos de datos como texto ilimitado, direcciones IP o MAC o CIDR, arrays, números de precisión arbitraria e incluso figuras geométricas (con variedad de funciones asociadas). Adicionalmente permite que los usuarios puedan crear sus propios tipos de datos, que se pueden indexar perfectamente a una tabla. 
 	\item Otras características deseables en un gestor de bases de datos, como claves foráneas (\emph{foregin keys}), disparadores, herencia de tablas, integridad transaccional, seguridad y escalabilidad.  
 \end{itemize}
-Las ventajas que ofrecen todas esté gestor de base de datos son básicamente seguridad e integridad en términos generales en la BD\footnote{Base de Datos}, un buen sistema de transacciones y respaldos y una conexión a sistema de gestión de base datos. Desafortunadamente no cuenta con gestor de errores, por tanto es difícil conocer el estado de los errores o corregirlos. 
+Las ventajas que ofrece este gestor de base de datos son básicamente seguridad e integridad en términos generales en la BD\footnote{Base de Datos}, un buen sistema de transacciones y respaldos y una conexión a sistema de gestión de base datos. Desafortunadamente no cuenta con gestor de errores, por tanto es difícil conocer el estado de los errores o corregirlos. 
 
 Como ya vimos en el \ref{sec:heroku}, PostgreSQL cuenta con un paquete propio integrado en Heroku que permite utilizar este sistema de gestión de bases de datos junto con el almacenamiento de los mismos en servicios virtualizados de manera gratuita en algunos de sus planes.  
 
@@ -500,24 +508,24 @@ Este módulo es el encargado de recibir y gestionar las peticiones recibidas des
 Las URL y como se gestionan las respuestas se define a continuación: 
 
 \begin{itemize}
-	\item \textbf {/ (Home)}: Como muchas otras aplicaciones que existen, cuando se introduce la URL con el nombre completo del dominio sin añadir ningún directorio tras este, se redirige con esta petición a la página principal o home, donde se simplemente se puede ver dos botones grandes que te permiten o bien iniciar sesión y registrarte o bien iniciar Gymkhana App. 
+	\item \textbf {/ (Home)}: Como muchas otras aplicaciones que existen, cuando se introduce la URL con el nombre completo del dominio sin añadir ningún directorio tras este, se redirige con esta petición a la página principal o home, donde simplemente se puede ver dos botones grandes que te permiten o bien iniciar sesión y registrarte o bien iniciar Gymkhana App. 
 	\item \textbf {/start}: Cuando inicias la Gymkhana desde el home te lleva automáticamente a esta dirección, donde primero este módulo comprueba si existen juegos disponibles en la base de datos, y si es así, los muestra. El usuario puede elegir uno de estos juegos y enviar una petición GET con el identificador del juego elegido. 
-	\item \textbf {/challenge}: Cuando se accede a este directorio se recoge la petición GET del usuario con el juego elegido, y si vienes de un reto anterior o acaba de empezar el juego. Así podemos elegir cuál de los diferentes retos que componen un juego mostrar, siempre comprobando que todos los datos existan en la base de datos para evitar posibles errores. Una vez elegido el reto a mostrar se le muestra a el reto donde el usuario debe introducir la respuesta al mismo para poder avanzar. 
-	\item \textbf {/response}: Una vez el usuario ha rellenado la repuesta al reto se envía una petición tipo GET con la información contenida del reto al que pertenece, el juego, si ha habido un reto del mismo juego anterior y la respuesta al reto. En caso de ser correcta el servidor redirigirá al usuario bien al nuevo reto, si se está jugando a un juego con varios retos, o una pantalla en la que indica que ha finalizado correctamente el juego y desde ahí el usuario podrá regresar al menú principal para poder elegir otros juegos, o repetir el mismo. También en cada response se analizará si el usuario que está jugando está registrado y le añadirá a ese usuario la puntuación de dicho reto, pero solo en caso de que no lo haya completado anteriormente. Por otro lado, si la respuesta no es correcta, enviará al usuario a una pantalla donde se indica que la respuesta es incorrecta y te dejará volver a intentar el reto o salir al menú de juegos.
+	\item \textbf {/challenge}: Cuando se accede a este directorio se recoge la petición GET del usuario con el juego elegido, y si vienes de un reto anterior o acaba de empezar el juego. Así podemos elegir cuál de los diferentes retos que componen un juego mostrar, siempre comprobando que todos los datos existan en la base de datos para evitar posibles errores. Una vez elegido el reto a mostrar se le muestra el reto donde el usuario debe introducir la respuesta del mismo para poder avanzar. 
+	\item \textbf {/response}: Una vez el usuario ha rellenado la repuesta al reto se envía una petición tipo GET con la información contenida del reto al que pertenece, el juego, si ha habido un reto del mismo juego anterior y la respuesta al reto. En caso de ser correcta el servidor redirigirá al usuario al nuevo reto, si se está jugando a un juego con varios retos, o a una pantalla en la que indica que ha finalizado correctamente el juego y desde ahí el usuario podrá regresar al menú principal para poder elegir otros juegos, o repetir el mismo. También en cada response se analizará si el usuario que está jugando está registrado y le añadirá a ese usuario la puntuación de dicho reto, pero solo en caso de que no lo haya completado anteriormente. Por otro lado, si la respuesta no es correcta, enviará al usuario a una pantalla donde se indica que la respuesta es incorrecta y te dejará volver a intentar el reto o salir al menú de juegos.
 	\item \textbf {/accounts}: Esta dirección funciona de una manera un poco diferente. Para el inicio de sesión, modificación de contraseñas y cierre de la misma en la aplicación se ha decidido utilizar un módulo ya implementado de Django que gestione correctamente estas peticiones. Este módulo se le conoce como ``Django’s authentication system'' y está dentro de la configuración por defecto de Django. Una vez accedemos a esta dirección el usuario deberá ingresar su nombre de usuario y contraseña para poder continuar. En caso de ser correcto redirigirá al usuario a su perfil. Cuando el usuario decida cerrar la sesión se le redirigirá al home de la aplicación. 
 	\item \textbf {/profile}: Si te registras en la aplicación exitosamente podrás acceder a tu perfil de usuario a través de una petición GET en esta dirección. Básicamente aquí se muestra la información del usuario, como el nombre o el acumulado de sus puntos. También se podrá acceder a /start para comenzar a jugar. Desde este punto el usuario que ha iniciado sesión puede acceder a los módulos para crear retos y juegos 
 	\item \textbf {/create challenge}: En esta dirección primero comprueba que el usuario esté registrado y si es así se le muestra un formulario con los campos necesarios que componen un reto. Para poder continuar desde este punto habrá que haber rellenado correctamente todos los datos del formulario y pulsar el botón de subir reto. 
 	\item \textbf {/upload challenge}: La activación de botón mencionado en el apartado anterior enviara los datos del formulario mediante una petición POST. En este punto se revisa que los campos requeridos hayan sido rellenados correctamente y en caso afirmativo se guarda este reto en base de datos.  
-	\item \textbf {/create game}: Al igual que para crear un reto, se accede a este módulo desde la página del usuario, una vez se haya registrado. En este caso una vez se haya accedido se presenta un formulario para poder crear un juego. Como los juegos son simples colecciones de retos, aquí se le muestra al usuario un listado con los retos subidos para que seleccione uno o varios retos. La única forma de avanzar desde este punto será pulsando el botón de subir juego con el formulario correctamente cumplimentado. 
+	\item \textbf {/create game}: Al igual que para crear un reto, se accede a este módulo desde la página del usuario, una vez se haya registrado. En este caso, una vez se haya accedido se presenta un formulario para poder crear un juego. Como los juegos son simples colecciones de retos, aquí se le muestra al usuario un listado con los retos subidos para que seleccione uno o varios retos. La única forma de avanzar desde este punto será pulsando el botón de subir juego con el formulario correctamente cumplimentado. 
 	\item \textbf {/upload challenge} Para terminar la subida de un juego se envían los campos del formulario contenidos en una petición POST que será la se espera recibir aquí. En caso de que todos los campos requeridos existan y sean correctos subirá el juego a la base de datos de la aplicación Gymkhana App.
 	
 \end{itemize}
 
-Django cuenta con muchas funciones y respuestas que vienen ya integradas, como por ejemplo poder responder a peticiones que provocan errores genéricos como tipo HTTP 404 (Not Found), entre otros. De esta manera todas las peticiones que se hacen al servidor en caso de encontrar la información requerida en la base de datos la aplicación captura este error y devuelve un ERROR 404 genérico de Django, que aparte hace terminar el resto de procesos en curso, haciendo a la aplicación mucho más robusta ante errores. 
+Django cuenta con muchas funciones y respuestas que vienen ya integradas, como por ejemplo poder responder a peticiones que provocan errores genéricos como tipo HTTP 404 (Not Found), entre otros. De esta manera todas las peticiones que se hacen al servidor en caso de no encontrar la información requerida en la base de datos la aplicación captura este error y devuelve un ERROR 404 genérico de Django, que aparte hace terminar el resto de procesos en curso, haciendo a la aplicación mucho más robusta ante errores. 
 
 
 \section{Módulo Templates-Vistas}
-El módulo de Templates es el que forma la interfaz de usuario de la aplicación. Cada vista de la aplicación, o página que el usuario acaba visualizando está compuesta por un template o plantilla HTML sobre la que se aplica un estilo con CSS. Trabajar con plantillas en Django hace que la aplicación sea escalable y el código quede ordenado. En muchos casos la plantilla es reutilizable si se parametrizan adecuadamente, a su vez, la capa de estilo está muy bien aislada gracias a Bootstrap, de manera que se puede separar muy bien la parte programática del desarrollo de la parte encargada del diseño y el estilo evitando así tener que aplicar estilo a cada una de las páginas implicadas en el desarrollo. 
+El módulo de Templates es el que forma la interfaz de usuario de la aplicación. Cada vista de la aplicación, o página que el usuario acaba visualizando. Está compuesta por un template o plantilla HTML sobre la que se aplica un estilo con CSS. Trabajar con plantillas en Django hace que la aplicación sea escalable y el código quede ordenado. En muchos casos la plantilla es reutilizable si se parametrizan adecuadamente, a su vez, la capa de estilo está muy bien aislada gracias a Bootstrap, de manera que se puede separar muy bien la parte programática del desarrollo de la parte encargada del diseño y el estilo evitando así tener que aplicar estilo a cada una de las páginas implicadas en el desarrollo. 
 
 La aplicación de \texttt{Gymkhana App} se compone de las siguientes views: home, start, challenge, succes y wrong, login, profile, create challenge y create game
 \subparagraph{Home}
@@ -562,7 +570,6 @@ En este proyecto, el idioma original que se eligió para desarrollar las plantil
 
 En el diccionario aparte de todas las cadenas de texto que se muestran en las diferentes plantillas, también están guardadas las respuestas a los retos. Esta es la única manera de poder procesar las respuestas de los usuarios en diferentes idiomas y comprobar que coinciden con la respuesta de un reto concreto. 
 
-De la misma manera, para poder traducir las imágenes de los diagramas UML que se muestran, cada diagrama tiene que estar disponible en dos idiomas diferentes, es decir, cada diagrama está representado por dos imágenes, una en inglés y otra en castellano, así se seleccionará la imagen correspondiente dependiendo del idioma del usuario. 
 
 \section{Módulo Models-Modelo}
 Este módulo es el que gestiona la información de la aplicación Gymkhana App, toda la información de la aplicación está contenida en una base de datos. El gestor de base de datos utilizado es, en este caso, SQLite versión 3. Este sistema de base de datos es un sistema de base de datos relacional y es por defecto el que utiliza Django, no obstante, se permite cambiar a otros modelos fácilmente. Se ha decidido utilizar este gestor precisamente por la sencillez y compatibilidad con Django, con SQLite la base de datos completa se encuentra en un solo archivo totalmente autocontenido, sin dependencias externas, además admite concurrencia decir que permite que múltiples procesos tengan el archivo de base de datos abierto y leer a la vez. En la figura~\ref{fig:diagarma_ER} se puede ver el diagrama entidad-relación que define la base de datos de la aplicación, el proyecto de Django tiene más tablas aparte de las que se muestran, pero el resto son propias de la arquitectura de Django así que no nos centraremos en ellas. Las tablas que componen la base de datos de la aplicación se describen a continuación:
@@ -626,7 +633,7 @@ Heroku necesita saber el lenguaje o lenguajes de programación en el que está b
 	python-3.7.13
 \end{verbatim}
 
-También será necesario añadir en el archivo \emph{requirements.txt} todas las dependencias del proyecto para que Heroku pueda instalarlas. Es importante durante el proceso de desarrollo haber tenido un entorno aislado y tener todos las dependencias del proyecto correctamente instaladas. 
+También será necesario añadir en el archivo \emph{requirements.txt} todas las dependencias del proyecto para que Heroku pueda instalarlas. Es importante durante el proceso de desarrollo haber tenido un entorno aislado y tener todas las dependencias del proyecto correctamente instaladas. 
 \begin{verbatim}
 	$ pip freeze > requirements.txt
 \end{verbatim}
@@ -636,14 +643,13 @@ Para que las máquinas de Heroku tengan la información necesaria para ejecutar 
 	web: gunicorn ProjectUML.wsgi 
 \end{verbatim}
 
-
-Para que las máquinas de Heroku tengan la información necesaria para ejecutar las piezas de la aplicación es necesario un archivo \emph{Procfile}. En el caso de este proyecto se compone como se indica a continuación. 
+Para que en el servidor tenga archivos estáticos es necesario editar el fichero de \emph{settings.py} y añadir el siguiente \emph{middleware}, su función es básicamente para mejorar la eficiencia de la aplicación, comprimiendo y almacenando en caché información de los ficheros estáticos del proyecto.
 \begin{verbatim}
 	STATICFILES_STORAGE = 
 	'whitenoise.storage.CompressedManifestStaticFilesStorage'
 \end{verbatim}
 
-Una vez hecho todo esto, y suponiendo que el repositorio del proyecto ya tenga una rama Git iniciada para el control de versiones, y que ya el usuario se haya registrado y dado de alta en Heroku, se enlazará el directorio Git con el proyecto existente en Heroku de manera local.
+Una vez hecho todo esto, y suponiendo que el repositorio del proyecto ya tenga una rama Git iniciada para el control de versiones, y que el usuario se haya registrado y dado de alta en Heroku, se enlazará el directorio Git con el proyecto existente en Heroku de manera local.
 \begin{verbatim}
 	$ heroku create -a project-uml 
 	  # si el proyecto ya existe se debe usar este otro comando: 
@@ -751,6 +757,8 @@ Para completar con la subida solo hay que pulsar el botón situado al final de l
 \end{figure}
 
 \section{Creación de juegos}
+Esta página funciona de manera muy parecida a la anterior, y solo se tendrá acceso aquel usurario que se ha registrado a través del inicio de sesión. Consiste del mismo modo en rellenar un formulario sencillo, en el que esta vez solo es necesario añadir un título del juego y seleccionar en el menú desplegable uno o varios retos que compondrán dicho juego. 
+Para completar la subida del juego es necesario pulsar el botón que hay al final de la página. 
 
 \begin{figure}
 	\centering
@@ -770,7 +778,7 @@ Para completar con la subida solo hay que pulsar el botón situado al final de l
 
 \chapter{Experimentos y validación}
 
- 
+\label{chap:validacion}
 %Describe los experimentos y casos de test que tuviste que implementar para validar tus resultados. 
 %Incluye también los resultados de validación que permiten afirmar que tus resultados son correctos. 
 
@@ -785,13 +793,13 @@ Para validar de manera prácticamente inmediata el desarrollo de nuevas funciona
 
 A nivel de control de versiones, las validaciones sobre WSL se han hecho en la rama \emph{develop}, donde se añadían las modificaciones de software que requería el proyecto en cada punto. 
 
-De esta manera durante el desarrollo se ha validado el correcto funcionamiento de cada característica, de manera individual y progresiva, en un servidor web desplegado en el \emph{localhost}. Una vez aprobadas las nuevas funcionalidades y cambios se llevaba a cabo la segunda fase de validación. 
+De esta manera, durante el desarrollo se ha validado el correcto funcionamiento de cada característica, de manera individual y progresiva, en un servidor web desplegado en el \emph{localhost}. Una vez aprobadas las nuevas funcionalidades y cambios se llevaba a cabo la segunda fase de validación. 
 	
 \section{Validación en la plataforma Heroku.}
 
 Después de la primera fase de desarrollo y validación se despliega el software en la plataforma Heroku, como se vio en la sección \ref{sec:despliegue} de este proyecto. 
 
-Hay que remarcar que antes del despliegue en Heroku el proyecto requería ciertas modificaciones a nivel de archivos de configuración o referencias a ficheros y rutas internas. Esto es debido a que el software va a alojarse en otra máquina, por tanto la arquitectura de ficheros no coincide con lo desplegado en el servidor WSL local. Esto es fácilmente manejable gracias al control de versiones de Git, donde la referencia estos ficheros se dejaba ajustada con los parámetros necesarios de WLS en la rama \emph{develop} y en la rama \emph{main} lo correspondiente a las necesidades de la máquina virtualizada de Heroku. De esta manera cada vez que se completaba una fase de validación en local y se requería emprender una validación en Heroku es necesario mergear y añadir los últimos cambios hechos sobre el software a la rama \emph{main} del proyecto. Una vez hecho eso, si se encontraba algún problema durante esta fase de validación relacionado con Heroku su añadían los \emph{bugfix} sobre esta rama. Se muestra un ejemplo de esto en la figura \ref{fig:git_graph.png}.
+Hay que remarcar que antes del despliegue en Heroku el proyecto requería ciertas modificaciones a nivel de archivos de configuración o referencias a ficheros y rutas internas. Esto es debido a que el software va a alojarse en otra máquina, por tanto la arquitectura de ficheros no coincide con lo desplegado en el servidor WSL local. Esto es fácilmente manejable gracias al control de versiones de Git, donde la referencia estos ficheros se dejaba ajustada con los parámetros necesarios de WSL en la rama \emph{develop} y en la rama \emph{main} lo correspondiente a las necesidades de la máquina virtualizada de Heroku. De este modo, cada vez que se completaba una fase de validación en local y se requería emprender una validación en Heroku es necesario mergear y añadir los últimos cambios hechos sobre el software a la rama \emph{main} del proyecto. Una vez hecho eso, si se encontraba algún problema durante esta fase de validación relacionado con Heroku su añadían los \emph{bugfix} sobre esta rama. Se muestra un ejemplo de esto en la figura \ref{fig:git_graph.png}.
 
 \begin{figure}
 	\centering
@@ -800,7 +808,7 @@ Hay que remarcar que antes del despliegue en Heroku el proyecto requería cierta
 \end{figure}
 
 
-En ambas fases el proceso de validación era el mismo. A través de pruebas manuales, probando las nuevas funcionalidades y comprobando que no entraban en conflicto con las funcionalidades ya validadas en fases anteriores del desarrollo. Por ejemplo, si se quería validar que funcionaba la creación de juegos o retos, se subía en cada caso un reto ``\emph{dummy}'', cuya única función era comprobar que los flujos de trabajo del software funcionaban correctamente. Esto se ha hecho eso mismo con todas las funcionalidades requeridas durante el desarrollo del proyecto, hasta alcanzar el resultado actual.
+En ambas fases el proceso de validación era el mismo. A través de pruebas manuales, probando las nuevas funcionalidades y comprobando que no entraban en conflicto con las funcionalidades ya validadas en fases anteriores del desarrollo. Por ejemplo, si se quería validar que funcionaba la creación de juegos o retos, se subía en cada caso un reto ``\emph{dummy}'', cuya única función era comprobar que los flujos de trabajo del software funcionaban correctamente. Esto se ha hecho con todas las funcionalidades requeridas durante el desarrollo del proyecto, hasta alcanzar el resultado actual.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -823,10 +831,10 @@ En este proyecto sí se ha conseguido desplegar una aplicación web que puede ll
 En cuanto los objetivos específicos: 
 \begin{enumerate}
 	\item \textbf{Primera versión de la aplicación funcionando en \emph{localhost}.} Este objetivo ha sido alcanzado con creces, ha sido el objetivo más abstracto y con más tareas a realizar. En este objetivo va incluido el diseño inicial del proyecto, elección de los estilos y la mayor parte de lo visto en el Capítulo~\ref{chap:diseño}. Cabe destacar que desde este punto de partida inicial se han añadido diferentes cambios críticos para el proyecto.
-	\item \textbf{Agrupación de juegos y retos, y navegación en menú entre ellos.} Para lleva a cabo este objetivo fue necesario reorganizar parte de la estructura de la base de datos inicial, especialmente los campos de \emph{Challenges} y \emph{Games}. También para poder gestionar la navegación entre retos contenidos en juegos se añadieron varias funciones extras en el archivo \emph{utils.py}
+	\item \textbf{Agrupación de juegos y retos, y navegación en menú entre ellos.} Para llevar a cabo este objetivo fue necesario reorganizar parte de la estructura de la base de datos inicial, especialmente los campos de \emph{Challenges} y \emph{Games}. También para poder gestionar la navegación entre retos contenidos en juegos se añadieron varias funciones extras en el archivo \emph{utils.py}
 	\item \textbf{Internacionalización del proyecto.} Gracias al estándar i18n se ha podido alcanzar este objetivo con relativa facilidad. Fue necesario cambiar prácticamente todos los textos de la plantilla e invertir tiempo en la traducción y compilación de los archivos \emph{.po}, pero considero que es una pieza clave del proyecto y un objetivo alcanzado con éxito.
 	\item \textbf{Sistema de gestión de usuarios que puedan subir retos y crear juegos}. Se puede decir que este ha sido el objetivo más complicado del proyecto. Desarrollar un \emph{login} en Django en principio es sencillo, y te da muchas facilidades la documentación, pero en este caso lo complicado era diseñar la aplicación de tal forma que solo ciertos usuarios pudiesen registrarse. El objetivo de estar registrado es poder subir retos, lo que conlleva poder subir archivos a la base de datos del proyecto, y, por tanto, es necesario un control de acceso más restrictivo en este caso. Se decidió en este punto que solo el administrador o administradores del proyecto tengan la potestad de crear usuarios. 
-	\item \textbf{Añadir sistema de puntuación}. Para poder cumplir este objetivo fue necesario cambiar la estructura de la base de datos de nuevo y añadir ciertas funciones en \emph{utils.py} de nuevo para poder gestionar toda la parte de retorno de puntuaciones.  
+	\item \textbf{Añadir sistema de puntuación}. Para poder cumplir este objetivo fue necesario cambiar la estructura de la base de datos de nuevo y añadir ciertas funciones en \emph{utils.py} para poder gestionar toda la parte de retorno de puntuaciones.  
 	\item \textbf{Despliegue de la aplicación y hacerla pública}. Este último objetivo se logró de igual forma que los otros. Llegados a este punto del desarrollo este último fue relativamente sencillo, gracias a la documentación de Heroku y que está diseñado y orientado para ser utilizado en  este tipo de proyectos.  
 \end{enumerate}
 
@@ -866,7 +874,7 @@ Como todos los proyectos web, esta aplicación permite nuevas implementaciones, 
 	\item Si se logra el primer objetivo de esta lista, se podría implementar el inicio de sesión a través de Google o Facebook con la intención de hacer más sencilla la implicación del usuario con \texttt{Gymkhana App}. 
 	\item Evolucionar o mejorar el sistema de retos para que el juego consista en algo más que en dar una respuesta a un reto, algo más interactivo o completo. 
 	\item Como todos los proyectos de software, siempre se pueden mejorar la resistencia a errores. Someter la aplicación a una fase de QA\footnote{QA: De las siglas Quality Asurance, consiste en asegurar que el producto final sea de calidad, robusto y funcione correctamente} para asegurar el buen funcionamiento de la aplicación en cualquier caustica a la que esté sometido el programa.
-	\item Conseguir difundir el uso de la aplicación entre docentes y alumnos y obtener de estos un buen muestreo tanto de opiniones y resultado para comprobar si realmente \texttt{Gymkhana App} cumple el propósito de familiarizar y hacer comprender mejor conceptos del lenguaje de modelado unificado. 
+	\item Conseguir difundir el uso de la aplicación entre docentes y alumnos y obtener de estos un buen muestreo tanto de opiniones y resultados para comprobar si realmente \texttt{Gymkhana App} cumple el propósito de familiarizar y hacer comprender mejor conceptos del lenguaje de modelado unificado. 
 	
 \end{itemize}
 
@@ -953,7 +961,7 @@ Este ejemplo modela la funcionalidad de un ``Sistema Apocalipsis Zombie'' con lo
 \end{figure}
 
 \section{Diagrama de máquina de estados}
-En este ejemplo se muestra un diagrama del proceso de inscripción y finalización de una asignatura de la universidad. Se puede como el estado pasa de tratar de apuntarse a una asignatura, poder matricularte en esta y pasar los exámenes finales. 
+En este ejemplo se muestra un diagrama del proceso de inscripción y finalización de una asignatura de la universidad. Se puede ver como el estado pasa de tratar de apuntarse a una asignatura, a poder matricularte en esta y pasar los exámenes finales. 
 \begin{figure}
 	\centering
 	\includegraphics[width=16cm, keepaspectratio]{img/diagrama_maquina_estados.png}
