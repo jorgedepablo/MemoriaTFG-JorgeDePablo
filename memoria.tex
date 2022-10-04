@@ -152,7 +152,7 @@ Por otro lado, teniendo en cuenta que la gran mayoría del personal docente que 
 
 No quiero olvidarme de las amistades que he hecho durante este trayecto, entre las cuales nos hemos ayudado y apoyado en momentos difíciles y con las que he celebrado y disfrutado de nuestros logros: Rafa, Julia, Irene, Antonio, Juanjo, Victor, Willy\ldots
 
-En general a todo estudiante y docente comprometido, que aportan su granito de arena para mejorar y aportar conocimiento de fácil acceso al resto del mundo, que al fin y al cabo, es la idea en torno a la cual gira este proyecto. Gracias. 
+En general a todo estudiante y docente comprometido, que aportan su granito de arena para mejorar y aportar conocimiento de fácil acceso al resto del mundo, que, al fin y al cabo, es la idea en torno a la cual gira este proyecto. Gracias. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Resumen
@@ -177,7 +177,7 @@ The Unified Modeling Language is currently the most widely used language in soft
 
 This final thesis of the degree aims to develop a web application for teaching and student use through which students of early ages can learn and become familiar with activities that imply in some way understanding and analyzing diagrams to extract information from them. All of this will be attempted through gymkhanas and games to somehow attract the interest of younger users.
 
-The application has been developed practically in its entirety with \emph{OpenSource} technologies, or failing that, with company software but that offer free (as in gratis) plans for student proposals and/or small proofs of concept and, of course, access to it must be be totally free (as in gratis). These technologies include Python and Django, along with Bootstrap, HTML, CSS, and git for version control. It has been deployed on the internet thanks to Heroku and therefore \texttt{Gymkhana App} can be accessed from anywhere in the world, at any moment of time.
+The application has been developed practically in its entirety with \emph{OpenSource} technologies, or failing that, with company software but that offer free (as in gratis) plans for student proposals and/or small proofs of concept and, of course, access to it must be totally free (as in gratis). These technologies include Python and Django, along with Bootstrap, HTML, CSS, and git for version control. It has been deployed on the internet thanks to Heroku and therefore \texttt{Gymkhana App} can be accessed from anywhere in the world, at any moment of time.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -234,7 +234,7 @@ La memoria de este trabajo está estructurada de la siguiente manera:
   
   \item \textbf{Capítulo~\ref{chap:objetivos}. Objetivos.} En este capítulo se describe el objetivo principal de este proyecto y también objetivos más específicos e hitos a alcanzar durante el desarrollo de la aplicación.
   
-  \item \textbf{Capítulo~\ref{chap:estado}. Estado del arte.}. Capítulo dedicado a las tecnologías utilizadas durante el desarrollo de la aplicación. Se hace una pequeña introducción de estas y se explican características básicas y propiedades que hacen que se pueda y tenga sentido utilizarlas en el proyecto.
+  \item \textbf{Capítulo~\ref{chap:estado}. Estado del arte.} Capítulo dedicado a las tecnologías utilizadas durante el desarrollo de la aplicación. Se hace una pequeña introducción de estas y se explican características básicas y propiedades que hacen que se pueda y tenga sentido utilizarlas en el proyecto.
   
   \item \textbf{Capítulo~\ref{chap:diseño}. Diseño e implementación.} Se hace una descripción más profunda y técnica de la arquitectura del proyecto a nivel interno. Explicando detalladamente con ayuda de diagramas el diseño de la aplicación desgranando los módulos que la componen.
  	
@@ -245,7 +245,7 @@ La memoria de este trabajo está estructurada de la siguiente manera:
   
   \item \textbf{Capítulo~\ref{chap:conclusiones}. Conclusiones.} Capítulo dedicado a repasar los objetivos cumplimentados durante el desarrollo del proyecto, los conocimientos aplicados y aprendidos durante el mismo y por último, estudiar posibles líneas de trabajo futuras para el proyecto. 
   
-  \item \textbf{Apéndice~\ref{app:diagramas}. Ejemplos de diagramas UML.} En este anexo se describen brevemente ejemplos de cada uno de los diagramas UML que se explican la sección~\ref{sec:UML}, también se añaden imágenes de cada uno de ellos con el fin de aportar información gráfica.
+  \item \textbf{Apéndice~\ref{app:diagramas}. Ejemplos de diagramas UML.} En este anexo se describen brevemente ejemplos de cada uno de los diagramas UML que se explican en la sección~\ref{sec:UML}, también se añaden imágenes de cada uno de ellos con el fin de aportar información gráfica.
 \end{itemize}
 
 
@@ -386,7 +386,7 @@ Modelo-vista-controlador es un patrón de arquitectura de software, este patrón
 
 \begin{itemize}
  \item Modelo: Se encarga de gestionar los datos, normalmente de obtener información de una base de datos. 
- \item Vista: Se encarga de mostrar la información al usuario y las interacciones del mismo con el sistema. 
+ \item Vista: Se encarga de mostrar la información al usuario y las interacciones de este con el sistema. 
  \item Controlador: Gestiona todas las comunicaciones que existen entre la vista y el modelo. 
 \end{itemize}
 
@@ -428,7 +428,7 @@ El modelo de arquitectura de Heroku se basa en Dynos, que son unidades de capaci
 	\item Tamaño: Puedes elegir diferentes unidades de memoria y procesamiento en cada máquina. 
 	\item Routing: Internamente se conoce la ubicación de los Dynos y, por tanto, redirigen el tráfico eficientemente. 
 	\item Seguimiento: Existe un manejador de Dynos, el cual está continuamente monitorizando sus servicios, en caso de que alguno falle este nodo es eliminado y levantado nuevamente. 
-	\item Distribución y redundancia. Estas unidades de procesamiento al estar aisladas implica que si existen fallos en la infraestructura de una de ellas otras no se verán afectadas y en consecuencia tampoco sus servicios. 	
+	\item Distribución y redundancia. Estas unidades de procesamiento al estar aisladas implican que, si existen fallos en la infraestructura de una de ellas, las otras no se verán afectadas y en consecuencia tampoco sus servicios. 	
 \end{itemize}
 
 Heroku, a diferencia de otras tecnologías vistas en este documento, no es un servicio puramente gratuito, ya que es propiedad de Salesforce, una gran empresa estadounidense de software bajo demanda. No obstante, su unidad de cómputo más básica es de uso gratuito. Con una de estas unidades o Dynos es suficiente para experimentar, poder trabajar en pequeñas aplicaciones y en pruebas de concepto. Todas estas características convierten e a este servicio en un entorno perfecto para desplegar una aplicación web pequeña o mediana de manera gratuita para que esté disponible en cualquier parte del mundo. 
@@ -510,7 +510,7 @@ Las URL y como se gestionan las respuestas se define a continuación:
 \begin{itemize}
 	\item \textbf {/ (Home)}: Como muchas otras aplicaciones que existen, cuando se introduce la URL con el nombre completo del dominio sin añadir ningún directorio tras este, se redirige con esta petición a la página principal o home, donde simplemente se puede ver dos botones grandes que te permiten o bien iniciar sesión y registrarte o bien iniciar Gymkhana App. 
 	\item \textbf {/start}: Cuando inicias la Gymkhana desde el home te lleva automáticamente a esta dirección, donde primero este módulo comprueba si existen juegos disponibles en la base de datos, y si es así, los muestra. El usuario puede elegir uno de estos juegos y enviar una petición GET con el identificador del juego elegido. 
-	\item \textbf {/challenge}: Cuando se accede a este directorio se recoge la petición GET del usuario con el juego elegido, y si vienes de un reto anterior o acaba de empezar el juego. Así podemos elegir cuál de los diferentes retos que componen un juego mostrar, siempre comprobando que todos los datos existan en la base de datos para evitar posibles errores. Una vez elegido el reto a mostrar se le muestra el reto donde el usuario debe introducir la respuesta del mismo para poder avanzar. 
+	\item \textbf {/challenge}: Cuando se accede a este directorio se recoge la petición GET del usuario con el juego elegido, y si vienes de un reto anterior o acaba de empezar el juego. Así podemos elegir cuál de los diferentes retos que componen un juego mostrar, siempre comprobando que todos los datos existan en la base de datos para evitar posibles errores. Una vez elegido el reto a mostrar se le muestra el reto donde el usuario debe introducir la respuesta de este para poder avanzar. 
 	\item \textbf {/response}: Una vez el usuario ha rellenado la repuesta al reto se envía una petición tipo GET con la información contenida del reto al que pertenece, el juego, si ha habido un reto del mismo juego anterior y la respuesta al reto. En caso de ser correcta el servidor redirigirá al usuario al nuevo reto, si se está jugando a un juego con varios retos, o a una pantalla en la que indica que ha finalizado correctamente el juego y desde ahí el usuario podrá regresar al menú principal para poder elegir otros juegos, o repetir el mismo. También en cada response se analizará si el usuario que está jugando está registrado y le añadirá a ese usuario la puntuación de dicho reto, pero solo en caso de que no lo haya completado anteriormente. Por otro lado, si la respuesta no es correcta, enviará al usuario a una pantalla donde se indica que la respuesta es incorrecta y te dejará volver a intentar el reto o salir al menú de juegos.
 	\item \textbf {/accounts}: Esta dirección funciona de una manera un poco diferente. Para el inicio de sesión, modificación de contraseñas y cierre de la misma en la aplicación se ha decidido utilizar un módulo ya implementado de Django que gestione correctamente estas peticiones. Este módulo se le conoce como ``Django’s authentication system'' y está dentro de la configuración por defecto de Django. Una vez accedemos a esta dirección el usuario deberá ingresar su nombre de usuario y contraseña para poder continuar. En caso de ser correcto redirigirá al usuario a su perfil. Cuando el usuario decida cerrar la sesión se le redirigirá al home de la aplicación. 
 	\item \textbf {/profile}: Si te registras en la aplicación exitosamente podrás acceder a tu perfil de usuario a través de una petición GET en esta dirección. Básicamente aquí se muestra la información del usuario, como el nombre o el acumulado de sus puntos. También se podrá acceder a /start para comenzar a jugar. Desde este punto el usuario que ha iniciado sesión puede acceder a los módulos para crear retos y juegos 
@@ -533,7 +533,7 @@ Es la página principal que el usuario ve cuando accede a la web. Se limita a un
 \subparagraph{Start}
 Esta página actúa de forma de menú y muestra los juegos que hay disponibles en la aplicación, los lista ordenadamente de manera descendientes, y cada juego tiene un botón con el que él usuario puede interactuar, pulsando el mismo se accede a dicho juego.  
 \subparagraph{Challenge} 
-En esta página muestra un único reto, que se compone de un nombre o título, una pregunta y una imagen con un diagrama UML que debe estar relacionado con el reto. Esta vista tiene también un campo que el usuario debe rellenar con la respuesta planteada al reto y un botón par enviar la petición que más tarde procesará el módulo Vistas-Controlador.
+En esta página muestra un único reto, que se compone de un nombre o título, una pregunta y una imagen con un diagrama UML que debe estar relacionado con el reto. Esta vista tiene también un campo que el usuario debe rellenar con la respuesta planteada al reto y un botón para enviar la petición que más tarde procesará el módulo Vistas-Controlador.
 \subparagraph{Success}
 Una vez enviada la respuesta a un reto, si eta es correcta te redirigirá a esta página donde puedes ver un texto dando la enhorabuena al usuario. Dependiendo del juego te mostrará un botón para volver al menú de juegos o al siguiente reto si el juego estaba compuesto por varios. 
 \subparagraph{Wrong}
@@ -757,7 +757,7 @@ Para completar con la subida solo hay que pulsar el botón situado al final de l
 \end{figure}
 
 \section{Creación de juegos}
-Esta página funciona de manera muy parecida a la anterior, y solo se tendrá acceso aquel usurario que se ha registrado a través del inicio de sesión. Consiste del mismo modo en rellenar un formulario sencillo, en el que esta vez solo es necesario añadir un título del juego y seleccionar en el menú desplegable uno o varios retos que compondrán dicho juego. 
+Esta página funciona de manera muy parecida a la anterior, y solo se tendrá acceso aquel usurario que se ha registrado a través del inicio de sesión. Consiste, al igual que en el módulo anterior, en rellenar un formulario sencillo, en el que esta vez solo es necesario añadir un título del juego y seleccionar en el menú desplegable uno o varios retos que compondrán dicho juego. 
 Para completar la subida del juego es necesario pulsar el botón que hay al final de la página. 
 
 \begin{figure}
@@ -799,7 +799,7 @@ De esta manera, durante el desarrollo se ha validado el correcto funcionamiento 
 
 Después de la primera fase de desarrollo y validación se despliega el software en la plataforma Heroku, como se vio en la sección \ref{sec:despliegue} de este proyecto. 
 
-Hay que remarcar que antes del despliegue en Heroku el proyecto requería ciertas modificaciones a nivel de archivos de configuración o referencias a ficheros y rutas internas. Esto es debido a que el software va a alojarse en otra máquina, por tanto la arquitectura de ficheros no coincide con lo desplegado en el servidor WSL local. Esto es fácilmente manejable gracias al control de versiones de Git, donde la referencia estos ficheros se dejaba ajustada con los parámetros necesarios de WSL en la rama \emph{develop} y en la rama \emph{main} lo correspondiente a las necesidades de la máquina virtualizada de Heroku. De este modo, cada vez que se completaba una fase de validación en local y se requería emprender una validación en Heroku es necesario mergear y añadir los últimos cambios hechos sobre el software a la rama \emph{main} del proyecto. Una vez hecho eso, si se encontraba algún problema durante esta fase de validación relacionado con Heroku su añadían los \emph{bugfix} sobre esta rama. Se muestra un ejemplo de esto en la figura \ref{fig:git_graph.png}.
+Hay que remarcar que antes del despliegue en Heroku el proyecto requería ciertas modificaciones a nivel de archivos de configuración o referencias a ficheros y rutas internas. Esto es debido a que el software va a alojarse en otra máquina, por tanto, la arquitectura de ficheros no coincide con lo desplegado en el servidor WSL local. Esto es fácilmente manejable gracias al control de versiones de Git, donde la referencia estos ficheros se dejaba ajustada con los parámetros necesarios de WSL en la rama \emph{develop} y en la rama \emph{main} lo correspondiente a las necesidades de la máquina virtualizada de Heroku. De este modo, cada vez que se completaba una fase de validación en local y se requería emprender una validación en Heroku es necesario mergear y añadir los últimos cambios hechos sobre el software a la rama \emph{main} del proyecto. Una vez hecho eso, si se encontraba algún problema durante esta fase de validación relacionado con Heroku su añadían los \emph{bugfix} sobre esta rama. Se muestra un ejemplo de esto en la figura \ref{fig:git_graph.png}.
 
 \begin{figure}
 	\centering
@@ -874,7 +874,7 @@ Como todos los proyectos web, esta aplicación permite nuevas implementaciones, 
 	\item Si se logra el primer objetivo de esta lista, se podría implementar el inicio de sesión a través de Google o Facebook con la intención de hacer más sencilla la implicación del usuario con \texttt{Gymkhana App}. 
 	\item Evolucionar o mejorar el sistema de retos para que el juego consista en algo más que en dar una respuesta a un reto, algo más interactivo o completo. 
 	\item Como todos los proyectos de software, siempre se pueden mejorar la resistencia a errores. Someter la aplicación a una fase de QA\footnote{QA: De las siglas Quality Asurance, consiste en asegurar que el producto final sea de calidad, robusto y funcione correctamente} para asegurar el buen funcionamiento de la aplicación en cualquier caustica a la que esté sometido el programa.
-	\item Conseguir difundir el uso de la aplicación entre docentes y alumnos y obtener de estos un buen muestreo tanto de opiniones y resultados para comprobar si realmente \texttt{Gymkhana App} cumple el propósito de familiarizar y hacer comprender mejor conceptos del lenguaje de modelado unificado. 
+	\item Conseguir difundir el uso de la aplicación entre docentes y alumnos y obtener de estos un buen muestreo tanto de opiniones y resultados para comprobar si realmente \texttt{Gymkhana App} cumple el propósito de familiarizar y ayudar a comprender de mejor manera conceptos del lenguaje de modelado unificado. 
 	
 \end{itemize}
 
@@ -913,7 +913,7 @@ Los diagramas de objetos están fuertemente relacionados con los diagramas de cl
 \end{figure}
 
 \section{Diagrama de despliegue}
-Este diagrama de despliegue modela la arquitectura en tiempo de ejecución de un sistema. Se muestra la configuración de los elementos de hardware, identificados como nodos. Y muestra la trazas de elementos y artefactos del software en estos nodos. 
+Este diagrama de despliegue modela la arquitectura en tiempo de ejecución de un sistema. Se muestra la configuración de los elementos de hardware, identificados como nodos. Y muestra las trazas de elementos y artefactos del software en estos nodos. 
 \begin{figure}
 	\centering
 	\includegraphics[width=16cm, keepaspectratio]{img/diagrama_despliegue.png}
@@ -985,7 +985,7 @@ Los diagramas de secuencia se centrar en representa las interacciones entre los 
 	\caption{Ejemplo diagrama de secuencia}\label{fig:diagrama_secuencia}
 \end{figure}
 
-Los diagramas de tiempos se unas para representar la línea de vida de un objeto en una instancia y en el tiempo. Se representa los cambios con nivel alto y bajo con señales. En el ejemplo se puede ver un diagrama del comportamiento de los objetos que forman una sistema contraincendios.
+Los diagramas de tiempos se unas para representar la línea de vida de un objeto en una instancia y en el tiempo. Se representa los cambios con nivel alto y bajo con señales. En el ejemplo se puede ver un diagrama del comportamiento de los objetos que forman un sistema contraincendios.
 \begin{figure}
 	\centering
 	\includegraphics[width=12cm, keepaspectratio]{img/diagrama_tiempos.png}
